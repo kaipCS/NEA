@@ -10,10 +10,12 @@ surname VARCHAR(50) NOT NULL,
 role TINYINT(1) NOT NULL,
 schoolID INT(5),
 password VARCHAR(255) NOT NULL,
-UNIQUE (email)
+UNIQUE (email))
 ");
 $stmt->execute();
 $stmt->closeCursor();
 #message indicating successful creation
 echo("users table created");
 ?>
+
+
