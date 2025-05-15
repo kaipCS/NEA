@@ -50,11 +50,12 @@ for question in questions[1:]:
     #url for tex file 
 
     #spec case
-
+    if year == 1986:
+        texurl = url + "/database/db/Spec/Spec-S" + str(paper) + ".tex"
     #otherwise
-    texurl = url + "/database/db/" + str(year)[2:] + "/" + str(year)[2:] + "-S" + str(paper) + ".tex"
+    else:
+        texurl = url + "/database/db/" + str(year)[2:] + "/" + str(year)[2:] + "-S" + str(paper) + ".tex"
     print(texurl)
-
 
 
 # #convert question data json file into a list
