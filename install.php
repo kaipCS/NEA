@@ -1,4 +1,5 @@
 <?php
+#connect to database
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS users;
 CREATE TABLE users 
@@ -13,5 +14,6 @@ UNIQUE (email)
 ");
 $stmt->execute();
 $stmt->closeCursor();
+#message indicating successful creation
 echo("users table created");
 ?>
