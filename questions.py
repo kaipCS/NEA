@@ -71,7 +71,6 @@ for question in questions[1:]:
     code = sections[questionnum]
 
     #clean code
-
     index = code.find("end{question}")
     code = code[:index-1]
     
