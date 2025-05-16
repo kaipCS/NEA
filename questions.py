@@ -3,7 +3,7 @@ import json
 url = "https://stepdatabase.maths.org"
 
 #load the json file
-jsonurl = f"{url}/database/database_data.json"
+jsonurl = url+"/database/database_data.json"
 response = requests.get(jsonurl, verify=False)
 data = response.json()
 #print(type(data))
@@ -14,6 +14,9 @@ questions = data["questions"]
 #open json file to store extracted data
 questionsjson = open("questions.json", "w")
 
+#initalise data array
+data = []
+
 #iterate through each question
 #ignore first "start" question 
 for question in questions[1:]:
@@ -21,7 +24,9 @@ for question in questions[1:]:
     topic = question["tags"]
     #only take first topic for data integrity
     topic = topic[0]
-    print(topic)
+    #get rid of comma at end of line
+    topic = topic[:-1]
+    #print(topic)
     #store year created and paper number
     title = question["title"]
     # issue with 93-S2-Q7
@@ -83,7 +88,10 @@ for question in questions[1:]:
     
     #all data 
     info= {"topic" : topic, "year" : year, "paper" : paper, "area" : area, "code" :code}
-    questionsjson.write(json.dumps(info))
+    data.append(info)
+    print(year)
+
+json.dump(data, questionsjson)
 
     #add data into json file 
 
