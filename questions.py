@@ -2,7 +2,6 @@ import requests
 import json
 url = "https://stepdatabase.maths.org"
 
-errors = []
 #load the json file
 jsonurl = url+"/database/database_data.json"
 response = requests.get(jsonurl, verify=False)
