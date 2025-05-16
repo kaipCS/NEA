@@ -2,6 +2,7 @@ import requests
 import json
 url = "https://stepdatabase.maths.org"
 
+errors = []
 #load the json file
 jsonurl = url+"/database/database_data.json"
 response = requests.get(jsonurl, verify=False)
@@ -25,7 +26,7 @@ for question in questions[1:]:
     #only take first topic for data integrity
     topic = topic[0]
     #get rid of comma at end of line
-    topic = topic[:-1]
+    topic = topic.strip(",")
     #print(topic)
     #store year created and paper number
     title = question["title"]
@@ -73,14 +74,32 @@ for question in questions[1:]:
     
     #split by questions
     sections = texfile.split("begin{question}")
-    
+
     #identify question code
     # issue with 93-S2-Q7
     if question["question_id"] == 93207:
         questionnum = 7
     else:
-        questionnum = int(title[-1])
-    code = sections[questionnum]
+        elements = title.split("Q")
+        questionnum = int(elements[-1])
+    #print(questionnum)
+    # if questionnum > len(sections) -1:
+    #     errors.append(year)
+    print(errors)
+
+    # issue with 18-S1-Q11
+    if title[:5] == "18-S1" and questionnum >=10:
+        if questionnum < 12:
+            part = sections[10].split("begin {question}")
+            if questionnum == 10:
+                code = part[0]
+            elif questionnum == 1:
+                code = part[1]
+        else:
+            code = sections[questionnum -1]
+
+    else:
+        code = sections[questionnum]
 
     #clean code
     index = code.find("end{question}")
@@ -94,5 +113,4 @@ for question in questions[1:]:
 json.dump(data, questionsjson)
 
     #add data into json file 
-
 questionsjson.close()
