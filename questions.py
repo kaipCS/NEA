@@ -6,7 +6,7 @@ url = "https://stepdatabase.maths.org"
 jsonurl = url+"/database/database_data.json"
 response = requests.get(jsonurl, verify=False)
 data = response.json()
-#print(type(data))
+print(type(data))
 
 #extract only the question data from the file
 questions = data["questions"]
@@ -22,7 +22,7 @@ data = []
 for question in questions[1:]:
     #store topic
     topic = question["tags"]
-    #only take first topic for data integrity
+    #only take first topic 
     topic = topic[0]
     #get rid of comma at end of line
     topic = topic.strip(",")
@@ -58,6 +58,7 @@ for question in questions[1:]:
     else:
         area = 2
 
+
     #url for tex file 
 
     #specimen case
@@ -81,10 +82,6 @@ for question in questions[1:]:
     else:
         elements = title.split("Q")
         questionnum = int(elements[-1])
-    #print(questionnum)
-    # if questionnum > len(sections) -1:
-    #     errors.append(year)
-    print(errors)
 
     # issue with 18-S1-Q11
     if title[:5] == "18-S1" and questionnum >=10:
@@ -107,9 +104,13 @@ for question in questions[1:]:
     #all data 
     info= {"topic" : topic, "year" : year, "paper" : paper, "area" : area, "code" :code}
     data.append(info)
-    print(year)
+    #print(year)
 
+#convert to json and enter into file
 json.dump(data, questionsjson)
 
-    #add data into json file 
 questionsjson.close()
+
+
+
+
