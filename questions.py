@@ -10,11 +10,18 @@ data = response.json()
 
 #extract only the question data from the file
 questions = data["questions"]
+
+#open json file to store extracted data
+questionsjson = open("questions.json", "w")
+
 #iterate through each question
 #ignore first "start" question 
 for question in questions[1:]:
     #store topic
     topic = question["tags"]
+    #only take first topic for data integrity
+    topic = topic[0]
+    print(topic)
     #store year created and paper number
     title = question["title"]
     # issue with 93-S2-Q7
@@ -75,4 +82,9 @@ for question in questions[1:]:
     code = code[:index-1]
     
     #all data 
-    print(topic, year, paper, area, code)
+    info= {"topic" : topic, "year" : year, "paper" : paper, "area" : area, "code" :code}
+    questionsjson.write(json.dumps(info))
+
+    #add data into json file 
+
+questionsjson.close()
