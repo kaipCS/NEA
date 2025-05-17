@@ -1,0 +1,5150 @@
+quadratic functions
+partial fractions
+coefficient of binomial expansion
+lines
+right angle
+differentiation
+maximum value
+optimisation
+trigonometry
+substitution
+initial condition
+forced second order equation
+trigonometry
+trigonometric
+integral
+arctan
+positive integers
+digits in base 10
+zeros
+factorial
+50p (fifty pence) coin
+arc
+cross section
+diametrically opposite
+radius
+circle
+area
+modulus and argument
+complex exponential
+de moivre's theorem
+sum of complex series
+fixed point
+curve
+rectangle
+vertices
+area
+arc
+parabola
+integration
+finding area
+modulus function
+rational function
+surds
+trigonometry
+trigonometric
+integration
+rate of work
+constant force and resistance
+speed
+distance
+limiting friction
+uniform cylinder
+coefficient of friction
+inclined plane ramp
+constant force
+uniform disc
+coefficient of friction and restitution
+string
+angular speed
+horizontal circle
+vertical plane motion
+unbiased four-faced dice
+expectation
+expectation and variance
+integer values
+pdf
+cumulative distribution function (cdf)
+expectation
+continuous random variable
+algebra
+partial fractions
+positive integers
+algebra
+discriminant
+system of equations
+three unknowns
+de moivre's theorem
+system and simultaneous equations
+trigonometry
+trigonometry
+hyperbolic function
+inverse functions
+principal value
+function
+approximating integrals with sums
+bounds
+error
+trigonometry
+exponential
+logarithm
+sine
+cosine
+differentiation
+identity
+integer part
+floor  function
+curve sketching
+exponential function
+multiplication modulo n
+cyclic group
+order 12
+isomorphism
+intersection of plane and sphere
+circle
+speaking frogs arguing with toads
+truth and lies
+collision in trajectory
+combined particle
+coalesce
+simple harmonic oscillation
+period
+bead on wire
+string and springs
+small angle approximation
+inequality
+uniform sphere
+tension
+chocolate orange
+centre of mass of segment
+uniform disc
+angular speed
+constant frictional force
+rate of change
+king of smorgasbrod
+kippers
+mean and variances
+schemes
+tennis tournament
+probability
+draw
+first
+final round
+product
+sum
+binomial coefficient
+binomial expansion
+positive integer
+inequality
+power
+bernoulli inequality
+triangle inequality
+solution of complex polynomial equation
+coordinate geometry
+tangent
+parabola
+directrix
+straight line
+curve sketching
+non-zero solutions
+small approximations
+sine function
+interval
+recurrence relation
+integral
+sech
+hyperbolic function
+solution by substitution
+general solution
+second order equation
+sum of squares
+midpoints on opposite edges
+tetrahedron
+scalar product
+inequality
+group of matrices under matrix multiplication
+associative
+subset
+integers
+identity matrix
+commute
+odd squares
+remainder
+even squares
+expressable as a sum of three squares
+divisibility
+identical snowploughs
+constant rate acceleration
+first order equation
+general solution
+time-distance (x-t)
+uniform rod
+light inextensible string
+inclined to the vertical
+tension
+resolve forces
+centre of mass
+bead on a rolling circular hoop
+second order differential equation
+slip
+reaction force
+uniform rod
+rotation about midpoint on smooth horizontal table
+perfectly elastic collision
+angular speed
+mountain villages
+vertices of tetrahedron
+snowfall probability
+independence
+president of the republic
+no children
+sons and daughters
+expectation
+trigonometric and exponential functions
+stationary points
+geometric progression
+ratio
+differentiation
+coordinate geometry
+circles
+area of region
+limit
+solution by substitution
+initial condition
+limit
+first order equation
+analysis
+sum of infinite series
+logarithm
+exponential function
+trigonometry
+sine and cosine functions
+integral of functions
+geometrical argument
+inequality
+trigonometric and inverse function
+differentiation
+sum
+finite sine series
+tangent
+integration by substitution
+equivalent
+1/t
+1/x
+trigonometry
+coordinate geometry
+triangle in a plane
+plane sketching
+parametrisation
+position vector
+spring
+modulus of elasticity
+cylinder
+equilibrium
+stretched spring
+momentum
+sphere
+lose contact
+energy consideration
+particle striking floor
+bouncing ball down flight of stairs
+momentum
+coefficient of restitution
+middle of step
+perpendicular
+force
+non-constant acceleration
+first order differential equation
+position
+x-t graph
+table tennis tournament
+successive
+probability
+c1
+continuous random variable
+point on a unit circle
+mean and variance
+parliament of laputa
+progressive and preservative
+normal approximation
+vote
+algebra
+substitution
+general case
+function
+c1
+sine function
+angles
+identity
+quartic
+quadratic
+algebra
+quadratic function
+positive integers
+argand diagram
+geometry
+necessary and sufficient
+if and only if
+vertices of equilateral triangle
+lagrange's identity
+inverse functions
+root of equation
+exponential function
+derivatives
+series
+sequences
+integration by substitution
+trigonometric function
+parameter
+definite integral
+trapezium rule
+intervals
+logarithm
+factorial function
+curve sketching
+stirling's approximation
+position vector
+locus
+spheres
+planes
+algebra
+geometrical
+equivalent
+square matrix
+non-singular
+unit
+zero matrix
+if and only if
+binary operation
+group axioms
+set
+ring
+inclined plane
+uniform rod
+pivot
+limiting equilibrium
+string
+ring
+static equilibrium
+shortest distance
+plane polar coordinates
+equation of curve
+coefficient of restitution
+ice snooker
+puck
+cushions
+table
+path
+ratio
+second order differential equation
+uniform elastic band
+modulus of elasticity
+circular cone
+vertex
+train and lorry
+level crossing
+collision
+independent random variables
+logic
+body in fridge
+enemy
+truth and lies
+probability
+c1
+positive integers
+divisibility
+factorial function
+c1
+trigonometric function
+sine
+cosine function
+recurrence relation
+iteration
+odd
+even
+inequality
+binomial expansion
+trigonometric identity
+arctan function
+rotating curves
+funnels
+surfaces
+inverse hyperbolic function
+water tap
+numbers
+secret message
+encoding
+decoding
+modulo 50
+forced system of first order equation
+explicit solution
+taylor series of arctan function with remainder
+inequality
+modulus function
+series
+error approximation
+inequality
+diagonals of a parallelogram
+maximum area
+set of points
+sketching
+c1
+group multiplication
+product group
+abelian
+if and only if
+subgroup
+isomorphism
+cyclic group
+bernoulli polynomial
+recurrence relation
+differentiation
+integration
+series
+telescoping sequence
+sum
+bank of river
+swimming downstream
+shortest possible time
+stump
+sketch
+c1
+firework burning
+rocket
+first order differential equation
+uniform rod
+inclined
+coefficient of friction
+slide
+equilibrium
+sphere
+attraction
+first order differential equation
+cloud
+instantanesous velocity
+expectation
+recurrence relation
+steppe syndrome
+independent identically distributed random variables (iid)
+min
+max
+lord copper
+lottery
+logarithm
+lnx/x
+positive integers
+functions
+c1
+trigonometry
+stationary point
+maxima
+minima
+derivatives
+square
+c1
+proof
+line segments
+midpoint
+intersection
+c1
+partial fraction
+taylor series
+general term
+argand diagram
+perpendicular
+geometry
+real part
+convex hexagon
+distance
+differentiation
+modulus function
+functional equation
+inequality
+c1
+skew (non-planar) quadrilaterial
+opposite sides
+midpoints
+diagonals
+c1
+integration by parts
+trigonometry
+substitution
+sniper
+bullet
+circle
+uniform circular arc
+plane framework
+equilibrium
+skater
+force
+travelling in a circle
+hitting bank
+nellie the elephant
+circus
+elasticity
+time-distance
+normal random variable
+expectation
+pdf
+cdf
+hogpo
+tourist
+vloska
+fridge football
+goals and fouls
+probability distribution
+wondergoo
+cars
+rust
+conditional probability
+laurent series
+series
+c1
+quadratic equation
+roots (complex)
+cubic equation
+real
+c1
+argand diagram
+locus
+complex numbers
+de moivre's theorem
+imaginary part
+tan
+product
+hyperbolic function
+turning point
+differentiation
+positive function
+integration by substitution
+trigonometry
+monstrously hard
+system of first order equation
+aardvark
+buffalo
+population dynamic
+matrix method
+linear combination
+equilibrium
+stationary point
+subgroups
+3d surface
+triangle
+scalar product
+cross product
+locus
+position vector
+particle
+cartesian axes
+first order equation
+string
+hole
+surface of table
+string
+librarian
+book
+coefficient of friction
+slip
+axel
+rotating about vertical axis
+angular speed
+inclined angle
+examination paper
+mark
+elementary probability
+c1
+quadratic equation
+expectation
+variance
+normal distribution
+integral
+inequality
+exponential function
+recurrence relation
+quadratic equation
+proof by induction
+c1
+argand diagram
+locus
+curve sketching
+kingdom
+parabolic hill
+minimal
+differentiation
+rotating curves
+engineers
+borrow money
+interest
+tunnel
+c1
+differentiation
+sine and cosine function
+approximation
+sturm-liouville
+orthogonal functions
+tangent and normal
+parabola
+determinant
+area
+necessary and sufficient
+concurrent
+order of group
+conjugation
+greyhounds
+polar curve
+vertices of regular n-gon
+coefficient of friction
+ladder
+minima
+inclined plane
+coefficient of restitution
+billiard ball
+maximum angle of deflection
+air resistance
+first order equation
+gravity
+goalkeeper
+tan
+quadratic equation
+bead on wire
+angle
+trigonometric function
+polar equation
+library book
+quadratic equation
+balls from urns
+mean
+expectation
+variance
+sum of random variable
+indicator function
+semi circles
+parabola
+vertex
+arc
+midpoint
+area
+c1
+logarithm function
+approximating area
+rectangle
+limit
+scalar product
+triangle
+line segments
+inequality
+collinear points
+line segment
+triangle
+general position
+c1
+binomial coefficient
+sum of
+normal to curve
+differential equation
+minimum point
+differentiation
+exponential function
+modulus function
+rectangle
+area
+maximimum
+implicit
+curve
+c1
+de moivre's theorem
+trigonometry
+roots of polynomial equation
+cubic equations
+polynomial
+turning points
+differentiation
+c1
+constant acceleration
+time-distance graph
+resistive force
+shot put
+horizontal distance
+perturbation
+tetrahedron
+elastic string
+modulus of elasticity
+hooke's law
+equilibrium
+ladder
+normal reaction
+frictional force
+coefficient of friction
+equilibrium
+enchanted castle
+prevailing wind
+princess magic seed
+expectation
+pdf
+cycling routes
+mean
+optimisation
+expectation
+probability
+long time
+algebra
+polynomial equation
+trigonometry
+substitution
+counterdatabase
+taylor series for tan and cot
+recurrence relation
+trigonometric identity
+ellipse
+hyperbola
+intersection
+curve sketching
+rational function
+functional equation
+differentiation
+inequality
+different cases
+differentiation
+mirror
+ray of light
+reflection
+bisect
+parabola
+integration by substitution
+inverse function
+geometrical interpretation
+substitution
+unique solution
+second order equation
+complex numbers
+permutation group
+mobius transformation
+order of group
+matrix power
+series
+exponential
+differential equation
+system
+integrating factor
+line
+intersection
+system of equation
+scalars
+pulley
+lift
+perfectly inelastic
+loss of energy
+uniform rectangular lamina
+vertical plane
+peg
+dynamically equivalent
+rod
+particle
+rectangular lamina
+moment of inertia
+light inextensible string
+circular motion
+reaction force
+continuous random variable
+pdf
+random points on permieter of semicircle
+expectation
+widget faults
+expectation
+probability
+area of surface
+sphere
+conic section
+tangent
+circle
+coal seam
+inclined plane
+bearing
+trigonometry
+bore hole
+matrix groups
+cayley-hamilton
+binary operation
+group axioms
+asymptotes
+turning points
+roots of equations
+c1
+sum
+series
+polynomial
+chebyshev's polynomial (hyperbolic)
+conic section
+tangent
+intersection
+bisection
+linear transformation
+matrix
+necessary ans sufficient
+commute
+system of first order equation
+exponential function
+sum
+sequences
+infinite
+sum of powers
+inequality
+limit
+increasing function
+rigorous proof of integration of polynomials
+coefficient of restitution
+spheres
+strike
+rigid rod
+vertical axis
+elastic strings
+modulus of elasticity
+hooke's law
+simple harmonic motion
+equilibrium
+circular disc
+minelastic string
+pulley
+continuous random variable
+independent
+probability density function
+pdf
+median
+integration
+expectation
+variance
+ruritania
+tree diagram
+c1
+semicircle
+quadrilateral
+blind
+maximum area
+c1
+complex numbers
+modulus and argument
+roots of unity
+binomial expansion
+sum
+push-off
+normal
+position vector
+gradient
+arithmetic
+double arithmetic
+factorial progression
+sequence
+sum
+c1
+integration by substitution
+curve sketching
+polynomial
+distinct roots
+inequality
+parallelogram
+area of rectangle
+projection
+diagonals
+substitution
+first order equation
+trigonometry
+sine
+cosine function
+curve
+intersection
+projection
+area of quadrilaterals
+inequality
+c1
+work
+energy and power
+relative velocity
+superman
+shell
+downward velocity
+spring
+modulus of elasticity
+equilibrium
+potential energy
+cylinder
+coefficient of friction
+inequality
+normal reaction
+smooth rail
+bag of balls
+blackball
+expectation
+strategy
+binomial coefficient
+combinatorics
+probability
+tosses
+c1
+probability density function
+poisson distribution
+bus
+stop
+algebra
+roots of equations
+ineqlaity
+non-negative
+c1
+algebra
+roots of equations
+ineqlaity
+non-negative
+c1
+algebra
+roots of equations
+ineqlaity
+non-negative
+c1
+sine function
+circle
+geometry
+cubic equation
+cases
+inequality
+c1
+proof by induction
+plane
+lines
+intersection
+line segments
+c1
+geometry
+circle
+argand diagram
+position
+positive integers
+fractions
+c1
+damped system with feedback
+exponential function
+curve sketching
+root of equations
+first order equation
+identity
+curve sketching
+cardioid
+length of curve
+determinants
+cayley-hamilton theorem
+necessary and sufficient
+counterexamples
+disc spinning about vertical axis
+moment of inertia
+first order equation
+integration by substitution
+coefficient of restitution
+straight staircase
+edge
+centre of gravity
+non-uniform rod
+light inextensible string
+kinetic energy
+identical smooth marbles
+probability density function
+expectation
+taget
+shot
+marksman
+trousers
+ties and compromising photographs
+elementary probability
+c1
+de moivre's theorem
+trigonometry
+roots of equation
+tangent function
+3-dimensional space
+line
+intersection
+angle
+c1
+binary operation
+order 2
+commute
+conjugate elements
+sum of trigonometric functions
+cosine
+binomial coefficient
+binomial coefficient
+differential equations
+arcsin function
+leibniz's rule
+vectors
+matrices
+eigenvectors
+area
+equation of tangent
+circle
+taylor series
+curve sketching
+inequality
+asymptote
+second order equation
+integrating factor
+polar differential equations
+hyperbolic and trigonometric functions
+curve sketching
+interval
+inequality
+estimation
+approximation
+c1
+uniform square lamina
+revolution about axis
+rotation
+smooth wedge
+particle
+elastic collision
+projection from sphere
+strike surface
+rigid cube
+moment
+force
+marginal distribution
+mean
+expectation
+probability
+unbiased 12-sided die
+dice
+rod cut into pieces
+conditional probability
+triangle formed
+bivariate distribution
+construction possible
+obtuse angle
+cubic equation
+frosty the snowman
+melting
+ratio of volume
+surface area
+maximum value
+c1
+argand diagram
+path
+prison compound
+square
+black tower
+distance
+area
+maximum value
+c1
+regular vectors
+centroid
+differentiation
+integration
+criticise argument
+maximum
+minimum
+c1
+slakan treasury
+economics
+continuous variable
+vloskan
+interest
+sequence
+inequality
+c1
+trigonometric integral
+sin substitution
+arcsin function
+sum
+inequality
+approximation
+analysis
+c1
+suspension bridge
+flexible chains
+weight
+tension
+parabola
+piledriver
+acceleration
+collision
+geometric progression
+inelastic
+makeshift stepladder
+coefficient of friction
+lamina
+slide
+semicircle
+speed
+rod
+triangle
+non-degenerate
+without replacement
+c1
+binomial distribution
+probability
+mean and variance
+toad and frog cross the road
+probability
+linear combination
+algebra
+c1
+hyperbola
+curves
+differentiation
+equation of tangent
+asymptote
+bisect angles
+algebraic manipulation
+c1
+sum
+quadratic equation
+cosine function
+analysis
+curve sketching
+tangent function
+sum
+logarithm function
+integration
+approximation
+taylor series
+differentiation
+logarithmic function
+functional equations
+quadratic equations
+hyperbolic functions
+substitution
+groups under matrix multiplication
+commute
+subgroup
+straight stick
+shadow
+displacement vector
+ruritanian army
+shells
+maximum height
+angle of elevation
+string
+second order differential equation
+necessary and sufficient
+uniform rod
+moment of inertia
+coefficient of friction
+current in a river
+vector
+first order differential equation
+hyperbolic
+exponential functions
+expectation
+combinatorics
+desk
+examination hall
+invigilator
+cabbibo dam
+rain
+approximation
+sum
+logarithm
+exponential function
+argand diagram
+triangles
+rotation
+deterinant of matrix
+similar triangles
+centroid
+equilateral
+geometry
+differentiation
+stationary
+inflection points
+continuous and differentiable
+inverse function
+c1
+3-dimensional space
+position vector
+equation of path
+polar coordinates
+integration
+closed loop
+area of region
+equation of lines
+hyperbolic functions
+necessary and sufficient
+logarithm
+trigonometry
+analysis
+inequality
+limits
+integration by parts
+reccurence formula
+binomial coefficient
+parametric equations
+ellipse
+polar equation
+perimeter
+integration
+sum of roots
+proof by induction
+uniform circular cylinder on inclined plane
+coefficient of friction
+elliptic tube
+acceleration
+polar coordinates
+ceiling
+perfectly inelastic collision
+modulus of elasticity
+spring
+reaction force
+pack of cards
+without replacement
+identical
+elementary probabliity
+joint probability distribution
+marginal probability
+expectation
+date of the week
+methodical
+c1
+c1
+sine and modulus function
+integration by parts
+argand diagram
+locus
+differentiation
+c1
+small angle approximation
+c1
+quadratic equation
+functional equation
+integer
+c1
+differentiation
+integration
+exponential function
+coffee filter
+cone
+height of water
+c1
+toy cannon
+force exerted on projectile
+modulus of elasticity
+stepladder
+coefficient of friction
+equilibrium
+inverse square law
+comet
+escape velocity
+pedestrains
+poldavia
+newspaper headlines
+c1
+trains
+london
+barchester
+c1
+closure of roads
+binomial distribution
+c1
+functions
+trigonometry
+square roots
+second order equation
+differentiation
+hyperbolic functions
+curve sketching
+integration
+area of region
+functional equation
+differentiation
+polynomial
+c1
+order of an element
+sl2(r)
+inverse
+matrix multiplication
+trigonometry
+logarithm
+root of equation
+approximation
+differentiation
+logarithmic function
+functional equations
+integration by substitution
+trigonometry
+hyperbolic function
+locus
+scalar product
+vector identity
+vector triple product
+locus
+argand diagram
+real part
+points on a circle
+throwing wallet up a cliff?! inequality
+two wheels
+modulus of elasticity
+equilibrium positions
+coefficient of friction
+coefficient of restitution
+inequality
+bounce
+particles on table
+tensions in string
+tension
+equilibrium
+binomial coefficient
+differentiation
+taxi driver
+tofees and mint
+logarithm
+differentiation
+hyperbolic function
+exponential function
+proof by induction
+matrix multiplication
+curve sketching
+quadratic equations
+intersection of curves
+family of curves
+rational functions
+first order differential equation
+intersection of curve
+coordinate geometry
+tetrahedron
+midpoint
+sphere
+intersections
+integration by parts
+recurrence relation
+reduction formula
+curve sketching
+area under curve
+parallelogram
+meet in a point
+trigonometry
+binomial coefficients
+sum
+straight line
+bosect angle
+ellipse
+focus
+polar coordinates
+pole
+tangent
+first order differential equation
+curve sketching
+perimeter
+area of region
+integration
+barrier
+wall
+rebound
+coefficient of restitution
+hemispherical bowl
+slide
+first order differential equation
+velocity
+modulus of elasticity
+circular disc
+string
+reaction force
+turn about fixed horizontal axis
+motion in polar coordinates
+friction
+tension
+acceleration
+second order differential equation
+goat
+probability density function
+pdf
+median
+conditional probability
+misprint in newspapper
+probability
+dice
+colors
+number of ways
+c1
+series
+limit
+sequence
+c1
+inequality
+algebra
+reciprocal function
+inverse
+integer solution
+inequality
+c1
+trigonometry
+sine function
+modulus
+triangle inequality
+roots of equation
+bump
+rational functions
+sine function
+c1
+curve sketching
+roots of equation
+inequality
+c1
+intersection of surface with spheres
+little fitton
+handmade ice-cream
+first order differential equation
+modulus of elasticity
+lamp
+equilibrium
+rotate
+centre of mass
+uniform square wire
+clay pigeon
+rifle
+inequality
+range
+train
+tractive force
+engine
+time-distance
+mr toad
+probability density function
+probability
+limit
+traffic light
+wild wood
+captain spalding
+gambriced
+frodox
+truth
+logic
+native
+probability
+integration by substitution
+uniform distribution
+pins on lines
+c1
+substitution
+trigonometry
+substitution
+first order equation
+3d
+non-parallel lines
+shortest distance
+curve sketching
+equiangular spiral
+plane geometry
+arc length of curve
+proofs and counterexamples
+determinant
+quadratic
+matrix multiplication
+linear algebra
+divisibility
+solution of equation
+am-gm inequality
+proof by induction
+c1
+argument
+imaginary part
+inequality
+proof
+diagonal matrix
+transformation
+change of basis
+immersed body into liquid
+buoyancy and drag
+equilibrium
+sphere on inclined plane
+rolling not slipping
+simple harmonic motion
+repulsive force
+electrical charge
+perturbation
+period of motion
+binomial approximation
+hooke's law
+restitution
+kinetic energy
+ball thrown from floor
+lep
+voz
+computer programs
+fractional part
+magnitude of error
+bus arriving
+curve sketching
+parabola
+length of curve
+volume of revolution
+implicit differentiation
+polar coordinates
+area of curve
+system of equations
+unique solution
+inverse
+sequences
+set of complex numbers
+binary operation
+associative and commutative
+identity
+isomorphism
+matrix groups
+argand diagram
+circle
+locus
+mobius transformation
+position
+simultaneous equations
+root of equation
+iterative root finding
+square pyramid
+vectors
+quadrilateral
+parallelogram
+proof
+sum over pairs
+sum of squares
+parallelogram
+lines
+gradients
+matrix transformation
+area
+determinant
+force along lines
+direction of rotation
+parallel axis theorem
+angular acceleration
+modulus of elasticity
+equilibrium
+string
+tension
+energy
+variable mass
+circular disc
+coefficient of restitution
+strike
+rebound
+elementary probability
+expectation
+binomial distribution
+c1ish
+pdf
+probability density function
+mean
+curve sketching
+setting questions
+attic
+rectangular base
+c1
+derivatives of powers
+binomail expansion
+coefficient
+sum
+even and odd
+trigonometry identity
+arctan
+locus
+parabola
+tangents
+mobius transformation
+real and imaginary part
+conjugate
+composition of functions
+pattern
+cubes of integers
+sum
+logarithmic
+trigonometric functions
+change of variables
+phase
+cannon ball
+equation of motion
+range
+inequality
+angle of firing
+modulus of elasticity
+horizontal circle
+inequality
+angular velocity
+railway wagon
+equilibrium
+collide
+incline
+female colleges of cambridge
+newnham
+new hall
+c1
+without replacement
+expectation
+binomial coefficients
+handing essays
+mean and variance
+probability density functino
+pdf
+digits
+c1
+polynomials
+nth derivatives
+degree of polynomials
+functional equation
+non-constnat function
+c1
+area of circles and ellipses
+intersection
+modulus function
+curve sketching
+c1
+trigonometric series
+ruritanian infantry division
+flagpoles
+cartesian equations
+straight lines
+c1
+24 hour spares
+continuous function
+profits
+inequality
+c1
+particle attached to rod
+angle with horizontal
+modulus of elasticity
+rope
+truk towing a trailer
+taut
+upwards projectile
+inequality
+fragments
+split into fragments
+conservation of momentum
+calamity jane
+buffalo bill
+craps
+fair dice
+c1
+cruncho
+cards of mathematicians
+expectation
+septimus moneybags
+dart board
+uniform distribution
+variance
+charity fete
+minimise expected loss
+reduction formula
+hyperbolica functions
+substitution
+algebra
+quartic equations
+c1
+intersection of plane with sphere
+simultaneous equations
+circle
+solution curves
+curve sketching
+tangent
+proof by induction
+derivatives
+logarithmic function
+maclaurin series
+coefficient
+power series
+argand diagram
+rotation
+necessary and sufficient
+permutation
+isomorphism
+roots of unity
+complex multiplication
+matrix product
+determinant
+complex numbers
+sum of squares
+coefficient of restitution
+symmetrical bowl
+first order differential equation
+gammaland
+pilot constant wind
+c1
+stepladder
+modulus of elasticity
+rope
+tennis match
+winning match
+trapeze artist
+probability density function
+hyperbolic function
+rope failure
+points on perimeter of circle
+form triangle
+probability
+curve sketching
+region
+lines
+c1
+trigonometric substitution
+telescoping sum
+sum of cubes
+de moivre's theorem
+binomial theorem
+real and imaginary parts
+binomial coefficient
+differentiation
+integral
+harmonic sum
+substitution
+centroid
+midpoint
+altitudes of triangle
+second order equation
+substitution
+angle of projection
+parabola
+assumptions
+equilibrium
+modulus of elasticity
+restitution
+cylinder
+surface in contact
+coefficient of friction
+combinatorics
+hockey
+c1
+cancerous cells
+expectation
+probability
+proportion
+maximum value
+differentiation
+geometric series
+differentiation
+sum of squares
+recurrence relation
+proof by induction
+c1
+integration by parts
+recurrence relation
+curve sketching
+trigonometry
+inequality
+limit
+birkhoff maclane
+c1
+roots of quadratics
+roots of unity
+circle
+triangle
+coordinate geometry
+c1
+bacteria in nutrient medium
+limit
+first order equation
+equilibrium
+inclined plane
+coefficient of restitution
+spheres
+mass under gravity
+distance apart of two particles
+bread roll throwing duel drones' club
+probability
+c1
+fly by night airline
+expectation
+maximum
+scientist
+probability density
+hypothesis testing
+linear systems
+c1
+recurrence formula
+simple harmonic motion
+shm
+damped
+maximum
+second order equations
+trigonometric series
+inequality
+maclaurin series
+coefficient
+power series
+differentiation
+trigonometric functions
+proof by induction
+argand diagram
+inverse function
+set
+isomorphism
+3d
+perpendicular distance
+plane
+surface
+scalar product
+geometrical interpretation
+circles
+circular disc
+stable equilibrium
+moment of inertia
+maximum
+cannon ball
+angle of firing
+range
+ship sailing
+wind
+c1
+joint pdf
+normal distribution
+radially symmetric
+c1
+probability density function
+pdf
+candidate
+examination
+surface area
+minimum
+sphere
+cylinder
+c1
+polynomial
+binomial coefficient
+divisibility
+factorisation
+modulo arithmetic
+c1
+arctan
+logarithmic integration
+substitution
+quadratic equations
+rational numbers
+telescoping sum
+trigonometry
+integration
+water tank
+power law
+steady rate
+first order equation
+geometric series
+positive integer
+rational numbers
+c1
+bungee jumping
+ravine
+modulus of elasticity
+maximum speed
+kinetic energy
+spaceship
+relative speed
+explosion
+angle of projection
+speed of projection
+binomial coefficients
+exam scripts
+expectation
+c1
+expectation and variance
+penny black stamp
+biased coin
+successive
+conditional probability
+c1
+binomial coefficients
+linear system
+c1
+general formula
+proof by induction
+change of variable
+trigonometry
+cosine
+integral
+quartic equations
+root of unity
+proper factor
+prime factorisation
+c1
+square
+perpendicular distance
+straight line
+circle
+solutions
+functional equation
+trigonometry
+initial condition
+child's toy
+hemisphere
+surface
+equilibrium
+centre of gravity
+rhode island red and the henhouse of doom
+fairground wheel
+maximum
+simple harmonic motion
+ceiling
+second order equation
+amplitude of oscillation
+probabiltiy density function
+uniform distribution
+variance
+expectation
+exponential distribution
+binomial coefficients
+sum
+triposville
+elementary probability
+conditional probability
+uniform distribution
+expectation
+moments
+inequality
+approximation
+sum
+identity
+definition
+linear system
+proof
+c1
+integration by substitution
+arctan
+trigonometry
+inequality
+sum
+largest product
+proof
+c1
+de moivre's theorem
+tangent identity
+sum
+cubic equation
+roots of unity
+group of matrices
+singular matrix
+determinant
+simultaneous equations
+roots of polynomials
+area of triangle
+semi-perimeter
+heron
+cubic equation
+c1
+mobius transformation
+inverse operation
+composition
+identity
+c1
+sphere
+small displacement
+perturbation
+circular cylinders
+coefficient of friction
+equilibrium
+inequalities
+simple harmonic motion
+circular wire
+second order equation
+equilibrium
+period of oscillation
+displacement
+professor ecks
+proving theorem
+matrices
+random variables
+expectation and variance
+linearity
+inequalities
+bike
+puncture
+first order equation
+approximation
+10 and 20 pence coins
+number of ways
+c1
+trigonometry
+identity
+chain rule
+implicit differentiation
+recurrence relation
+decimal places
+digit
+numbers
+c1
+roots of equations
+c1
+quadrilateral
+midpoints
+constant
+vertices
+c1
+factorisation
+algebraic manipulation
+integration
+inequality
+c1
+integration
+roots of equation
+logarithmic function
+successive car width
+chicken
+inequality
+time-distance
+c1
+horizontal circle
+tension in string
+first order differential equation
+maximum height
+velocity
+root of quadratic
+expectation and variance
+sum of random variable
+probability
+bond
+assasin
+tree diagram
+c1
+maximum flood
+cost
+expected cost
+logarithm function
+sum of numbers
+digits
+product of primes
+c1
+iteration
+proof
+integration by partial fractions
+arctan
+logarithm
+factors of polynomials
+divisibility
+degree
+c1
+locus
+subset
+regions of argand diagram
+trigonometric identity
+solution of equations
+rational
+inequality
+differentiation
+maximum
+minimum
+c1
+integration
+coefficient of friction
+solid sphere
+no slip
+horizontal force
+coefficient of restitution
+elastic collision
+coalesce
+energy
+explosion
+tennis player
+angle and velocity
+lower bound for serve
+cambridge whispers
+elementary probability
+buffon's needle
+continuous random variable
+cumulative distribution function
+lines
+traffic
+tunnel
+expectation
+exponential function
+maclaurin series
+logarithmic and exponential function
+maximum
+differentiation
+root of equation
+c1
+roots of unity
+points around a circle
+coordinate geometry
+roots of cubic equations
+coefficient
+differentiation
+c1
+ratio
+distance of wheel rolling
+integration
+harmonic oscillator
+second order equation
+recurrence relation
+difference equation
+proof
+integer parts
+inequality
+c1
+diagonal matrix
+matrix of rotation
+ellipse
+diagonalise
+ratio of stretched and unstretched springs
+friction
+spherical marble on horizontal table
+symmetrical bell and clapper
+angle vith vertical
+biased coin
+probability generating function
+pgf
+expectation and variance
+sample cards
+normal approximation
+harmonic series
+probability density and moment generating functions
+expectation
+normal distribution
+mean and variance
+industrial process
+standard deviation
+area and perimeter
+integers
+digits
+number of
+c1
+
+statements
+proof
+polynomials
+trigonometry
+inequality
+logarithmic functions
+differentiation
+rectangle inscribed in circle
+greatest
+maximum
+perimeter
+sum of lengths
+proof
+c1
+argand diagram
+six-sided polygon
+difference equation
+trigonometry
+bank
+interest
+deposit
+financial
+c1
+differential equations
+volume flux
+second order equation
+coefficient of resitution
+spheres
+shell
+greatest height
+maximum
+distance
+hank's gold mine
+maximum
+differentiation
+independence
+solution to equation
+divisibility
+elementary probability
+c1
+geometrical probability
+genland
+slihing
+tax on yaks
+expectation
+cubic equation
+factors
+integer solution to equation
+c1
+approximation to square roots
+telescoping sum
+limit
+ratio of terms
+recurrence formula
+trigonometric integral
+triangle inequality
+induction
+roots of equation
+geometry
+curve sketching
+normal and tangent
+differentiation
+maximum
+minimum
+inequality
+trigonometric functions
+3d
+triangle
+plane
+midpoint
+line meet plane
+equilibrium
+planar hexagon framework
+suspended
+diagram
+cconservation of momentum and energy
+inclined surface
+differential equation
+mechanical principles
+cricket
+fielder
+batsman
+constant angle
+al
+step
+tree diagram
+sufferer c1
+conditional probability
+serve customer
+independent
+catastrophe college
+dr doom
+inequality
+trigonometry
+differentiation
+stationary points
+beta function
+integration by parts
+recurrence formula
+bank bond
+power law solution substitution
+limit
+c1
+curve sketching
+circles
+area enclosed by curve
+integration
+exponential of square matrix
+geometry
+cube
+tetrahedron
+polyhedra
+octahedron
+vertices
+faces
+volume
+edges
+c1
+differentiation
+stationary points
+statistical physics
+integral
+line intersecting spheres
+inequality
+minimum distance
+period of simple harmonic motion
+moment of inertia
+circular cone
+conservation of momentum and energy
+coeffcient of restitution
+binomial expansion
+equation of motion
+period
+integration by substitution
+mountain villages
+tetrahedron
+snowfall
+c1
+maximum likelihood estimator
+coin toss
+c1
+submarines
+max
+sum of random variables
+estimator
+expectation and variances
+divisibility
+average value
+c1
+sum of squares
+centroid
+c1
+proof
+inequality
+c1
+modulus function
+inequality
+c1
+small angle approximation
+cartesian coordinates
+satellites
+general relativity
+earth
+c1
+maximum and minimum
+quadratic equation
+c1
+trigonometry
+second order equation
+inequality
+integral
+logarithm function
+harmonic series
+sum
+limit
+tortoise
+hare
+c1
+simple harmonic motion
+period
+inverse square law
+krypton
+starmaker
+centre of mass
+sum of dice
+probability
+inequality
+c1
+bar magnets
+expectation and variance
+continuous random variable
+dart throwing
+expectation
+total score
+probability
+density function
+stirling's formula
+factorial
+logarithm
+exponentials
+magnitude
+c1-ish
+inequality
+real roots
+c1
+hermite polynomial
+differentiation
+exponential function
+coefficient
+sum of binomial coefficients
+identity
+solutions of trigonometric equation
+inequality
+substitution of mobius form
+logarithm
+nice trick
+differentiation
+stationary points
+c1
+differentiation
+trigonometry
+approximation
+small angle
+acceleration
+fragment
+star
+z-universe
+coefficient of restitution
+impact
+velocity
+loss of kinetic energy
+automated mobile dummy target for gunnery practice
+circle
+distance
+shell
+conditional probability
+c1
+stick
+broken
+pieces
+expectation and variance
+pdf
+probability density function
+six-sided fair dice
+strategy
+maximise
+expectation
+c1
+roots of equation
+geometric progression
+polynomial
+c1
+transcendental equation
+inequality
+roots of equation
+differentiation
+integration
+sum
+limit
+euler's formula
+polyhedron
+edge
+vertices
+faces
+regular
+euclidean
+c1
+proof by induction
+integration
+curve sketching
+area
+binary operation
+associative
+subgroup
+harmonic oscillator
+sum
+tirgonometry
+integration
+zeta function
+shell
+circular ring
+attraction
+momentum
+integral
+moment of inertia
+circular hoop
+contact
+table
+increasing function
+solution of equation
+expectation
+cake in canteen
+expectation
+horizons
+expected winnings
+inequality
+number
+digit
+c1-ish
+binomial expansion
+integer part
+floor function
+exponential and logarithm
+curve sketching
+inequality
+maximum
+quotient rule
+differentiation
+c1
+trigonometry
+steepest line
+inclined plane
+c1
+factorisation
+inequality
+coordinate geometry
+circles and lines
+c1
+quotient rule
+derivative
+c1
+modulus function
+absolute value
+trigonometric function
+curve sketching
+toy cannon in railway carriage
+maximum range
+energy of system
+coefficients of restitution
+rod inclined against wall
+ladder
+coefficient of friction
+limiting
+key
+front door
+elementary probability
+combinatorics
+c1
+gene
+elementary probability
+c1
+uniform distribution
+expectation
+moments
+variance
+egyption fractions
+prime
+factors
+number theory
+c1
+proof
+factorisation
+c1
+error estimation
+perturbation
+range
+inequality
+length of triangle
+c1
+de moivre's theorem
+trigonometric identities
+arctan
+induction
+approximation by linear functions
+residual error
+trigonometric functions
+small angle approximation
+t-substitution
+tan half angle substitution
+trigonometry
+equation of a line and plane
+interection
+circle
+line through origin
+separable
+integration
+limit
+small angle approximation
+acceleration
+equilibrium
+air resistance
+differential equation
+parachute
+equilibrium
+acceleration
+modulus of elasticity
+ceiling
+simple harmonic motion
+shm
+henry the commuter
+cambridge to king's cross
+liverpool street
+train
+inequality
+expectation
+biologists
+voles
+combinatorics
+binomial coefficients
+sampling with/out replacement
+c1
+independent
+medium
+probability density function
+pdf
+expectation and variance
+inequality
+normal distribution
+central limit theorem
+reciprocal and hyperbola functions
+tangent
+square
+coordinate geometry
+c1
+substitution by trigonometric functions
+roots of unity
+argand diagram
+equilateral triangle
+geometry
+rational function
+algebraic
+intersection
+oblique asymptote
+c1-ish
+matrix
+vector cyclic triple product
+transformation
+roots of cubic equation
+factorisation
+quartic equations
+c1-ish
+am-gm inequality
+e
+binomial theorem
+limit
+product
+exponential function
+c1-ish
+recurrence relation
+difference equation
+disc
+kineic energy
+cosine of angle
+inequality
+coefficient of friction
+sphere
+slipping
+beam
+limiting friction
+slipping
+combinatorics
+binomial approximation
+exponential function
+expectation
+c1-ish
+probability generating function
+dice
+six
+expectation
+independence
+expectation algebra
+triangle
+length
+c1
+square root
+quadratic function
+c1
+differentiation
+stationary points
+factors
+inequality
+cubic
+quadratic
+sufficient and necessary conditions
+c1
+solution of equations
+derivatives
+spherical loaf of bread
+slices
+integration
+cosmology
+curve sketching
+inequality
+c1
+substitution
+trigonometry
+second order equation
+ship
+tugboat
+c1
+gun shell
+equation of motion
+cylinder
+circular motion
+modulus of elasticity
+gossip
+rumour
+c1
+breaking plates
+interview
+candidates
+elementary probability
+approximation to square roots
+error
+c1-ish
+integer part
+floor function
+sum
+limit
+c1-ish
+cuboid
+ratio of volume to surface area
+inequality
+c1
+roots of equation
+identity
+curve sketching
+maximum and minimum
+stationary point
+c1
+arctan
+integration by substitution
+argand diagram
+12-gon
+rotation
+functional equation
+integer
+limit
+upward projection
+energy
+gravity
+coefficient of restitution
+kinetic energy
+rebound
+two-stage missile
+fragments at highest point
+range
+inequality
+ruritania
+integer
+combinatorics
+expectation
+c1
+probability density function
+median
+light bulbs
+independent
+identically distributed
+iid
+fail
+random variable
+expectation
+minimum
+variance
+cumulative distribution function
+cdf
+mean
+taylor series
+differentiation
+induction
+differential equation
+hyperbolic function
+area
+inequality
+regions
+inequality
+roots
+range
+curve sketching
+trigonometric
+rational functions
+arctan
+sine
+cubic equation
+normal and tangents
+cartesian equation
+locus
+curve sketching
+ellipsoid
+plane
+orthocentre
+circumcentre
+triangle
+centroid
+triangle
+line segment
+ratio
+curve sketching
+logarithm function
+separable equation
+parabola
+orthogonal intersection
+equations of locus
+arcs
+circles
+lines arguments
+sketching
+horizontal beams
+coefficient of friction
+slip
+limiting equilibrium
+centre of gravity
+ships
+velocities
+magnitude
+dot scalar product
+angular velocity
+cylinder
+rotation
+a bag of balls
+combinatorics
+c1
+elementary probability
+conditional probability
+c1-ish
+uniform distribution
+variance
+estimators
+ellipse
+circle
+intersection
+c1
+differentiation
+stationary point
+maximum
+minimum
+c1
+differentiation
+trigonometric functions
+maximum and minimum
+c1
+intersection with line
+area under curve
+integration
+volume of revolution
+factorisation
+product
+quartic equations
+integer
+c1
+pyramid
+equilateral triangle
+volume
+c1
+trickery
+trigonometric functions
+sequences
+interest
+financial maths
+c1-ish
+lorry on inclined plane
+centre of gravity
+inequality
+bicycle pump
+speed
+particles
+sin
+angle
+conservation of energy
+elementary probability
+expectation
+c1
+roots of quadratic
+expectation
+cubic equation
+cash dispenser
+police
+integration by substitution
+sine
+trigonometry
+substitution
+quartic
+quadratic equations
+algebra
+c1
+number theory
+prime
+induction
+c1
+quadratic equation
+sine
+inequality
+determinant
+logarithmic function
+recurrence relation
+difference equation
+quartic equation
+c1
+inclined plane
+rotate
+angle
+3-dimensional
+vector geometry
+lines
+distance
+perpendicular
+continuity
+modulus function
+limit
+range
+equation of motion
+small perturbation
+small angle approximation
+trigonometry
+inequality
+marathon
+c1
+beam
+centre of mass
+ladder
+limiting equilibrium
+binomial expansion
+normal approximation
+cumulative distribution function
+inequality
+expectation and variance
+circular island
+concentric regions
+integration
+limit
+lograithm function
+sum
+arctan
+identity
+square root function
+inequality
+roots
+number theory
+positive integer
+difference of cubes
+sum of square
+c1
+quadratic equation
+factorisation
+c1
+solution curve
+curve sketching
+trigonometry
+coordinate geometry
+algebraic manipulation
+c1-ish
+modulus and argument
+modulus
+identity
+equilibrium
+fluid
+topple
+centre of mass
+cylinder
+trigonometry
+second order differential equation
+slip
+coefficient of restitution
+triangular horizontal surface
+expectation
+c1
+exponential distribution
+bus route
+median
+variance
+covariance
+binomial distribution
+rss
+simultaneous equations
+sum of squares and cubes
+examination paper
+candidate
+reciprocal functions
+if and only if
+c1
+if and only if
+general solution to trigonometric equations
+trigonometry
+binomial coefficient
+algebraic manipulation
+integration by substitution
+inequality
+divisibility
+sum of digits
+c1
+chemicals
+rate of change
+first order equation
+angle of projection
+range equation
+rectangular lamina
+triangle
+trapezium
+equilibrium
+inclined plane
+coefficient of restitution
+kinetic energy
+balls out of bag
+expectation
+sum of squares
+c1-ish
+football
+penalty shootout
+expectation
+elementary probability
+phone calls
+average
+linear system
+solution
+inequality
+c1
+identity
+inverse trigonometric functions
+number theory
+cube root
+proof by induction
+sequence
+converge
+c1-ish
+lines and circles
+intersection
+segment
+c1
+position vector
+intersection
+midpoint
+curve sketching
+modulus function
+composition of function
+trigonometric function
+integration by parts
+logarithmic function
+limit
+inequality
+sum of inverse squares
+stationary value
+first order equation
+curve sketching
+limit
+rod
+cylinder
+coefficient of friction
+limiting equilibrium
+equilibrium
+triangle
+reaction
+normal force
+angle of elevation
+equation of range
+binomial distribution
+conditional probability
+expectation algebra
+limit
+normal approximatino
+mean
+inequality
+discrete random variable
+coin toss
+biased die
+statistical test
+alternative hypothesis
+curve sketching
+inverse differentiation
+inverse trigonometric and hyperbolic functions
+binomial coefficient
+sum
+reciprocal function
+differentiation
+c1
+tangent
+sequence of points meet the curve
+quadratic equations
+curve sketching
+necessary and sufficient conditions
+turning points
+c1-ish
+solution to trigonometric equations
+product to sum formula
+feet of the perpendicular
+geometrical interpretation
+collinear
+implicit differentiation
+general solution
+simple harmonic motion
+hooke's law
+modulus of elasticity
+equilibrium
+small displacement
+perturbation
+time-distance
+limit
+c1
+direction of projection
+inequality
+velocity equation
+distance
+interruptions to work
+expectation
+elementary probability
+conditional probability
+probability generating function
+pgf
+square roots
+cube roots
+solutions to polynomial equations
+c1
+integration
+integer part
+floor function
+square root
+sum
+factorisation
+linear factors
+c1
+differentiation
+trigonometric substitution
+arithmetic progression
+square
+solution
+c1
+intersections
+midpoint
+line
+right angle
+c1
+difference equations
+algebraic fractions
+c1
+sequence
+strictly increasing
+inequality
+proof
+c1
+maximum height
+inequality
+acceleration
+magnitude
+inequality
+c1
+two ladders
+coefficient of friction
+slip
+large random sample
+c1-ish
+continuous rectangular distribution
+null and alternative hypothesis
+elementary probability
+tree diagram
+c1
+solution of equations
+square root function
+c1
+curve sketching
+proof
+modulus function
+inequality
+c1
+nature of stationary point
+differentiation
+c1
+move rod from corridor
+inequality
+trigonometry
+table-top
+c1
+trigonometric integrals
+equating coefficients
+planes
+perpendicular
+parallel
+scalar product
+trigonometric equation
+sequence of intervals
+approximations
+c1-ish
+first order equation
+curve sketching
+inequality
+equilibrium
+non-uniform solid hemisphere
+friction
+projection
+collision
+loss of energy
+train and engines
+velocities
+conservation of energy
+probability density function
+mode
+median
+inequality
+conditional probability
+curve sketching
+gaussian
+expectation
+maximise
+integer part
+c1
+union of three events
+plum pudding
+christmas
+sixpences
+c1
+hyperbolic functions
+exponential and logarithms
+partial fractions
+vertical and oblique asymptotes
+tangent
+double root
+approximating an integral
+inequalities
+sum
+inverse square
+bounds
+isoceles triangle
+tangent to circles
+ratio of radii
+area
+c1
+identities
+proof
+counterexample
+general solutions to trigonometric equations
+difference equations
+sequence
+proof
+period of sequences
+c1-ish
+recurrence formula
+greatest value
+inequality
+logarithm
+substitution
+curve sketching
+hoop
+equilibrium
+mouse
+friction
+modulus of elasticity
+string
+acceleration
+inequality
+second order differential equations
+expectation
+variance and covariances
+sum of random variables
+normal and poisson approximations
+relative error
+endurance competition
+rounds
+elementary probability
+c1
+normal distribution
+null and alternative hypothesis
+approximations
+sum of digits
+c1
+parabola
+intersection
+tangent
+quadrilateral
+c1
+if and only if
+c1
+trigonometric identity
+general solution of trig equations
+approximation
+logarithm
+cartesian equation
+circle
+locus
+ratio
+c1
+manipulation of product sign
+trigonometric identity
+implicity differentiation
+geometrical interpretation
+logarithm
+equilibrium
+slip prevention
+tension
+collinear
+coefficient of resititution
+curve sketching
+trigonometry
+parameteric
+velocity
+elementary probability
+lord the rings
+conditional probability
+continuous random variable
+supermarket
+milk
+estimate
+inequality
+conditional probability
+expectation
+median
+gaussian
+variance
+differentiation
+exponential function
+euler totient function
+prime factors
+proof
+counterexample
+c1
+curve sketching
+trigonometry
+inequality
+tan identity
+proof
+simultaneous equations
+ratio of area
+tangent to circle
+triangle
+inequality
+differentiation
+binomial expansion
+general term
+series
+position vectors
+geometrical interpretation
+angle
+time
+first order equation
+curve sketching
+approximation
+equilibrium
+inclined plane
+connected particles
+slip
+missile
+anti-missile
+collision
+acceleration
+string breaks
+maximum point
+coin toss
+truth and lies
+c1
+independence
+errors
+approximation
+conditional probability
+maximisation
+probability density function
+normal distribution
+standard deviation
+expectation
+cumulative distribution function
+cdf
+trigonometric
+modulus functions
+solution to equations
+general solution
+general solution
+curve sketching
+least distance
+quadratic
+quartic equations
+necessary and sufficient
+if and only if
+difference equations
+proof by induction
+geometric progression
+period of sequences
+lines
+tangent
+quadratic equations
+common tangents
+c1
+complex numbers
+roots of equation
+cubic equations
+polynomial substitution
+argand diagram
+triangle
+circle
+tangent
+coefficient of restitution
+rebound
+friction
+kinetic energy
+inequality
+energy of system in (stable) equilibrium
+angular velocity
+independent
+runners
+continuous random variable
+interval estimation
+expectation
+integration by substitution
+density function
+median
+expectation
+gas molecule
+perfect square
+inequality
+factors
+c1
+goat
+rope
+barn
+differentiation
+c1
+roots
+determinant
+necessary and sufficient
+cubic equations
+c1
+area and perimeter of polygon
+curve sketching
+trigonometry
+mainimisation
+differentiation
+c1-ish
+polynomial substitution
+exponential and logarithms
+hyperbolas
+curve
+postive integers
+c1
+trigonometry
+modulus
+exponential function
+curve sketching
+roots of equation
+tetrahedron
+volume
+triangle
+c1
+equilibrium
+equation of trajectory
+trigonometry
+slide along a rail
+conservation of energy and momentum
+elementary probability
+road blocks
+limit
+conditional probability
+c1
+diamond in chocolate bars
+expectation
+binomial expansion
+bag of sweet
+maximisation
+c1
+recurrence relations
+period of sequences
+limit
+convergence
+curve sketching
+turning points
+differentiation
+exponential function
+inequality
+surds
+square root functions
+binomial expansion
+approximation
+c1-ish
+trigonometry
+modulus function
+change of period
+curve sketching
+quadratics
+area under curve
+integer part
+c1
+proof
+simultaneous equations
+c1
+curve sketching
+ellipse
+tangent
+equation of line
+position vectors
+trapezium
+ratio
+friction
+slip
+coefficient of restitution
+second time
+horizontal force
+blow back
+maximisation
+approximation
+cricket
+strategy
+c1
+probability density function
+curve sketching
+pdf
+vertical and oblique asymptotes
+roots of equations
+c1
+trigonometry
+substitution
+maclaurin
+taylor series for trigonometric functions
+recurrence
+difference equations
+comparing coefficients
+identity
+logarithm
+exponential and trigonometric functions
+maclaurin series
+roots of unity
+equilateral triangle
+transformation
+gradient
+implicit differentiation
+mirror
+incident and reflected ray
+hyperbolic functions
+asymptotes
+differentiation
+proof
+first principle
+polynomial
+c1
+bead on wire
+projection
+first order differential equation
+angular velocity
+substitution
+hyperbolic function
+differential equation
+coefficient of restitution
+pulley
+loss of energy of impact
+lift
+cruise liner
+approximation
+cdf
+points on permieter of semicircle
+independent
+expectation
+area of triangle
+industrial process
+expectation algebra
+variance
+standard deviation
+balanced number
+sum of digits
+c1
+identity
+arctan
+highest common factor
+hcf
+trigonometry
+identity
+quadratic equations
+factor
+perfect square
+root
+c1
+octahedron
+polyhedron
+equilateral triangle
+volume
+faces
+vertices
+ratio
+c1
+quadratic equations
+square roots
+cubic
+factorisation
+positive integers
+c1
+equation of line
+minimum distance
+cubic equations
+intersection
+c1
+inclined plane
+inequality
+time-distance
+horsemen
+saxon army
+inequality
+c1
+distance equation
+differentiation
+elementary probability
+c1
+discs
+conditional probability
+c1
+curve sketching
+discrete random variable
+binomial expansion
+square roots
+decimal places
+curve sketching
+turning points
+differentiation
+area enclosed
+symmetry
+c1
+tan half angle substitution
+t-sub
+arctan
+trigonometry
+identity manipulation
+solution to equations
+composition of functions
+trigonometry
+periodicity
+c1
+differentiation
+logarithm function
+quadratic equation
+concave functions
+inequalities
+minimum value
+c1
+position vector
+locus
+ratio
+intersection
+coefficient of restitution
+circulr cone
+impact
+greatest value
+coefficient of restitution
+solid cylinder
+hemisphere
+equilibrium
+vector
+maximum height
+bullet
+binomial distribution
+expectation
+large approximation
+elementary probability
+same birthday
+c1
+probability density function
+curve sketching
+median
+tan
+identities
+quartic equations
+product
+binomial expansion
+differentiation
+number theory
+proof by induction
+divisibility
+curve sketching
+tangent to curve
+radius of curvature
+normal
+parallel
+polar coordinates
+logarithmic and hyperbolic functions
+proof
+argand diagram
+circle
+geometry
+trigonometry
+substitution
+transform
+general solution
+linearity
+period of simple harmonic motion
+energy in spring
+inclined plane
+range
+maximisation
+beads rolling
+circular hoop
+slip
+expectation
+variance and covariances
+sum of random variables
+frog jumping towards pond
+markov chain
+dartboard
+circles
+expectation
+irrationality
+proof by contradiction
+c1
+integration
+squares
+sum of squares
+c1
+curve sketching
+exponential and trigonometric functions
+differentiation
+analysis
+polynomials
+turning point
+c1
+curve sketching
+integration
+rotation
+equilateral triangle
+c1
+line
+circle
+parabola
+rolling hoop
+zog
+trajectory sketching
+range
+limiting equilibrium
+coefficient of friction
+geometry
+expectation
+median
+married couples sitting at a table
+elementary probability
+c1
+difference equations
+recurrence
+period of sequences
+c1
+binomial coefficient
+partial fractions
+proof by contradiction
+inequality
+curve sketching
+c1
+implicit differentiation
+tangent and normals
+approximation using binomial expansion
+trigonometry
+period of function
+substitution
+general solution
+conjecture
+ratio
+position vector
+bisection
+cricket bowler
+small angle approximation
+billards table
+coefficient of restitution
+kinetic energy
+wedge
+acceleration
+discrete random variable
+elementary probability
+expectation
+conditional probability
+elementary probability
+bag and counters
+maximisation
+c1
+linear systems
+c1
+binomial coefficients
+sum of powers
+degrees of polynomial
+sum of coefficients
+ellipse
+focus
+circle
+intersection
+geometry
+functions
+inverse hyperbolic functions
+integration
+curve sketching
+recurrence relation
+proof by induction
+implicit differentiation
+substitution
+argand diagram
+equilateral triangle
+rotation
+centroid
+recurrence relations
+coefficients
+partial fractions
+acceleration
+sinusoidal force
+curve sketching
+modulus of elasticity
+elastic energy
+tension
+moment of inertia
+angular velocity
+couple
+moment generating function
+variance
+curve sketching
+frog
+sum of random variables
+normal distribution
+box
+strings
+rings
+expecttion
+harmonic sum
+variance
+proper factor
+integer
+prime factors
+c1
+curve
+tangent
+positive integers
+c1
+square and cube roots
+distinct real solutions to equations
+c1
+sides of triangles
+cosine rule
+ratio
+c1
+circular cone
+differentiation
+stationary value
+c1
+polynomial substitution
+trigonometric and exponential functions
+sum to product formula
+equation of circle
+angle
+incircle
+c1
+simultaneous projection
+collision
+trigonometry
+range equation
+inequality
+pulley
+acceleration
+maximisation
+coefficient of restitution
+kinetic energy
+elementary probability
+inequality
+sweets from bag
+c1
+ordering
+expectation
+boys and girls in line
+c1
+curve sketching
+lines of symmetry
+intersection
+area of quadrilateral
+c1
+curve sketching
+trigonometry
+exponential function
+stationary points
+differentiation
+approximation
+integration
+area under curve
+identity proof
+tan
+surds
+degree of polynomial
+divisibility
+c1
+area under curve
+surds
+sum
+inequality
+sequences
+c1
+integration as inverse differentiation
+polynomial
+exponential
+product rule
+equation of line
+quadrilateral
+position vector
+uniform lamina
+trapezium
+tank with liquid
+coefficient of restitution
+equidistant particles
+train engine and trucks
+inequality
+approximation
+probability density function
+pdf
+curve sketching
+expectation and variance
+statistical tables
+median
+expectation
+quadratic equation
+circle
+c1
+comparing coefficients
+recurrence relations
+differential equations
+trigonometric functions
+curve sketching
+taylor series
+limits
+differentiation
+even function
+integration
+inverse laplace transform
+symmetry
+recurrence relations
+c1
+modulus and argument
+euler's formula
+trigonometry
+geometry
+cyclic quadrilaterals
+reurrence relations
+differential equation
+degrees of polynomial
+limits
+exponential functions
+recurrence formula of integrals
+second trajectory
+trigonometry
+simple harmonic motion
+second order differential equation
+springs
+hooke's law
+newton's second law
+gravitational force
+variable mass
+conditional expectation
+sum of random variables
+probability generating function
+pgf
+expectation and variance
+independence
+correlation
+point on the circumference of a circle
+uniform distribution
+factorisation of quadratic polynomials
+c1
+differentiation
+stationary points
+vertical asymptote
+exponential function
+sum to product formulae
+sine
+cosine
+coordinate geometry
+parallel lines
+logarithmic and square root function
+volume of revolution
+sum of binomial coefficients
+differentiation
+eigenfunction substitution
+exponential function
+linearity
+position vector
+equation of lines
+intersection
+divisibility
+integer solution to equations
+c1
+uniform rectangular lamina
+centre of mass
+coefficient of friction
+trigonometry
+exponential and trigonometric functions
+velocity of particles
+acceleration
+coefficient of restitution
+changing direction
+expectation algebra
+toy penguins from cereal boxes
+receiving texts
+sum of random variables
+coordinate geometry
+differentiation
+rate of change
+gradient
+equation of tangent
+trigonometric identities
+useless eustace
+recurrence relation
+general solution
+sum
+logarithmic and trigonometric functions
+position vectors
+inclined plane
+angle bisector
+tetrahedron
+edge
+cosine
+inscribed sphere
+c1
+turning points
+cubic equations
+relation between roots
+c1
+curve sketching
+trigonometry
+exponential function
+area under curve
+sum
+simultaneous projection
+inequalities
+maximum height
+collision
+coefficient of restitution
+perfectly elastic
+approximation
+inclined at angle
+ladder
+trigonometry
+expectation
+median
+inequality
+stepney chess club
+strategies
+c1
+sum of squares
+algebraic manipulation
+inequalities
+hyperbolic functions
+substitution
+roots of unity
+primitive
+polynomials
+factorisation
+prime
+roots of quadratic equations
+common root
+proof
+cubic
+c1
+line produced
+construction using straight-edge
+square
+c1
+sphere
+rotation
+trigonometry
+vector
+proof by induction
+chebyshev polynomial
+differential equation
+polynomial
+degree
+differential equation
+general solution
+string
+normal reaction
+inequality
+period of simple harmonic motion
+modulus of elasticity
+equation of motion
+acceleration
+bullet
+distance
+infinite series
+target
+product moment correlation coefficient
+independent random variables
+variance
+expectation
+normal
+gradient
+lines and curve
+c1
+integration by parts
+differentiation
+identity
+parabola
+tangents
+bisection
+c1
+curve sketching
+trigonometry
+integration
+modulus function
+differentiation
+stationary
+minimum
+optimisation
+binomial series
+coefficient
+infinite sum
+differential equation
+water leaking out of tank
+logarithm function
+cubes and squares
+inequality
+integer solution to equations
+c1
+collision
+perfectly elastic
+perfect elastic
+particles dropped from height
+horizontal plane
+trigonometry
+pulley
+lottery
+expectation
+combinatorics
+c1
+integration
+curve sketching
+graphical solution to equations
+c1
+perfect squres
+cubes
+solution to equations
+c1
+trigonometry
+differentiation
+increasing
+proof
+identities
+general solution
+rational numbers
+reflection line
+position vector
+parts
+trigonometry
+summation
+curve sketching
+area integral
+integration
+maximum value
+coefficient of restitution
+second collision
+horizontal projectile
+time
+tan equation
+equilibrium
+resolve forces
+trigonometry
+vectors
+expectation
+statistics
+measure of skewness
+decile and pearson skewness
+cdf (cumulative distribution function)
+continuous random variable
+substitution
+general solution
+polynomial
+common factor
+irrational
+nth root
+cubic equations
+cubic and quadratic poynomial
+roots
+complex numbers
+theorem
+curve sketching
+young's inequality
+graphical solution
+functions
+trigonometric functions
+area integral
+parametric equation
+coordinate geometry
+integration by substitution
+hyperbolic and logarithmic functions
+square root
+general forms
+complex numbers
+locus
+circle
+line segment
+real and imaginary parts
+first order differential equation
+contact
+cylinder
+hooke's law
+impulse
+string
+couple
+angular speed of simple harmonic motion (shm)
+probability generating function
+sum of independent random variables
+expectation and variance algebra
+coin toss
+sampling with replacement
+combinatorics
+probability
+floor function
+c1
+equation of lines
+intersection
+sum of distance
+minimisation
+differentiation
+c1
+quartic equations
+roots
+differentiation
+stationary points
+c1
+integration
+curve sketching
+tangent
+exponential function
+hyperbola
+tangent
+intersection
+distances
+c1
+trigonometric and logarithmic functions
+parts
+substitution
+trigonometry
+inequality
+recurrence relations
+factorisation
+cubics
+substitution
+general solution
+shot putter
+distance equation
+trigonometry
+stone dropped from well
+time
+coefficient of friction
+equilibrium
+acceleration
+fire extinguishers
+continuous probability density function
+combinatorics
+digits
+expectation
+coefficients
+degree of polynomials
+c1
+tan substitution
+logarithm function
+infinite series
+inequalities
+exponential function
+limits
+differentiation
+stationary points
+c1
+cyclic quadrilateral
+area of triangle
+sides
+heron
+c1
+position vectors
+centroid
+equation of plane and line
+recurrence relations
+sequences
+proof
+strictly increasing
+tennis ball
+inequality
+over net
+distance
+trigonometry
+equilibrium
+cylinder
+kinetic energy lost
+particles embedded in block
+tree diagram
+conditional probability
+c1
+poisson random variable
+supermarkets
+expectation and variance
+integration
+pdf
+substitution
+general solution
+forced first order equation
+expansions of logarithmic
+rational functions
+quadratic and quartic equations
+intersection
+c1
+differentiation
+summation sign manipulation
+infinite series
+logarithms
+integer rational points
+circle
+number theory
+hyperbola
+c1
+quadtratic equation
+parametesr
+root locus
+argand diagram
+pain-killing drug modelling
+brain
+system of first order equations
+arctan identity
+infinite sum
+proof by induction
+fmoment of inertia
+rotation
+axle
+ring and hoop
+equilibrium
+reaction force
+rope
+energy conservation
+area of triangle
+perpendicular distance
+minimum
+pdf
+expectation
+tetrahedron
+distance from point to closest face
+cdf
+conditional expectation
+substitution
+root of equation
+c1
+floor function
+curve sketching
+roots of equation
+inequalities
+c1
+position vectors
+associativity
+ratio
+line segment
+trigonometry
+locus
+quadratic
+factorisation
+circles
+coordinate geometry
+symmetry
+c1
+sequences
+sum
+recurrence relation
+fibonacci numbers
+substitution
+logarithmic function
+range and domain of logarithmic
+polynomial
+square root
+quadratic functions
+composition
+curve sketching
+asymptotes
+simultaneous projection
+collide
+ice puck
+coefficient of restitution and friction
+block
+weight
+coefficient of friction
+trigonometry
+medicine tablets
+combinatorics
+c1
+random numbers
+probability distribution
+expectation
+lines and logarithms
+inequality
+substitution and by parts
+recurrence formula
+curve sketching
+roots of equations
+turning points
+c1
+midpoint of chord
+line segment
+locus
+unit circle
+c1
+functional relations
+differentiation
+stationary points
+inequality
+range
+c1
+difference equations
+proof by induction
+convergence to limit
+integer solutions to equations
+prime
+c1
+inequality
+strictly decreasing
+functional equations
+differentiation
+discs
+normal reaction
+equilibrium
+trigonometry
+trajectory
+angle of elevation
+coefficient of restitution
+identical particles
+discrete random variables
+expectation and variance
+elementary probability
+straight and alternating runs
+tan half angle substitution
+t-sub
+differentiation
+trigonometry
+recurrence formula
+differential equations
+proof by induction
+maclaurin series
+surface of the sphere
+position vector
+roots of unity
+trigonometric sum
+coprime
+powers of prime
+rational
+c1
+argand diagram
+modulus functions
+inequality
+hyperbolic functions
+complex number
+chords
+geometry
+sum
+simple harmonic motion
+sphere
+displaced liquid
+equiibrium
+second order differential equation
+moment of inertia
+coefficient of restitution
+collision
+equilateral triangle
+modulus of elasticity
+equilibrium
+expectation
+ordering of letters
+sum
+variance
+continuous random variables
+pdf
+integration
+inequalities
+difference of squares
+odd
+even
+c1
+area under curve
+modulus and logarithmic functions
+integration
+cubic
+rate of increase
+differentiation
+factorisation
+curve sketching
+differentiation
+inequality
+c1
+substitution
+conjecture
+proof
+difference equation
+triangle
+ratio
+intersection
+vectors
+equation of lines
+point of intersection
+limit
+tangent
+c1
+greatest height
+trajectory sketching
+inequality
+uniform spherical ball
+coefficient of restitution
+acceleration and tension
+expectation
+discrete random variable
+strategy
+c1
+continuous random variable
+pdf
+mean and median
+triangle
+trigonometry
+lines produced
+c1
+integration
+counterexamples
+trigonometric and quadratic equations
+shortest distance
+lines and curves
+tangent
+differential equation
+logarithmic and arctan integral
+substitution of 1/x
+substitution
+first order equation
+solution curves
+quadratic
+sum to product formula
+sum
+stationary point
+differentiation
+curve sketching
+inequalities
+analysis
+modulus function
+c1
+coefficient
+inequality
+rectangular lamin
+equilibrium
+trajectory sketching
+furthest range
+second order differential equations
+tension
+smooth ring
+sketch
+cdf (cumulative distribution function)
+pdf (probability density function)
+sum of series
+expectation
+series expansion
+logarithm
+coefficients
+counterexamples and proof
+hyperbolic functions
+shortest distance of a line and a parabola
+parametric equations
+integration by parts
+quadrilateral
+parallelogram
+square
+differentiation
+increasing and decreasing functions
+inequality
+triangles
+sum
+intersection
+inequalities
+sum
+positive integers
+nubmer theory
+decimal representation
+sum of reciprocals
+resistive force
+equation of motion
+range equation
+shm (simple harmonic motion)
+second order differential equation
+modulus of elasticity
+tension
+strings
+bounds
+median
+pdf
+expectation
+cumulative distribution function (cdf)
+strategy
+probability generating function
+exponential function
+polynomial
+curve sketching
+limits
+cosine and sine function
+root of equation
+surds
+prison guard
+square
+perimeter
+maximise
+c1
+locus of points
+trigonometry
+tangent function
+area of curve
+integration
+integration
+curve sketching
+quadrilateral
+position vectors
+optimisation
+square
+c1
+optimisation
+interval
+greatest value
+polynomial
+cubic function
+c1
+sum
+divisibility
+series
+proof
+c1
+angle of elevation
+bullet
+range
+short-barrelled machine gun
+inclined plane
+rain
+bus
+constant speed
+cuboid
+c1-ish
+acceleration
+coefficient of friction
+circular cylinders
+inclined plane
+casualties at hospital
+mean and probability
+poisson distribution
+fair die
+elementary probability
+binomial expansion
+c1
+differentiation
+infinite series
+sum
+inequality
+logarithm function
+trigonometry
+sine function
+midpoint
+perpendicular
+bisector
+trisection
+c1
+triangle
+induction
+degenerate
+cases
+tangent function
+continuous
+range
+differentiation
+stationary point
+asymptote
+curve sketching
+proof
+induction
+infinite sum
+right-angled triangle
+integration by substitution
+differentiation
+bisection
+circle
+diametrically opposite
+inequality
+c1
+non-overlapping circles
+tangent
+intersection
+position vectors
+lines
+equilateral triangle
+light rods
+rotate
+equilibrium
+impulse
+tension
+pulley
+motion
+equilibrium
+impulse
+elastic collision
+kinematics
+differential equations
+impulse
+inextensible string
+coin-tossing game
+sequence
+elementary probability
+c1
+probability density function (pdf)
+flood
+cost
+expectation and variance
+recurrence relation
+integration by substitution
+sequences
+proof
+counter-example
+conchoid of nicomedes
+polar coordinates
+secant function
+trigonometry
+integration
+area of loop
+cubic function
+real root
+algebra
+trigonometry
+sine function
+proof by contradiction
+irrationality of square root 2
+rational
+c1
+system of equation
+proof
+real and complex values
+operators
+polynomial
+divisibility
+sum
+identity
+positive integers
+order of polynomials
+proof
+curve sketching
+polar coordinate
+differential equations
+impulse
+acceleration
+period of motion
+integral
+differential equations
+rod
+horizontal disc
+rotation
+moment
+fair die
+random variable
+independent
+probability generating function (pgf) probability
+divisibility
+remainder
+independent random variable
+normal distribution
+cumulative function
+probability density function (pdf)
+expectation
+factorising
+powers of 7
+differentiation
+integration
+anti-derivative
+graphs
+floor function
+integer part
+discontinuity
+geometry
+circles
+touching circles
+common tangent
+radius
+differentiation
+curvature
+radius of curvature
+vectors
+vector geometry
+quadrilateral
+diagonal
+sets
+integers
+prime numbers
+mod 4
+base 4
+sequences
+generating functions
+recurrence relations
+difference equation
+statics
+equilibrium
+friction
+wall
+rod
+rail
+particles
+coefficient of restitution
+collisions
+projectile
+tower
+greatest distance
+coins
+tossing
+bob
+alice
+arrival times
+exponential distribution
+expectation
+coordinate geometry
+parametric equation
+tangent
+parabola
+factor theorem
+cubic equation
+polynommial
+roots
+exponential series
+inequality
+rational function
+quadratic ratio
+binomial coefficient
+negative binomial expansion
+chu
+vandermonde identity
+differential equation
+legendre equation
+legendre polynomials
+integral
+substitution
+change of variable
+trigonometric functions
+integral
+sums
+approximations
+zeta function
+bullet
+resistence
+block of wood
+momentum conservation
+statics
+equilibrium
+triangle
+friction
+coefficient of friction
+projectile
+target
+collision
+probability
+inclusion-exclusion
+hats
+playing cards
+binomial distribution
+normal approximation
+poission approximation
+n! estimate
+stirling's approximation
+integral
+infinite integral
+reduction formula
+induction
+coordinate geometry
+parabola
+normals
+intersecting normals
+integration
+exponential
+rational function
+polynomial
+sum
+telescoping sum
+hyperbolic functions
+binomial coefficients
+inequalities
+prime numbers
+distribution of primes
+hyperbolic functions
+conditions for intersection
+intersection
+amplitude phase
+roots of unity
+polygon
+argand diagram
+complex numbers
+side lengths
+functional equations
+simultaneous functional equations
+simple harmonic motion
+equilibrium
+triangle
+springs
+modulus of elasticity
+plane
+string
+impulse
+car
+work
+work rate
+resistance
+chebyshev
+inequality
+coin tossing
+expectation
+random variable
+normal distribution
+integration
+substitution
+trigonometry
+inequalities
+integration
+logarithm
+parabola
+tangents
+intersection
+area
+geometric progression
+sum
+sum of first three terms
+circle
+segment
+rectangle
+greatest area
+maximisation
+integration
+moments
+triangles
+equilateral triangles
+cosine rule
+areas
+sequences
+double sequences
+induction
+approximation for root two
+rational approximation
+projectile
+angle of projection
+minimum angle of projection
+particles
+collisions
+coefficient of restitution
+kinetic energy
+box
+inclined plane
+friction
+slipping
+limiting equilibrium
+lottery
+random numbers
+expected profit
+expected loss
+popular numbers
+bread
+slices
+toast
+sandwich
+recurrence relations
+integration
+arctan
+recurrence
+induction
+sequence
+period
+period 2
+period 4
+trigonometric equations
+sin
+arcsin
+sin graph
+curve sketching
+inequalities
+integral inequalities
+schwarz inequality
+sin
+exponential
+gaussian integral
+parabola
+parametric equations
+normal
+chord length
+circle
+minimum diameter
+series
+square root
+induction
+inequalities
+inequlaities
+limits
+x to the power x
+curve sketching
+logarithms
+vectors
+position vectors
+vector geometry
+triangle
+vector equation of line
+altitudes
+equilibrium
+friction
+limiting friction
+cylinders
+plank
+normal reaction
+inequalities
+car
+journey
+air resistance
+rolling resistance
+acceleration
+driving force
+work
+projectile
+walls
+fishing
+adam
+eve
+poisson
+binomial
+expected time
+poisson process
+game show
+keys
+door
+random
+binomial expansion
+series
+inverse cube
+binomial coefficients
+inequalities
+sum of series
+infinite sum
+transformations
+rotations
+complex numbers
+argand diagram
+compound transformations
+quartic equation
+roots
+cubic equation
+geometric mean
+exponential
+integration
+polar equations
+perpendicular curves
+orthogonal families of curves
+cardioid
+families of curves
+integration
+arctan
+integral definition
+ellipse
+tangent
+intersecting tangents
+summation by parts
+trigonometric sums
+sine sum
+cosine sum
+spring
+particles
+modulus of elasticity
+gravity
+table
+energy conservation
+rod
+hinge
+normal reaction
+particle
+friction
+coefficient of friction
+gun
+projectile
+truck
+kinetic energy
+momentum
+discrete random variable
+joint probability distribution
+independence
+covariance
+random variable
+expectation
+variance
+uniform distribution
+integration
+area
+tangent
+triangle
+inequality
+logarithm
+pi
+euler
+inequalities
+bounds
+approximation
+hyperbola
+angles
+integration
+by substitution
+curve sketching
+polynomials
+integers
+polynomial degree
+numerical integration
+trigonometry
+trapezium rule
+midpoint rule
+cubic
+mobius
+roots
+integral
+differential equation
+generalised trigonometric functions
+road
+go-kart
+traffic lights
+inclined plane
+energy
+two roads
+train
+tension
+carriages
+engine
+compression
+inelastic string
+pulley
+equilibrium
+coeffcient of friction
+bound
+inclined plane
+friction
+coins
+bag
+coin toss
+expectation
+variance
+multiple choice
+test
+mcq
+probability
+random answers
+quartic
+roots
+repeated roots
+symmetric polynomial
+concave
+jensen
+inequalities
+triangles
+mean
+range
+domain
+integral
+trigonometric functions
+symmetry
+odd function
+tan
+trigonometric equations
+angle addition
+roots
+series
+taylor
+integration
+binomial expansion
+number theory
+primes
+factorial
+integers
+diophantine
+triangle
+intersection
+ratio
+lengths
+euclidean geometry
+differential equation
+square root
+curve sketching
+substitution
+beads
+wire
+collisions
+coefficient of restitution
+bounce
+elastic string
+ant
+equation of motion
+motorbike
+wheelie
+moments
+slipping
+maximum
+acceleration
+coin
+toss
+game
+probability
+expectation
+winnings
+pass the parcel
+probability
+markov
+recurrence
+curve sketcing
+inequalities
+vieta
+roots
+quadratics
+stationary points
+maximum
+hermite
+differentiation
+recurrence
+fibonacci
+polynomials
+sturm-liouville
+second order
+2nd order
+differential equation
+hyperbola
+tangent
+geometry
+coordinate geometry
+conic sections
+arithmetic mean
+geometric mean
+inequality
+induction
+complex numbers
+argand
+geometry
+circle
+intersecting lines
+intersection
+complex numbers
+de moivre
+binomial expansion
+cotangent
+integration
+by substitution
+periodic
+fractional part
+collisions
+particle
+coefficient of restitution
+recurrence relation
+wall
+moment
+inertia
+disc
+particle
+mass
+rotation
+rotate
+oscillation
+energy
+equation of motion
+linearised equation
+circular motion
+string
+particle
+mass
+inextensible string
+taut
+tension
+instantaneous
+instantaneously
+rest
+random variable
+uniform distribution
+minimum
+smallest
+binomial expansion
+probability density function
+order
+samples
+pgf
+probability generating functino
+poisson distribution
+expectation
+inequality
+discrete random variable

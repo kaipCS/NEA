@@ -6,7 +6,7 @@ url = "https://stepdatabase.maths.org"
 jsonurl = url+"/database/database_data.json"
 response = requests.get(jsonurl, verify=False)
 data = response.json()
-print(type(data))
+#print(type(data))
 
 #extract only the question data from the file
 questions = data["questions"]
