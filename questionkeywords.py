@@ -1,13 +1,11 @@
 import requests
 import json
 
-#array to hold dictionaries
-
 #open file to store keywords
-file = open("questionkeywords.txt", "w")
+file = open("questionkeywords.json", "w")
 
 #array to hold dictionaries
-data = []
+dictionaries = []
 
 #url of json file
 url = "https://stepdatabase.maths.org/database/database_data.json"
@@ -34,9 +32,9 @@ for question in questions[1:]:
     
     #split list of keywords into an array of individual ones
     keywordsarray = keywords.split(",")
-    info= {"questionid" : counter, "keywords" : keywords}
-    data.append(info)
+    info= {"questionid" : counter, "keywords" : keywordsarray}
+    dictionaries.append(info)
 
-file.write(data)
+json.dump(dictionaries, file)
 #print(keywordarray)
 file.close()

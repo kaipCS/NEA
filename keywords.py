@@ -34,9 +34,10 @@ for question in questions[1:]:
         word= word.strip().lower()
         print(word)
         #check if already in array 
-        if word not in array:
+        if word not in keywordarray:
             keywordarray.append(word)
             #write to file
             file.write(word+"\n")
 #print(keywordarray)
 file.close()
+
