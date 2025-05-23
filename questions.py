@@ -109,6 +109,7 @@ for question in questions[1:]:
     info= {"topic" : topic, "year" : year, "paper" : paper, "area" : area, "code" :code}
     data.append(info)
     print(year)
+    #print(questionnum)
 
 #convert to json and enter into file
 json.dump(data, questionsjson)
