@@ -2,7 +2,7 @@ import requests
 import json
 
 #array to keep track of unique keywords
-keywordarray = []
+allkeywords = []
 
 #open file to store keywords
 file = open("keywords.txt", "w")
@@ -34,10 +34,10 @@ for question in questions[1:]:
         word= word.strip().lower()
         print(word)
         #check if already in array 
-        if word not in keywordarray:
-            keywordarray.append(word)
+        if word not in allkeywords:
+            allkeywords.append(word)
             #write to file
             file.write(word+"\n")
-#print(keywordarray)
+print(allkeywords)
 file.close()
 
