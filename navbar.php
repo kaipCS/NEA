@@ -1,12 +1,16 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Library</a>
-        </div>
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="logo" href="homepage.php">STEP</a>
+    <a href="#">QUESTIONS</a>
+    <a href="#">BUILD PAPER</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">ACCOUNT ▼</button>
+      <div class="dropdown-content">
+        <a href="#">SCHOOL</a>
+        <a href="#">PAPERS</a>
+        <a href="#">STATS</a>
+      </div>
     </div>
+  </div>
 </nav>

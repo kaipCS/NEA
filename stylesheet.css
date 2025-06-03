@@ -1,0 +1,62 @@
+.logo {
+    color: black;
+    text-decoration: none;
+    font-size:40px;
+}
+
+button{
+    background-color:#38B6FF;
+}
+
+button:hover {
+    background-color:#ADE1FF;
+    }
+
+.container-fluid{
+    background-color:#38B6FF;
+    padding:10px;
+}
+
+*{
+    font-family:"Cambria";
+}
+
+.dropbtn {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .dropdown {
+    position: relative;
+    float:right;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #aee5ff;
+    min-width: 120px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content {
+    display: block;
+    padding: 8px 12px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
