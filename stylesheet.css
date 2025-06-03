@@ -47,29 +47,65 @@
     color: black;
 }
 
-.dropbtn {
-    cursor: pointer;
-  }
-  
-  .dropdown {
-    position: relative;
-    float:right;
-  }
-
 .dropdown {
-    position: relative;
-    display: inline-block;
-    background-color: #ADE1FF;
-    text-decoration: none;
-    color:black;
-    }
-  
-  .dropdown-content {
-    padding: 8px 12px;
-    color:black;
-    text-decoration: none;
-  }
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.dropbtn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color:#38B6FF;
+  border-style: none;
+  font-size:25px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ADE1FF;
+  min-width: 160px;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+  font-size:25px;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #38B6FF;
+  text-decoration: none;
+  color:black;
+}
 
 .dropdown:hover .dropdown-content {
-    display: block;
-    }
+  display: flex;
+}
+
+#signout{
+  margin-left: auto
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-bar {
+  margin-top: auto;
+  padding: 10px;
+  background-color: #38B6FF;
+}
