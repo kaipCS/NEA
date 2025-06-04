@@ -1,111 +1,85 @@
+/* make all font on website Cambria */
+*{
+  font-family: "Cambria";
+}
+
+/* navbar container */
+.navbar .container-fluid{
+  background-color: #38B6FF;
+  height: 70px;
+}
+
+/* STEP logo on navbar */ 
 #logo {
+  font-size:40px; 
+  padding: 0 25px;
   color: black;
   text-decoration: none;
-  font-size:40px;
-  display: flex;
-  align-items: center; 
-  padding: 0 25px; 
-  height: 100%;
 }
+
+/* STEP logo when hovered over by cursor */ 
 #logo:hover {
   background-color: #ADE1FF;
-  color: black;
-  text-decoration: none;
-  padding: 0 25px; 
-  height: 100%;
+  padding: 25px;
 }
 
+/* questions and build paper buttons on navbar */ 
 .navbar-button {
   font-size: 25px;
-  display: flex;
-  align-items: center;
-  padding: 0 25px;
-  height: 100%;
+  padding: 0 22px;
   color: black;
   text-decoration: none;
 }
 
+/* buttons on navbar when hovered over */ 
 .navbar-button:hover {
   background-color: #ADE1FF;
+  padding: 22px;
   color: black;
   text-decoration: none;
-  padding: 0 25px; 
-  height: 100%;
 }
 
-.container-fluid {
-  background-color: #38B6FF;
-  padding: 0;
-  display: flex;
-  height: 70px;
-  align-items: stretch; 
-}
-
-
-*{
-    font-family:"Cambria";
-    color: black;
-}
-
+/* dropdown account menu */ 
 .dropdown {
+  float: right;
   position: relative;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
 }
 
+/* the account button to open dropdown menu */
 .dropbtn {
   cursor: pointer;
-  padding: 10px 20px;
-  background-color:#38B6FF;
-  border-style: none;
   font-size:25px;
+  height: 70px;
+  background-color: #38B6FF;
+  border-style: none;
 }
 
+/* display menu when account is hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* dropdown menu */
 .dropdown-content {
   display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
   background-color: #ADE1FF;
   min-width: 160px;
-  flex-direction: column;
+  position: absolute;
 }
 
+/* links in dropdown menu */
 .dropdown-content a {
-  padding: 10px 16px;
-  display: block;
-  text-decoration: none;
   font-size:25px;
+  display: block;
   color: black;
+  text-decoration: none;
+  padding: 5px;
 }
 
+/* links in dropdown menu when hovered over */
 .dropdown-content a:hover {
   background-color: #38B6FF;
+  color: black;
   text-decoration: none;
-  color:black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-}
-
-#signout{
-  margin-left: auto
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.bottom-bar {
-  margin-top: auto;
-  padding: 10px;
-  background-color: #38B6FF;
+  padding: 5px
 }

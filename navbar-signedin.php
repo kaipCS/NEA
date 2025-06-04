@@ -11,5 +11,5 @@
         <a href="stats.php">STATS</a>
       </div>
     </div>
-</div>
+  </div>
 </nav>
