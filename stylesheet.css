@@ -12,7 +12,10 @@
 /* STEP logo on navbar */ 
 #logo {
   font-size:40px; 
-  padding: 0 25px;
+  line-height: 70px;  
+  vertical-align: middle;
+  padding: 0 20px;
+  float:left;
   color: black;
   text-decoration: none;
 }
@@ -20,13 +23,18 @@
 /* STEP logo when hovered over by cursor */ 
 #logo:hover {
   background-color: #ADE1FF;
-  padding: 25px;
+  line-height: 70px;  
+  vertical-align: middle;
+  padding: 0 20px;
 }
 
 /* questions and build paper buttons on navbar */ 
 .navbar-button {
   font-size: 25px;
-  padding: 0 22px;
+  padding: 0 20px;
+  float:left;
+  line-height: 70px;  
+  vertical-align: middle;
   color: black;
   text-decoration: none;
 }
@@ -34,7 +42,9 @@
 /* buttons on navbar when hovered over */ 
 .navbar-button:hover {
   background-color: #ADE1FF;
-  padding: 22px;
+  line-height: 70px;  
+  vertical-align: middle;
+  padding: 0 20px;
   color: black;
   text-decoration: none;
 }
@@ -82,4 +92,18 @@
   color: black;
   text-decoration: none;
   padding: 5px
+}
+
+/* sign in button */
+#signin{
+  float:right;
+}
+
+/* bottom bar */
+.bottom-bar{
+  padding:10px;
+  background-color:#38B6FF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
