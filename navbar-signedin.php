@@ -8,6 +8,7 @@
         <a href="school.php">SCHOOL</a>
         <a href="papers.php">PAPERS</a>
         <a href="stats.php">STATS</a>
+        <a href="signout.php">SIGN OUT</a>
       </div>
     </div>
   </div>
