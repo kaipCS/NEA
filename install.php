@@ -43,7 +43,7 @@ $stmt->execute();
 $stmt->closeCursor();
 #create keywords table
 $stmt = $conn->prepare("CREATE TABLE keywords 
-(keyword VARCHAR(50) PRIMARY KEY NOT NULL)
+(keyword VARCHAR(100) PRIMARY KEY NOT NULL)
 ");
 $stmt->execute();
 $stmt->closeCursor();
@@ -55,7 +55,7 @@ $stmt->closeCursor();
 #create question has keyword table
 $stmt = $conn->prepare("CREATE TABLE questionhaskeyword 
 (questionid INT NOT NULL,
-keyword VARCHAR(50) NOT NULL,
+keyword VARCHAR(100) NOT NULL,
 PRIMARY KEY(questionid,keyword))
 ");
 $stmt->execute();
