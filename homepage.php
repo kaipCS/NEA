@@ -27,7 +27,7 @@ endif; ?>
 
   <!-- What is step and dates -->
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-9">
     <h2>
       What is STEP 
     </h2>
@@ -35,12 +35,16 @@ endif; ?>
       Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
     </div>
-    <div class="col-sm-4">
-    
-    <!--Countdown to STEP exams -->
-    <h3>  
-      Upcoming dates
-    </h3>
+    <div class="col-sm-3">
+      <h3>  
+        Upcoming dates
+      </h3>
+      <h3>
+        STEP II: 11/06/25
+      </h3>
+      <h3>
+        STEP III: 16/06/25
+      </h3>
     </div>
   </div>
 
@@ -75,9 +79,9 @@ endif; ?>
     <!-- How to prepare -->
     <div class="row">
     <div class="col-sm-12">
-      <h3>
+      <h2>
         Tips for preparation
-      </h3>
+      </h2>
       <p> 
         Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>

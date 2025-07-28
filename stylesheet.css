@@ -107,3 +107,15 @@
   bottom: -10px;
   width: 100%;
 }
+
+/* 3 width box in row */
+.col-sm-3{
+  background-color:#ADE1FF;
+  margin-top: 30px;
+}
+
+/* headers in 3 width boxes */
+.col-sm-3 h3{
+  margin-top: 5px;
+}
+
