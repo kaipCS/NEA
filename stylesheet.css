@@ -104,6 +104,6 @@
   padding:10px;
   background-color:#38B6FF;
   position: fixed;
-  bottom: 0;
+  bottom: -10px;
   width: 100%;
 }
