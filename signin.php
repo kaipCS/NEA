@@ -19,8 +19,36 @@ include 'navbar-signedout.php';
 ?>
 
 <!-- Page contents -->
-<div class="container">
-  <h1>Page contents</h1>
+<div id="sign-in" class="container">
+  <div class="col-sm-4">
+    <h3>
+      SIGN IN
+    </h3>
+    <br>
+    <form action="signinsession.php">
+      <div>
+        Email <input type="text" id="email" name="email"><br>
+        Password <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Sign in">
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-4">
+    <h3>
+      CREATE ACCOUNT    
+    </h3>
+    <br>
+    <form action="createaccount.php">
+      Forename <input type="text" id="forename" name="forename"> Surname <input type="text" id="surname" name="surname"><br>
+      Email <input type="text" id="email" name="email"><br>
+      Password <input type="password" id="password" name="password"><br>
+      <input type="radio" id="role1" name="role" value="Student" checked="checked">
+        <label for="role1">Student</label>
+      <input type="radio" id="role2" name="role" value="Teacher">
+        <label for="role2">Teacher</label>
+      <input type="submit" value="Create account">
+    </form>
+  </div>
 </div>
 
 <!-- Bottom blue bar -->
