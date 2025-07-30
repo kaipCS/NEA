@@ -1,1 +1,6 @@
-initally
+initally had simple labels but then added proper labels as were not arranging correctly
+add in comments
+extra divs and brs to seperate
+added <div class="col-sm-4" style="display: block; float: none; clear: both;"> inside div for testing
+covers bottom bar again
+need entry boxes to flex to fit containers as when make window smaller, they extend out

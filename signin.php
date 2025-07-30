@@ -24,28 +24,49 @@ include 'navbar-signedout.php';
     <h3>
       SIGN IN
     </h3>
-    <br>
     <form action="signinsession.php">
       <div>
-        Email <input type="text" id="email" name="email"><br>
-        Password <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Sign in">
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email">
       </div>
+      <div>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password">
+      </div>
+      <br>
+      <input type="submit" value="Sign in">
     </form>
   </div>
+  
   <div class="col-sm-4">
     <h3>
       CREATE ACCOUNT    
     </h3>
-    <br>
     <form action="createaccount.php">
-      Forename <input type="text" id="forename" name="forename"> Surname <input type="text" id="surname" name="surname"><br>
-      Email <input type="text" id="email" name="email"><br>
-      Password <input type="password" id="password" name="password"><br>
-      <input type="radio" id="role1" name="role" value="Student" checked="checked">
+      <div>
+        <label for="forename">Forename</label><br>
+        <input type="text" id="forename" name="forename">
+      </div>
+      <div>
+        <label for="surname">Surname</label><br>
+        <input type="text" id="surname" name="surname">
+      </div>
+      <div>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email">
+      </div>
+      <div>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password">
+      </div>
+      <br>
+      <div>
+        <input type="radio" id="role1" name="role" value="Student" checked>
         <label for="role1">Student</label>
-      <input type="radio" id="role2" name="role" value="Teacher">
+        <input type="radio" id="role2" name="role" value="Teacher">
         <label for="role2">Teacher</label>
+      </div>
+      <br>
       <input type="submit" value="Create account">
     </form>
   </div>
