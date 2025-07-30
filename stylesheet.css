@@ -75,6 +75,10 @@
   background-color: #ADE1FF;
   min-width: 160px;
   position: absolute;
+  z-index: 1000;
+  border-width: 2px;
+  border-style: solid;
+  border-color:#38B6FF;
 }
 
 /* links in dropdown menu */

@@ -15,7 +15,7 @@
 
 <!-- Link to include appropriate navbar -->
 <?php 
-echo($_SESSION['userid']);
+#echo($_SESSION['userid']);
 if (isset($_SESSION['userid'])):
   include 'navbar-signedin.php';
 else:

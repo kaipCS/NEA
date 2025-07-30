@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Template</title>
+  <title>Sign in</title>
   <!-- Links to style sheet and bootstrap -->
   <link rel="stylesheet" href="stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,12 +15,8 @@
 
 <!-- Link to include appropriate navbar -->
 <?php 
-echo($_SESSION['userid']);
-if (isset($_SESSION['userid'])):
-  include 'navbar-signedin.php';
-else:
-  include 'navbar-signedout.php';
-endif; ?>
+include 'navbar-signedout.php';
+?>
 
 <!-- Page contents -->
 <div class="container">
