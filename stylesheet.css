@@ -139,7 +139,7 @@
 
 /* Radio buttons */
 input[type=radio]{
-  accent-color:#38B6FF;
+  accent-color: #38B6FF;
 }
 
 /* Submit form buttons */
@@ -159,4 +159,8 @@ input[type=text]{
 input[type=password]{
   width:0;
   min-width: 100%;
+}
+
+.error-message{
+  color:red;
 }

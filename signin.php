@@ -27,12 +27,26 @@ include 'navbar-signedout.php';
         </h3>
     
         <!-- Sign in form -->
-        <form action="signinuser.php">
+        <form action="signinuser.php"  method="POST">
             Email<br>
             <input type="text" id="email" name="email"><br>
             Password<br>
             <input type="password" id="password" name="password">
             <br>
+            <div class="error-message">
+              <?php
+              print_r($_SESSION);
+              if ($_SESSION["error"] == "emptySignIn"){
+                echo "empty error message";
+              }
+              if ($_SESSION["error"] == "noUser"){
+                echo "user does not exist error message";
+              }
+              if ($_SESSION["error"] == "password"){
+                echo "password error message";
+              }
+              ?>
+            </div>
             <br>
             <input type="submit" value="Sign in">
         </form>
@@ -45,7 +59,7 @@ include 'navbar-signedout.php';
         </h3>
 
         <!-- Create account form -->
-        <form action="createaccount.php">
+        <form action="createaccount.php"  method="POST">
             Forename<br>
             <input type="text" id="forename" name="forename"><br>
             Surname<br>
@@ -57,6 +71,17 @@ include 'navbar-signedout.php';
             <input type="radio" name="role" value="Student" checked> Student
             <input type="radio" name="role" value="Teacher"> Teacher
             <br>
+            <div class= "error-message">
+              <?php
+              #print_r($_SESSION);
+              if ($_SESSION["error"] == "emptyAccount"){
+                echo "empty error message";
+              }
+              if ($_SESSION["error"] == "emailExists"){
+                echo "email error message";
+              }
+              ?>
+            </div>
             <br>
             <input type="submit" value="Create account">
         </form>

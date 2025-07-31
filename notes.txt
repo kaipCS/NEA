@@ -1,6 +1,11 @@
-css comments
-
 update sessions variables in create user and sign in pages
-HASHING
+error messages!! - use session variables (dont need to get rid of as will erase when session times out or sign out ending session)
+will do if try again, so reset at top of create and sign in pages
 
-error messages!!
+first tested without validation to see if work
+commented out header
+special chars to avoid attacks and prepare statements to avoid sql injection
+hash password
+tested that id fetching worked
+deleted test user
+different redirection to test as not yet had error messages
