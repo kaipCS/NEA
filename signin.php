@@ -27,14 +27,14 @@ include 'navbar-signedout.php';
     <form action="signinsession.php">
       <div>
         <label for="email">Email</label><br>
-        <input type="text" id="email" name="email">
+        <input class="text-input" type="text" id="email" name="email">
       </div>
       <div>
         <label for="password">Password</label><br>
-        <input type="password" id="password" name="password">
+        <input class="text-input" type="password" id="password" name="password">
       </div>
       <br>
-      <input type="submit" value="Sign in">
+      <input class="submit-input" type="submit" value="Sign in">
     </form>
   </div>
   
@@ -45,29 +45,29 @@ include 'navbar-signedout.php';
     <form action="createaccount.php">
       <div>
         <label for="forename">Forename</label><br>
-        <input type="text" id="forename" name="forename">
+        <input class="text-input" type="text" id="forename" name="forename">
       </div>
       <div>
         <label for="surname">Surname</label><br>
-        <input type="text" id="surname" name="surname">
+        <input class="text-input" type="text" id="surname" name="surname">
       </div>
       <div>
         <label for="email">Email</label><br>
-        <input type="text" id="email" name="email">
+        <input class="text-input" type="text" id="email" name="email">
       </div>
       <div>
         <label for="password">Password</label><br>
-        <input type="password" id="password" name="password">
+        <input class="text-input" type="password" id="password" name="password">
       </div>
       <br>
       <div>
-        <input type="radio" id="role1" name="role" value="Student" checked>
+        <input  class="radio-input" type="radio" id="role1" name="role" value="Student" checked>
         <label for="role1">Student</label>
-        <input type="radio" id="role2" name="role" value="Teacher">
+        <input class="radio-input" type="radio" id="role2" name="role" value="Teacher">
         <label for="role2">Teacher</label>
       </div>
       <br>
-      <input type="submit" value="Create account">
+      <input class="submit-input" type="submit" value="Create account">
     </form>
   </div>
 </div>

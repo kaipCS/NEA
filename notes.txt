@@ -3,4 +3,16 @@ add in comments
 extra divs and brs to seperate
 added <div class="col-sm-4" style="display: block; float: none; clear: both;"> inside div for testing
 covers bottom bar again
-need entry boxes to flex to fit containers as when make window smaller, they extend out
+need entry boxes to flex to fit containers as when make window smaller, they extend out:
+to fix added css for input but this changed radio and submit buttons so added class to input boxes i wante dto changed
+this also fixed device responsiveness for mobile devices which I tested by inspecting the page
+
+.col-sm-4 h3{
+  text-align: center;
+}
+
+.text-center{
+  text-align: center;
+}
+
+no border on the submit boxes 
