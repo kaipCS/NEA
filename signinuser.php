@@ -1,8 +1,8 @@
 <?php
 session_start();
 include_once('connection.php');
-print_r($_SESSION);
-print_r($_POST);
+#print_r($_SESSION);
+#print_r($_POST);
 if (empty($_POST["email"]) or empty($_POST["password"])){
     $_SESSION["error"] = "emptySignIn";
     header('Location: signin.php');
