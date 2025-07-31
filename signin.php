@@ -13,63 +13,54 @@
 </head>
 <body>
 
-<!-- Link to include appropriate navbar -->
+<!-- Link to include signed out navbar -->
 <?php 
 include 'navbar-signedout.php';
 ?>
 
 <!-- Page contents -->
 <div id="sign-in" class="container">
-  <div class="col-sm-4">
-    <h3>
-      SIGN IN
-    </h3>
-    <form action="signinsession.php">
-      <div>
-        <label for="email">Email</label><br>
-        <input class="text-input" type="text" id="email" name="email">
-      </div>
-      <div>
-        <label for="password">Password</label><br>
-        <input class="text-input" type="password" id="password" name="password">
-      </div>
-      <br>
-      <input class="submit-input" type="submit" value="Sign in">
-    </form>
-  </div>
-  
-  <div class="col-sm-4">
-    <h3>
-      CREATE ACCOUNT    
-    </h3>
-    <form action="createaccount.php">
-      <div>
-        <label for="forename">Forename</label><br>
-        <input class="text-input" type="text" id="forename" name="forename">
-      </div>
-      <div>
-        <label for="surname">Surname</label><br>
-        <input class="text-input" type="text" id="surname" name="surname">
-      </div>
-      <div>
-        <label for="email">Email</label><br>
-        <input class="text-input" type="text" id="email" name="email">
-      </div>
-      <div>
-        <label for="password">Password</label><br>
-        <input class="text-input" type="password" id="password" name="password">
-      </div>
-      <br>
-      <div>
-        <input  class="radio-input" type="radio" id="role1" name="role" value="Student" checked>
-        <label for="role1">Student</label>
-        <input class="radio-input" type="radio" id="role2" name="role" value="Teacher">
-        <label for="role2">Teacher</label>
-      </div>
-      <br>
-      <input class="submit-input" type="submit" value="Create account">
-    </form>
-  </div>
+    <!-- Sign in box -->
+    <div class="col-sm-4">
+        <h3>
+            SIGN IN
+        </h3>
+    
+        <!-- Sign in form -->
+        <form action="signinuser.php">
+            Email<br>
+            <input type="text" id="email" name="email"><br>
+            Password<br>
+            <input type="password" id="password" name="password">
+            <br>
+            <br>
+            <input type="submit" value="Sign in">
+        </form>
+    </div>
+    
+    <!-- Create account box -->
+    <div class="col-sm-4">
+        <h3>
+            CREATE ACCOUNT    
+        </h3>
+
+        <!-- Create account form -->
+        <form action="createaccount.php">
+            Forename<br>
+            <input type="text" id="forename" name="forename"><br>
+            Surname<br>
+            <input type="text" id="surname" name="surname"><br>
+            Email<br>
+            <input type="text" id="email" name="email"><br>
+            Password<br>
+            <input type="password" id="password" name="password"><br>
+            <input type="radio" name="role" value="Student" checked> Student
+            <input type="radio" name="role" value="Teacher"> Teacher
+            <br>
+            <br>
+            <input type="submit" value="Create account">
+        </form>
+    </div>
 </div>
 
 <!-- Bottom blue bar -->
