@@ -170,6 +170,7 @@ input[type=password]{
 
 .grey-text{
   color:grey;
+  font-size: 16px;
 }
 
 .col-sm-8{
@@ -181,4 +182,16 @@ input[type=password]{
 #in-school{
   gap:20px;
   display:flex;
+}
+
+#no-school{
+  justify-content: center;
+  display: flex;
+}
+
+/* Horizontal line */
+hr {
+  border:none !important;
+  height: 2px !important;
+  background-color:grey !important;
 }

@@ -60,3 +60,7 @@ so used single ones
 add in comments and indentation
 
 getting the html and css to work toegther, could close div of box inside first echo needed indivudal at the end
+
+hr css not working due to bootstrap overriding so added important
+
+echo quote problem again, note as a issue to check for in future if page with php does not load along with brakcets and semicolons 
