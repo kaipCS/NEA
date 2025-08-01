@@ -167,3 +167,18 @@ input[type=password]{
   font-size: 14px;
   margin-top:20px;
 }
+
+.grey-text{
+  color:grey;
+}
+
+.col-sm-8{
+  background-color: #ADE1FF;
+  font-size:20px; 
+  padding:10px;  
+}
+
+#in-school{
+  gap:20px;
+  display:flex;
+}

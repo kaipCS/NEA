@@ -1,5 +1,5 @@
 <?php
-# connext to database
+# connect to database
 include_once("connection.php");
 #get file
 $file = fopen("keywords.txt", "r");
