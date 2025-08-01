@@ -38,8 +38,17 @@ include 'navbar-signedin.php';
                         echo "Please enter a school code.";
                     }
                 }
+                if ($_SESSION["error"] == "noID"){
+                    if ($_SESSION["role"] == 1){
+                        echo "There is no school registered with this code. If you do not have a code, create a school below.";
+                    }
+                    else{
+                        echo "There is no school registered with this code. Check with your teacher.";
+                    }
+                }
                 ?>
             </div>
+            <br>
             <input type="submit" value="Join">
         </form>
 
@@ -63,7 +72,7 @@ include 'navbar-signedin.php';
                     echo "Please enter a school code.";
                 }
 
-            echo '</div>
+            echo ' </div> <br>
             <input type="submit" value="Create school code">
         </form>';
         }
@@ -71,6 +80,8 @@ include 'navbar-signedin.php';
     </div>
 </div>
 
+<br>
+<br>
 <!-- Bottom blue bar -->
 <div class="bottom-bar">
 <a> </a>

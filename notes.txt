@@ -64,3 +64,6 @@ getting the html and css to work toegther, could close div of box inside first e
 hr css not working due to bootstrap overriding so added important
 
 echo quote problem again, note as a issue to check for in future if page with php does not load along with brakcets and semicolons 
+
+got stuck on blank page when joining school with valid schoolID
+this was because sql was tyring to create new user with only schoolid and no update to phpmyadmin as lots was null when not null validation
