@@ -3,12 +3,12 @@ session_start();
 
 #connect to database
 include_once('connection.php');
-#print_r($_SESSION);
 #print_r($_POST);
 
 #check if either field was left empty
 if (empty($_POST["email"]) or empty($_POST["password"])){
     #one or both were left blank
+    #echo "emptySignIn";
 
     #set session variable to indicate nature of error
     $_SESSION["error"] = "emptySignIn";
@@ -18,6 +18,8 @@ if (empty($_POST["email"]) or empty($_POST["password"])){
 } 
 else{
     #both fields were entered
+    #echo "all details entered";
+
     $email = $_POST['email'];
 
     #search through users table for a record with the email entered
@@ -27,11 +29,13 @@ else{
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user){
         #a user does exist with this email
-        $password = $user["password"];
+        #echo "user exists";
 
+        $password = $user["password"];
         #check that password in record matches the one enetered
         if (password_verify($_POST["password"], $password)){
             #password is correct
+            #echo "correct password";
 
             #set role and userid session variables
             $_SESSION["role"] = $user["role"];
@@ -43,6 +47,7 @@ else{
         }
         else{
             #incorrect password
+            #echo "password";
 
             #set session variable to indicate nature of error
             $_SESSION["error"] = "password";
@@ -53,13 +58,13 @@ else{
     }
     else{
         #the email enetered is not in database
+        #echo "noUser";
 
         #set session variable to indicate nature of error
         $_SESSION["error"] = "noUser";
-
         #redirect back to sign in again
         header('Location: signin.php');
         exit(); 
-    }
+    }   
 }
 ?>

@@ -89,6 +89,7 @@ endif; ?>
   </div>
 </div>
 
+<br>
 <!-- Bottom blue bar -->
 <div class="bottom-bar">
 <a> </a>

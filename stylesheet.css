@@ -161,6 +161,7 @@ input[type=password]{
   min-width: 100%;
 }
 
+/* Error messages */
 .error-message{
   color:red;
   font-size: 14px;
