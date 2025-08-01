@@ -1,13 +1,2 @@
-error messages!! - use session variables (dont need to get rid of as will erase when session times out or sign out ending session, tried that didnt work so reset)
-will do if try again, so reset at top of create and sign in pages
 
-first tested without validation to see if work
-commented out header
-special chars to avoid attacks and prepare statements to avoid sql injection
-hash password
-tested that id fetching worked
-deleted test user
-different redirection to test as not yet had error messages
-
-sign out not working because did not start session
 
