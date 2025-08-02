@@ -22,19 +22,29 @@ include 'navbar-signedin.php';
 
 <!-- Page contents -->
 <div class="container">
-    <h2>
-    YOUR SCHOOL CODE:
-    <?php
-    echo $_SESSION["schoolID"];
-    ?>
-    </h2>
-    <?php 
-    $role = $_SESSION["role"]; 
-    if ($role == 1){
-        echo '<div class="grey-text"> Share this code with students and other teachers to join your school </div>';
-    }
-    ?>
-    <br>
+    <div class="row">
+        <div class="col-sm-10">
+            <h2>
+            YOUR SCHOOL CODE:
+            <?php
+            echo $_SESSION["schoolID"];
+            ?>
+            </h2>
+            <?php 
+            $role = $_SESSION["role"]; 
+            if ($role == 1){
+                echo '<div class="grey-text"> Share this code with students and other teachers to join your school </div>';
+            }
+            ?>
+            <br>
+        </div>
+        <div class="col-sm-2">
+            <button id="leave-school" type="button"
+                onclick="if (confirm('Are you sure you would like to leave your school?')) { window.location.href = 'leave-school.php'; }">
+                LEAVE SCHOOL
+            </button>
+        </div>
+    </div>
     <div id="in-school">
     <div class="col-sm-4">
         Teachers in your school:
@@ -52,7 +62,7 @@ include 'navbar-signedin.php';
     </div>
     <?php
     if ($role == 1){
-        echo '<div class="col-sm-8"> The students in your school: <br><br>';
+        echo '<div class="col-sm-8"> Students in your school: <br><br>';
         $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0 and schoolID = :schoolID");
         $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
         $stmt -> execute();

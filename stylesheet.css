@@ -195,3 +195,12 @@ hr {
   height: 2px !important;
   background-color:grey !important;
 }
+
+#leave-school{
+  background-color: #38B6FF;
+  border-style:none;
+  width:100%;
+  font-size: 22px;
+  color:red;
+  margin-top: 30px;
+}
