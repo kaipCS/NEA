@@ -71,6 +71,12 @@ include 'navbar-signedin.php';
                 if ($_SESSION["error"] == "emptyCode"){
                     echo "Please enter a school code.";
                 }
+                if ($_SESSION["error"] == "length"){
+                    echo "Please enter a 5 digit code.";
+                }
+                if ($_SESSION["error"] == "codeExists"){
+                    echo "An school with this code already exists. Enter the code above to join your school.";
+                }
 
             echo ' </div> <br>
             <input type="submit" value="Create school code">

@@ -41,7 +41,8 @@ include 'navbar-signedin.php';
         <br>
         <br>
         <?php
-        $stmt = $conn -> prepare("SELECT * FROM users WHERE role=1");
+        $stmt = $conn -> prepare("SELECT * FROM users WHERE role=1 and schoolID = :schoolID");
+        $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
         $stmt -> execute();
         while ($row = $stmt -> fetch(PDO::FETCH_ASSOC))
         {
@@ -52,7 +53,8 @@ include 'navbar-signedin.php';
     <?php
     if ($role == 1){
         echo '<div class="col-sm-8"> The students in your school: <br><br>';
-        $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0");
+        $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0 and schoolID = :schoolID");
+        $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
         $stmt -> execute();
         while ($row = $stmt -> fetch(PDO::FETCH_ASSOC))
         {
