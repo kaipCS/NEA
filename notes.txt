@@ -1,66 +1,3 @@
-<?php
-session_start();
-
-#redirect to correct page
-$userid = $_SESSION["userid"];
-
-$stmt = $conn->prepare("SELECT school FROM users WHERE userid = :userid");
-$stmt->bindParam(':userid', $userid);
-$stmt->execute();
-$school = $stmt->fetch(PDO::FETCH_ASSOC);
-if ($school){
-    echo "in school";
-}
-else{
-    echo "not in school";
-}
-?>
-
-does not display anything so tried $school %% $school != null
-not working for either user
-to see what going wrong, print session
-thats fine (user id is set)
-print school
-print nothing
-assign school a value and try that which works
-not printing so echoing is not working
-try echo something just before if statement, weird as else should catch everything
-BECAUSE SEMICOLON AT END OF IF STATEMENT AND NO OPENIGN BRACKET
-still same problems
-no printign anything after sql so sql statement is not working so catch pdo
-catch (PDOException $e) {
-    echo "DataBase Error".$e->getMessage();
-  } catch (Exception $e) {
-    echo "General Error".$e->getMessage();
-  }
-
-this said could not find school because it is schoolid not school
-
-saying in school when not
-so printed school
-printed "Array"
-
-use $school && $school['school'] !== null
-
-now not getting when it is there
-printing shows it does indeed select nothing 
-change to this if ($school && $school['schoolID'] !== null)
-anothing schoolID vs school problem
-
-made schoolID a session variable and prined: it was 0 rather than 27138
-session variable needed array access also $school['schoolID'] rather than just = $school, figured out when printed array 
-I was printing role 
-but before changing it did print array
-
-to test teacher bit had to give user 2 a school id also
-
-wouldnt load due to speech marks here "<div class="small-grey-text"> Share this code with students and other teachers to join your school </div>";
-so used single ones
-
-add in comments and indentation
-
-getting the html and css to work toegther, could close div of box inside first echo needed indivudal at the end
-
 hr css not working due to bootstrap overriding so added important
 
 echo quote problem again, note as a issue to check for in future if page with php does not load along with brakcets and semicolons 
@@ -77,17 +14,6 @@ when i entered a different code it successfully added to table but in my school 
 this got rid of both  $stmt = $conn -> prepare("SELECT * FROM users WHERE role=1 and schoolID == :schoolID");, tried double equals for both and single equals for both which worked 
 
 
-.col-sm-8{
-  background-color: #ADE1FF;
-  font-size:20px; 
-  padding:10px;  
-}
-
-/* Container in in-school page */
-#in-school{
-  gap:20px;
-  display:flex;
-}
 
 #no-school{
   justify-content: center;
@@ -100,19 +26,3 @@ hr {
   height: 2px !important;
   background-color:grey !important;
 }
-
-
-<?php
-session_start();
-#reset schoolID session variable
-unset($_SESSION["schoolID"]);
-
-include_once ("connection.php");
-#remove from database
-$stmt = $conn->prepare("UPDATE users SET schoolID = NULL WHERE userid = :userid");
-$stmt->bindParam(':userid', $_SESSION["userid"]);
-$stmt->execute();
-
-#redirect back to no school page
-header('Location: no-school.php');
-?>
