@@ -75,3 +75,29 @@ when added one that already existed, it stuck on white page- suggested something
 when i entered a different code it successfully added to table but in my school showed other users
 
 this got rid of both  $stmt = $conn -> prepare("SELECT * FROM users WHERE role=1 and schoolID == :schoolID");, tried double equals for both and single equals for both which worked 
+
+
+.col-sm-8{
+  background-color: #ADE1FF;
+  font-size:20px; 
+  padding:10px;  
+}
+
+/* Container in in-school page */
+#in-school{
+  gap:20px;
+  display:flex;
+}
+
+#no-school{
+  justify-content: center;
+  display: flex;
+}
+
+/* Horizontal line */
+hr {
+  border:none !important;
+  height: 2px !important;
+  background-color:grey !important;
+}
+

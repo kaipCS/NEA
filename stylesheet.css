@@ -168,34 +168,7 @@ input[type=password]{
   margin-top:20px;
 }
 
-.grey-text{
-  color:grey;
-  font-size: 16px;
-}
-
-.col-sm-8{
-  background-color: #ADE1FF;
-  font-size:20px; 
-  padding:10px;  
-}
-
-#in-school{
-  gap:20px;
-  display:flex;
-}
-
-#no-school{
-  justify-content: center;
-  display: flex;
-}
-
-/* Horizontal line */
-hr {
-  border:none !important;
-  height: 2px !important;
-  background-color:grey !important;
-}
-
+/* Leave school button */
 #leave-school{
   background-color: #38B6FF;
   border-style:none;
@@ -203,4 +176,23 @@ hr {
   font-size: 22px;
   color:red;
   margin-top: 30px;
+}
+
+/* Small grey text for instructions */
+.grey-text{
+  color:grey;
+  font-size: 16px;
+}
+
+/* 8 width column */
+.col-sm-8{
+  background-color: #ADE1FF;
+  font-size:20px; 
+  padding:10px;  
+}
+
+/* Container in in-school page */
+#in-school{
+  gap:20px;
+  display:flex;
 }

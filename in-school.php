@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 include_once ("connection.php");
 ?>
 <!DOCTYPE html>
@@ -23,12 +22,13 @@ include 'navbar-signedin.php';
 <!-- Page contents -->
 <div class="container">
     <div class="row">
+        <!-- School code -->
         <div class="col-sm-10">
             <h2>
-            YOUR SCHOOL CODE:
-            <?php
-            echo $_SESSION["schoolID"];
-            ?>
+                YOUR SCHOOL CODE:
+                <?php
+                echo $_SESSION["schoolID"];
+                ?>
             </h2>
             <?php 
             $role = $_SESSION["role"]; 
@@ -38,40 +38,42 @@ include 'navbar-signedin.php';
             ?>
             <br>
         </div>
+        <!-- Leave school button -->
         <div class="col-sm-2">
-            <button id="leave-school" type="button"
-                onclick="if (confirm('Are you sure you would like to leave your school?')) { window.location.href = 'leave-school.php'; }">
+            <button id="leave-school" type="button" onclick=' if(confirm("Are you sure you want to leave your school?")){window.location.href = "leave-school.php";}'>
                 LEAVE SCHOOL
             </button>
         </div>
     </div>
     <div id="in-school">
-    <div class="col-sm-4">
-        Teachers in your school:
-        <br>
-        <br>
+        <!-- List of teachers in school -->
+        <div class="col-sm-4">
+            Teachers in your school:
+            <br>
+            <br>
+            <!-- Search for teachers in users table -->
+            <?php
+            $stmt = $conn -> prepare("SELECT * FROM users WHERE role=1 and schoolID = :schoolID");
+            $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
+            $stmt -> execute();
+            while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+                echo($row["surname"]. ", ". $row["forename"]." (". $row["email"].") <br>"); 
+            }
+            ?> 
+        </div>
+        <!-- If user is a teacher, search for students in table -->
         <?php
-        $stmt = $conn -> prepare("SELECT * FROM users WHERE role=1 and schoolID = :schoolID");
-        $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
-        $stmt -> execute();
-        while ($row = $stmt -> fetch(PDO::FETCH_ASSOC))
-        {
-            echo($row["surname"]. ", ". $row["forename"]." (". $row["email"].") <br>"); 
-}
-        ?> 
+        if ($role == 1){
+            echo '<div class="col-sm-8"> Students in your school: <br><br>';
+            $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0 and schoolID = :schoolID");
+            $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
+            $stmt -> execute();
+            while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+                echo($row["surname"]. ", ". $row["forename"]." (". $row["email"].") <br>"); 
+            } 
+            echo '</div>'; 
+        }?>
     </div>
-    <?php
-    if ($role == 1){
-        echo '<div class="col-sm-8"> Students in your school: <br><br>';
-        $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0 and schoolID = :schoolID");
-        $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
-        $stmt -> execute();
-        while ($row = $stmt -> fetch(PDO::FETCH_ASSOC))
-        {
-            echo($row["surname"]. ", ". $row["forename"]." (". $row["email"].") <br>"); 
-
-    } echo '</div>'; }?>
-</div>
 </div>
 
 <!-- Bottom blue bar -->
