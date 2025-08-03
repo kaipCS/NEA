@@ -1,8 +1,11 @@
 <?php
 session_start();
+#reset schoolID session variable
 unset($_SESSION["schoolID"]);
 
+#connect to databse
 include_once ("connection.php");
+
 #remove from database
 $stmt = $conn->prepare("UPDATE users SET schoolID = NULL WHERE userid = :userid");
 $stmt->bindParam(':userid', $_SESSION["userid"]);
