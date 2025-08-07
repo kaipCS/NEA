@@ -24,12 +24,14 @@ include 'navbar-signedin.php';
             JOIN SCHOOL
         </h2>
 
+        <!--  Join school form -->
         <form action="joinschool.php"  method="POST">
             Enter school code<br>
             <input type="text" id="schoolID" name="schoolID"><br>
+
+            <!-- Error messages  -->
             <div class="error-message">
                 <?php
-                #print_r($_SESSION);
                 if ($_SESSION["error"] == "emptySchool"){
                     if ($_SESSION["role"] == 1){
                         echo "Enter a school code. If you do not have a code, create a school below.";
@@ -52,35 +54,36 @@ include 'navbar-signedin.php';
             <input type="submit" value="Join">
         </form>
 
+        <!-- Create school form only for teachers-->
         <?php
         if ($_SESSION["role"] == 1){
-        
-        echo '<hr>
-        <h2>
-            CREATE SCHOOL
-        </h2>
+            echo '<hr>
+            <h2>
+                CREATE SCHOOL
+            </h2>
+                    
+            <form action="createschool.php"  method="POST">
+                <div class="grey-text">
+                    Choose a 5 digit number to share with students and teachers to join your school, for example your centre code.
+                </div>
+                <br>
+                <input type="text" id="createSchoolID" name="createSchoolID"><br>
                 
-        <form action="createschool.php"  method="POST">
-            <div class="grey-text">
-                Choose a 5 digit number to share with students and teachers to join your school, for example your centre code.
-            </div>
-            <br>
-            <input type="text" id="createSchoolID" name="createSchoolID"><br>
-            <div class="error-message">';
-                #print_r($_SESSION);
-                if ($_SESSION["error"] == "emptyCode"){
-                    echo "Please enter a school code.";
-                }
-                if ($_SESSION["error"] == "length"){
-                    echo "Please enter a 5 digit code.";
-                }
-                if ($_SESSION["error"] == "codeExists"){
-                    echo "An school with this code already exists. Enter the code above to join your school.";
-                }
+                <!-- Error messages-->
+                <div class="error-message">';
+                    if ($_SESSION["error"] == "emptyCode"){
+                        echo "Please enter a school code.";
+                    }
+                    if ($_SESSION["error"] == "length"){
+                        echo "Please enter a 5 digit code.";
+                    }
+                    if ($_SESSION["error"] == "codeExists"){
+                        echo "An school with this code already exists. Enter the code above to join your school.";
+                    }
 
-            echo ' </div> <br>
-            <input type="submit" value="Create school code">
-        </form>';
+                echo '</div> <br>
+                <input type="submit" value="Create school code">
+            </form>';
         }
         ?>
     </div>
