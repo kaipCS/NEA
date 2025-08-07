@@ -1,5 +1,4 @@
-got stuck on blank page when joining school with valid schoolID
-this was because sql was tyring to create new user with only schoolid and no update to phpmyadmin as lots was null when not null validation
+need to get in lack of school id issue on in school page
 
 when i entered a different code it successfully added to table but in my school showed other users
 

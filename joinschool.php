@@ -10,7 +10,7 @@ if (empty($_POST["schoolID"])){
 
     #set session variable to indicate nature of error
     $_SESSION["error"] = "emptySchool";
-    #redirect back to sign in again
+    #redirect back to no school page
     header('Location: no-school.php');
     exit(); 
 } 
@@ -43,7 +43,7 @@ else{
     else{
         #set session variable to indicate nature of error
         $_SESSION["error"] = "noID"; 
-        #redirect back to sign in again
+        #redirect back to no school page
         header('Location: no-school.php');
         exit(); 
     }}
