@@ -196,3 +196,16 @@ input[type=password]{
   gap:20px;
   display:flex;
 }
+
+/* Container in no-school page */
+#no-school{
+  justify-content: center;
+  display: flex;
+}
+
+/* Horizontal line */
+hr {
+  border:none !important;
+  height: 2px !important;
+  background-color:grey !important;
+}
