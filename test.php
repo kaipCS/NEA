@@ -24,7 +24,7 @@ include 'navbar-signedin.php';
             JOIN SCHOOL
         </h2>
 
-        <form action="test2.php"  method="POST">
+        <form action=createschool.php"  method="POST">
             Enter school code<br>
             <input type="text" id="schoolID" name="schoolID"><br>
             <br>
