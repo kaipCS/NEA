@@ -1,1 +1,41 @@
-comments on no-school page
+id issue with making search bar not whole way and for years aswell which is exact for 4 digit year
+make 1986 and 2018 values not placeholders so can always filter
+and also step default checked
+
+issue with lots of divs and labels for form 
+
+label not bold issue important
+
+<?php
+$pure_topics= array();
+$mech_topics= array();
+$stats_topics= array();
+
+include_once ("connection.php");
+
+$stmt = $conn -> prepare("SELECT * FROM questions ");
+    $stmt -> execute();
+    while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+        $topic = $row["topic"];
+        if ($row["area"] = 0){
+            if (!in_array($topic, $pure_topics)) {
+                $pure_topics[] = $topic;
+            }
+        }
+        if ($row["area"] = 1){
+            if (!in_array($topic, $mech_topics)) {
+                $mech_topics[] = $topic;
+            }
+        }
+        if ($row["area"] = 2){
+            if (!in_array($topic, $stats_topics)) {
+                $stats_topics[] = $topic;
+            }
+        }
+    } 
+
+print_r($pure_topics);
+?>
+prints nothing - as only used single equals
+
+issue of not in being python syntax

@@ -209,3 +209,46 @@ hr {
   height: 2px !important;
   background-color:grey !important;
 }
+
+#questions-page{
+  gap:20px;
+  display: flex;
+}
+
+#questions-list{
+  background-color:white;
+}
+
+#question-preview{
+  background-color: white;
+}
+
+#search{
+  min-width:77%;
+}
+
+.year{
+  min-width:55px !important;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;            /* vertically center */
+  justify-content: space-between; /* label left, button right */
+  width: 100%;
+}
+
+.collapse-button {
+  background: none;
+  border-style: none;
+  padding: 0;
+}
+
+label{
+  font-weight:normal !important;
+}
+
+.collapse{
+  margin-left:20px;
+  font-size:14px;
+}
