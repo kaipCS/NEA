@@ -56,3 +56,5 @@ issue of not in being python syntax
 
 
 had the same name for things across pure and mech so needed to specify
+
+have to double click to open - because has to initalise to none as the other none is the style sheet so added an or
