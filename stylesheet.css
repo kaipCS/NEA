@@ -238,17 +238,40 @@ hr {
   width: 100%;
 }
 
+.option-row label {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;                   /* allow label to take available space */
+}
+
 .collapse-button {
   background: none;
   border-style: none;
   padding: 0;
+  margin-left: auto;
 }
 
 label{
   font-weight:normal !important;
 }
 
-.collapse{
+#pure-topics{
+  display: none;
   margin-left:20px;
   font-size:14px;
 }
+
+
+#mech-topics{
+  display:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+
+#stats-topics{
+  display:none;
+  margin-left:20px;
+  font-size:14px;
+}
+

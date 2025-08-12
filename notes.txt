@@ -39,3 +39,20 @@ print_r($pure_topics);
 prints nothing - as only used single equals
 
 issue of not in being python syntax
+
+              <?php
+                    if ($status == TRUE){
+                        foreach ($pure_topics as $topic => $count) {
+                            echo '<input type="checkbox" name="topic" value="' . ($topic) . '" checked> ' . ($topic) . " ($count) <br>";
+                        }
+                    }
+                    else{
+                        foreach ($pure_topics as $topic => $count) {
+                            echo '<input type="checkbox" name="topic" value="' . ($topic) . '"> ' . ($topic) . " ($count) <br>";
+                        }
+                    }
+                ?>
+                </div>
+
+
+had the same name for things across pure and mech so needed to specify
