@@ -30,20 +30,20 @@ include 'navbar-signedin.php';
         </form>
         <br>
         <form action="filter-questions.php"  method="POST">
-            <input type="checkbox" name="paper" value="1" checked> STEP I <br>
-            <input type="checkbox" name="paper" value="2" checked> STEP II <br>
-            <input type="checkbox" name="paper" value="3" checked> STEP III <br>
+            <input type="checkbox" name="papers[]" value="1" checked> STEP I <br>
+            <input type="checkbox" name="papers[]" value="2" checked> STEP II <br>
+            <input type="checkbox" name="papers[]" value="3" checked> STEP III <br>
             <br>
             Year
             <br>
-            from  <input type="text" class="year" name="from" value="1986"> to  <input type="text" class="year" name="to" value="2018">
+            from  <input type="number" name="from" value="1986"> to  <input type="number" name="to" value="2018">
             <br>
             <br>
 
             <div class="option-section">
                 <div class="option-row">
                     <label>
-                    <input id="pure-checkbox" type="checkbox" name="area" value="pure" checked>  Pure
+                    <input id="pure-checkbox" type="checkbox" name="areas[]" value="pure" checked>  Pure
                     <button type="button" id="toggle-pure-topics" class="collapse-button">◀</button>
                     </label>
                 </div>
@@ -66,7 +66,7 @@ include 'navbar-signedin.php';
                     for (const [topic, count] of Object.entries(pureData)) {
                         const checkbox = document.createElement("input");
                         checkbox.type = "checkbox";
-                        checkbox.name = "pure-topic";
+                        checkbox.name = "pure-topics[]";
                         checkbox.value = topic;
                         checkbox.checked = true;
                         
@@ -87,13 +87,13 @@ include 'navbar-signedin.php';
 
                     function pureChange(){
                         if (pureCheckbox.checked){
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topic"]');
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topics[]"]');
                             allTopicCheckboxes.forEach(checkbox => {
                                 checkbox.checked = true;
                             });
                         }
                         else{
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topic"]');
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topics[]"]');
                             allTopicCheckboxes.forEach(checkbox => {
                                 checkbox.checked = false;
                             });
@@ -121,7 +121,7 @@ include 'navbar-signedin.php';
             <div class="option-section">
                 <div class="option-row">
                     <label>
-                    <input id="mech-checkbox" type="checkbox" name="area" value="mechanics" checked>  Mechanics
+                    <input id="mech-checkbox" type="checkbox" name="areas[]" value="mechanics" checked>  Mechanics
                     <button type="button" id="toggle-mech-topics" class="collapse-button">◀</button>
                     </label>
                 </div>
@@ -144,7 +144,7 @@ include 'navbar-signedin.php';
                     for (const [topic, count] of Object.entries(mechData)) {
                         const checkbox = document.createElement("input");
                         checkbox.type = "checkbox";
-                        checkbox.name = "mech-topic";
+                        checkbox.name = "mech-topics[]";
                         checkbox.value = topic;
                         checkbox.checked = true;
                         
@@ -165,13 +165,13 @@ include 'navbar-signedin.php';
 
                     function mechChange(){
                         if (mechCheckbox.checked){
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="mech-topic"]');
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="mech-topics[]"]');
                             allTopicCheckboxes.forEach(checkbox => {
                                 checkbox.checked = true;
                             });
                         }
                         else{
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="mech-topic"]');
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="mech-topics[]"]');
                             allTopicCheckboxes.forEach(checkbox => {
                                 checkbox.checked = false;
                             });
@@ -199,7 +199,7 @@ include 'navbar-signedin.php';
             <div class="option-section">
                 <div class="option-row">
                     <label>
-                    <input id="stats-checkbox" type="checkbox" name="area" value="probability" checked>  Probability
+                    <input id="stats-checkbox" type="checkbox" name="areas[]" value="probability" checked>  Probability
                     <button type="button" id="toggle-stats-topics" class="collapse-button">◀</button>
                     </label>
                 </div>
@@ -222,7 +222,7 @@ include 'navbar-signedin.php';
                     for (const [topic, count] of Object.entries(statsData)) {
                         const checkbox = document.createElement("input");
                         checkbox.type = "checkbox";
-                        checkbox.name = "stats-topic";
+                        checkbox.name = "stats-topics[]";
                         checkbox.value = topic;
                         checkbox.checked = true;
                         
@@ -243,13 +243,13 @@ include 'navbar-signedin.php';
 
                     function statsChange(){
                         if (statsCheckbox.checked){
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="stats-topic"]');
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="stats-topics[]"]');
                             allTopicCheckboxes.forEach(checkbox => {
                                 checkbox.checked = true;
                             });
                         }
                         else{
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="stats-topic"]');
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="stats-topics[]"]');
                             allTopicCheckboxes.forEach(checkbox => {
                                 checkbox.checked = false;
                             });
@@ -274,7 +274,6 @@ include 'navbar-signedin.php';
 
             </script>
 
-            <br>
             <input type="checkbox" name="exclude-complete" value="yes"> Exclude completed questions <br>
             <br>
             <input type="submit" value="Apply filters">
@@ -284,6 +283,9 @@ include 'navbar-signedin.php';
     </div>
     <div id="questions-list" class="col-sm-4">
         questions
+        <?php
+            print_r($_SESSION); 
+        ?>
     </div>
     <div id="question-preview" class="col-sm-4">
         question

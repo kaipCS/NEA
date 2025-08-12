@@ -224,10 +224,10 @@ hr {
 }
 
 #search{
-  min-width:77%;
+  width: 77%;
 }
 
-.year{
+input[type=text]{
   min-width:55px !important;
 }
 
@@ -275,3 +275,6 @@ label{
   font-size:14px;
 }
 
+input[type=number]{
+  max-width:75px;
+}

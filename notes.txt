@@ -58,3 +58,15 @@ issue of not in being python syntax
 had the same name for things across pure and mech so needed to specify
 
 have to double click to open - because has to initalise to none as the other none is the style sheet so added an or
+
+post was only catching last checked
+
+for filter validation need to use isset rather than empty
+
+header not working beacuse was printing stuff to test
+
+prepared statement was difficult for sql with arrays so did not do this, no risk of sql injection as all textboxes except from years which I will change to only allow numerical entry
+
+was leaving one or two of areas empty then checking in sql producing error so made into one big list of topics as the area is not important for this bit 
+
+after testing using the filters, issues seemed to arise from the POST or the session being too long

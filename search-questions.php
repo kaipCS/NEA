@@ -1,44 +1,51 @@
 <?php
 session_start();
 
-#validate input ie not empty
-
-$search = $_POST["search"];
-
-$questions = [];
-
 include_once ("connection.php");
 
-#echo($search);
+if (empty($_POST["search"])){
+    #set session variable to indicate nature of error
+    $_SESSION["error"] = "emptySearch";
+    #redirect back to sign in again
+    header('Location: questionspage.php');
+    exit(); 
+} 
+else{
+    $search = $_POST["search"];
 
-#topics first
+    $questions = [];
 
-$search = "%$search%";  
+    #echo($search);
 
-$stmt = $conn->prepare("SELECT questionid FROM questions WHERE topic LIKE :search");
-$stmt->bindParam(":search", $search);
-$stmt->execute();
+    #topics first
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $questions[] = $row["questionid"];
-}
+    $search = "%$search%";  
 
-print_r($questions);
-#then keywords
+    $stmt = $conn->prepare("SELECT questionid FROM questions WHERE topic LIKE :search");
+    $stmt->bindParam(":search", $search);
+    $stmt->execute();
 
-$stmt = $conn->prepare("SELECT questionid FROM questionhaskeyword WHERE keyword LIKE :search");
-$stmt->bindParam(":search", $search);
-$stmt->execute();
-
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    if(!in_array($row["questionid"], $questions)){
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $questions[] = $row["questionid"];
-    } 
+    }
+
+    print_r($questions);
+    #then keywords
+
+    $stmt = $conn->prepare("SELECT questionid FROM questionhaskeyword WHERE keyword LIKE :search");
+    $stmt->bindParam(":search", $search);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        if(!in_array($row["questionid"], $questions)){
+            $questions[] = $row["questionid"];
+        } 
+    }
+
+    print_r($questions);
+
+    $_SESSION["results"] = $questions;
+
+    header('Location: questionspage.php');
 }
-
-print_r($questions);
-
-$_SESSION["results"] = $questions;
-
-header('Location: questionspage.php');
 ?>
