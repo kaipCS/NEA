@@ -3,18 +3,58 @@ session_start();
 
 $questions = [];
 
-print_r($_POST);
+#print_r($_POST);
 
 include_once ("connection.php");
 
 if(!empty($_POST["papers"])){
     if (!empty($_POST["pure-topics"]) || !empty($_POST["mech-topics"]) || !empty($_POST["stats-topics"])){
+
+        $topics = [];
+
+        if (!empty($_POST["areas"])){
+            $areas = $_POST["areas"];
+        }
+        else{
+            $areas = [];
+        }
+
+        $completeAreas = [];
+
+
+        // Process PURE topics
+        if (!empty($_POST["pure-topics"])) {
+            // If "pure" area is selected, use area filter
+            if (in_array("pure", $areas)) {
+                $completeAreas[] = 0; // Filter by pure area (0)
+            } 
+            // Otherwise, use specific topics
+            else {
+                $topics = array_merge($topics, $_POST["pure-topics"]);
+            }
+        }
+
+        // Process MECHANICS topics (same pattern)
+        if (!empty($_POST["mech-topics"])) {
+            if (in_array("mechanics", $areas)) {
+                $completeAreas[] = 1;
+            } else {
+                $topics = array_merge($topics, $_POST["mech-topics"]);
+            }
+        }
+
+        // Process STATISTICS topics (same pattern)
+        if (!empty($_POST["stats-topics"])) {
+            if (in_array("probability", $areas)) {
+                $completeAreas[] = 2;
+            } else {
+                $topics = array_merge($topics, $_POST["stats-topics"]);
+            }
+        }
+
+        #print_r($completeAreas);
         
-        $topics = array_merge(
-            $_POST["pure-topics"] ?? [],
-            $_POST["mech-topics"] ?? [],
-            $_POST["stats-topics"] ?? []
-        );
+        #print_r($topics);
 
         if(!isset($_POST["from"])){
             $from = 1986;
@@ -28,22 +68,49 @@ if(!empty($_POST["papers"])){
         else{
             $to = $_POST["to"];
         }
-        echo("here");
+
+        #print_r($completeAreas);
+        #print_r($topics);
 
         $papers = $_POST["papers"];
-     
+
+        $areasList  = !empty($completeAreas) ? implode(",", $completeAreas) : "-1"; 
         $papersList = "'" . implode("','", $papers) . "'";
-        $topicsList = "'" . implode("','", $topics) . "'";
-        
-        echo("here");
 
-        $stmt = $conn->query("SELECT questionid FROM questions WHERE (year <= $to AND year >= $from) AND (paper IN ($papersList)) AND (topic IN ($topicsList))"); 
-
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $questions[] = $row["questionid"];   
+        if (empty($topics)){
+            $topics = ["topic"];
         }
 
-        print_r($questions);
+        $chunks = array_chunk($topics, 100);
+
+
+        foreach ($chunks as $chunkIndex => $chunk) {
+            #print_r($topics);
+            #var_dump($areasList);
+
+            $topicsList = '"' . implode('","', $chunk) . '"';
+
+            $sql = "
+                SELECT DISTINCT questionid 
+                FROM questions
+                WHERE year BETWEEN $from AND $to
+                  AND paper IN ($papersList)
+                  AND (area IN ($areasList)
+                  OR topic IN ($topicsList))
+            ";
+
+            #echo $sql;
+            $result = $conn->query($sql);
+            if ($result) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    $questions[$row['questionid']] = true; // Deduplicate
+                }
+            }
+        }
+
+        $questions = array_keys($questions);
+        
+        #print_r($questions);
 
         if (empty($_POST["exclude-complete"])) {
             $_SESSION["results"] = $questions;

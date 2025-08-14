@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+unset($_SESSION['error']);
 include_once ("connection.php");
 
 if (empty($_POST["search"])){

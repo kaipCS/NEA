@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 include_once('connection.php');?> 
 
 <!DOCTYPE html>
@@ -24,6 +23,13 @@ include 'navbar-signedin.php';
 <!-- Page contents -->
 <div id="questions-page" class="container">
     <div class="col-sm-4">
+        <div class="error-message">
+            <?php
+                if ($_SESSION['error'] == "emptySearch"){
+                    echo("Please enter a search.");
+                }
+            ?>
+        </div>
         <form action="search-questions.php"  method="POST">
             <input type="text" id="search" name="search" placeholder="Search...">
             <input type="submit" value="Search">
@@ -282,9 +288,20 @@ include 'navbar-signedin.php';
         <br>
     </div>
     <div id="questions-list" class="col-sm-4">
-        questions
         <?php
-            print_r($_SESSION); 
+            if (isset($_SESSION['results'])){
+                if (empty($_SESSION['results'])){
+                    echo ("no search results");
+                }
+                else{
+                    print_r($_SESSION['results']);
+                }
+
+                unset($_SESSION['results']);
+            }
+            else{
+                echo("show all questions");
+            }
         ?>
     </div>
     <div id="question-preview" class="col-sm-4">

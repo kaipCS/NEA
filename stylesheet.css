@@ -224,11 +224,7 @@ hr {
 }
 
 #search{
-  width: 77%;
-}
-
-input[type=text]{
-  min-width:55px !important;
+  min-width: 245px;
 }
 
 .option-row {
