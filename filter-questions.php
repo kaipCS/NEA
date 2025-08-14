@@ -21,20 +21,15 @@ if(!empty($_POST["papers"])){
 
         $completeAreas = [];
 
-
-        // Process PURE topics
         if (!empty($_POST["pure-topics"])) {
-            // If "pure" area is selected, use area filter
             if (in_array("pure", $areas)) {
-                $completeAreas[] = 0; // Filter by pure area (0)
-            } 
-            // Otherwise, use specific topics
+                $completeAreas[] = 0; 
+            }
             else {
                 $topics = array_merge($topics, $_POST["pure-topics"]);
             }
         }
 
-        // Process MECHANICS topics (same pattern)
         if (!empty($_POST["mech-topics"])) {
             if (in_array("mechanics", $areas)) {
                 $completeAreas[] = 1;
@@ -43,7 +38,6 @@ if(!empty($_POST["papers"])){
             }
         }
 
-        // Process STATISTICS topics (same pattern)
         if (!empty($_POST["stats-topics"])) {
             if (in_array("probability", $areas)) {
                 $completeAreas[] = 2;
@@ -74,7 +68,13 @@ if(!empty($_POST["papers"])){
 
         $papers = $_POST["papers"];
 
-        $areasList  = !empty($completeAreas) ? implode(",", $completeAreas) : "-1"; 
+        if (!empty($completeAreas)){
+            $areasList  = implode(",", $completeAreas);
+        }
+        else{
+            $areasList = "-1";
+        }
+        
         $papersList = "'" . implode("','", $papers) . "'";
 
         if (empty($topics)){
@@ -83,43 +83,29 @@ if(!empty($_POST["papers"])){
 
         $chunks = array_chunk($topics, 100);
 
-
-        foreach ($chunks as $chunkIndex => $chunk) {
-            #print_r($topics);
-            #var_dump($areasList);
+        foreach ($chunks as $chunk) {
 
             $topicsList = '"' . implode('","', $chunk) . '"';
 
-            $sql = "
-                SELECT DISTINCT questionid 
-                FROM questions
-                WHERE year BETWEEN $from AND $to
-                  AND paper IN ($papersList)
-                  AND (area IN ($areasList)
-                  OR topic IN ($topicsList))
-            ";
+            $sql = "SELECT questionid FROM questions WHERE year BETWEEN $from AND $to AND paper IN ($papersList) AND (area IN ($areasList) OR topic IN ($topicsList))";
 
             #echo $sql;
             $result = $conn->query($sql);
-            if ($result) {
-                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                    $questions[$row['questionid']] = true; // Deduplicate
-                }
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                $questions[] = $row["questionid"];
             }
+            
         }
-
-        $questions = array_keys($questions);
         
         #print_r($questions);
 
         if (empty($_POST["exclude-complete"])) {
             $_SESSION["results"] = $questions;
-            header('Location: questionspage.php');
+            header("Location: questionspage.php");
             exit();
         }
 
         else if (!empty($questions)){
-
             $questionsList = "'" . implode("','", $questions) . "'";
 
             $userid = $_SESSION["userid"];

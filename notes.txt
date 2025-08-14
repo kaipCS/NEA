@@ -119,7 +119,7 @@ printing shows apostraphe in topics ending sql query: flipped round use of doubl
 
 
 issue where selecting one pure topic selects every pure topic
-in fact, whatever happens all pure are selected - is this a data type issue because pure is 0
+in fact, whatever happens all pure are selected - is this a data type issue because pure is 0: yes so concanated differently
 now only selecting step 1 despite told otherwise, may just be a cache issue with testing and reloading many times: yes this way the case
 
 
