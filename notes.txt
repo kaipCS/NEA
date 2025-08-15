@@ -124,3 +124,18 @@ now only selecting step 1 despite told otherwise, may just be a cache issue with
 
 
 when doing exlcluding for step I pure - include some mech questions?/ same thing for not excluding, clearly filtering is going wrong ** 
+
+echo "
+                        <div class='button question-row' onclick=\"window.location.href='display-question.php?id={$row['questionid']}'\">
+                            STEP $paper {$row['year']} {$row['topic']}
+                            <div class='grey-text'>$keywordList</div>
+                        </div>
+                        <br>
+                        ";
+had to concanate differently as the html was not working when split up 
+
+had to do research for this   to realod with value in search bar  <script>
+    function sortQuestions(sortValue) {
+        window.location.href = window.location.pathname + '?sort=' + sortValue;
+    }
+    </script>

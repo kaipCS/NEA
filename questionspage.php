@@ -17,7 +17,7 @@ include_once('connection.php');?>
 
 <!-- Navbar -->
 <?php 
-include 'navbar-signedin.php';
+    include 'navbar-signedin.php';
 ?>
 
 <!-- Page contents -->
@@ -40,7 +40,7 @@ include 'navbar-signedin.php';
             <input type="checkbox" name="papers[]" value="2" checked> STEP II <br>
             <input type="checkbox" name="papers[]" value="3" checked> STEP III <br>
             <br>
-            Year
+            Year:
             <br>
             from  <input type="number" name="from" value="1986"> to  <input type="number" name="to" value="2018">
             <br>
@@ -288,22 +288,119 @@ include 'navbar-signedin.php';
         <br>
     </div>
     <div id="questions-list" class="col-sm-4">
+
+        Sort by:
+        <select id="sort" onchange="sortQuestions(this.value)">
+            <option value="oldest" 
+            <?php  
+                if(!isset($_GET["sort"]) || $_GET["sort"] == "oldest"){
+                    echo 'selected="selected"';
+                }
+            ?>
+            >Oldest First</option>
+            <option value="newest"
+            <?php
+                if(isset($_GET['sort']) && $_GET['sort'] == 'newest'){
+                    echo 'selected="selected"';
+                } 
+            ?>
+            >Newest First</option>
+        </select>
+        
+        <br>
+        <br>
+
         <?php
+            $order = "ASC";
+            if (isset($_GET["sort"]) && $_GET["sort"] == 'newest') {
+                $order = 'DESC'; 
+            }
+
+            $sql_order = "ORDER BY year $order, paper ASC";
+
             if (isset($_SESSION['results'])){
                 if (empty($_SESSION['results'])){
-                    echo ("no search results");
+                    echo ("No results.");
                 }
                 else{
-                    print_r($_SESSION['results']);
+                    $results = $_SESSION['results'];
+                    $resultsList = "'" . implode("','", $results) . "'";
+
+                    $stmt = $conn->query("SELECT * FROM questions WHERE questionid IN ($resultsList) $sql_order"); 
+                    
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        if ($row["paper"] == 1){
+                            $paper = "I";
+                        }
+                        else if ($row["paper"] == 2){
+                            $paper = "II";
+                        }
+                        else{
+                            $paper = "III";
+                        }
+                        
+                        $stmt2 = $conn->prepare("SELECT keyword FROM questionhaskeyword WHERE questionid = :questionid");
+                        $stmt2->bindParam(':questionid', $row["questionid"]);
+                        $stmt2->execute();
+    
+                        $keywords = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                        $keywordList = implode(", ", array_column($keywords, 'keyword'));
+    
+                        echo "
+                        <div class='button question-row' onclick=\"window.location.href='display-question.php?id={$row['questionid']}'\">
+                            STEP $paper {$row['year']} {$row['topic']}
+                            <div class='grey-text'>$keywordList</div>
+                        </div>
+                        <br>
+                        ";
+                    }
+
                 }
 
                 unset($_SESSION['results']);
             }
             else{
-                echo("show all questions");
+                #echo("show all questions");
+                $stmt = $conn->prepare("SELECT * FROM questions $sql_order");
+                $stmt -> execute();
+                while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+                    if ($row["paper"] == 1){
+                        $paper = "I";
+                    }
+                    else if ($row["paper"] == 2){
+                        $paper = "II";
+                    }
+                    else{
+                        $paper = "III";
+                    }
+                    
+                    $stmt2 = $conn->prepare("SELECT keyword FROM questionhaskeyword WHERE questionid = :questionid");
+                    $stmt2->bindParam(':questionid', $row["questionid"]);
+                    $stmt2->execute();
+
+                    $keywords = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                    $keywordList = implode(", ", array_column($keywords, 'keyword'));
+
+                    echo "
+                    <div class='button question-row' onclick=\"window.location.href='display-question.php?id={$row['questionid']}'\">
+                        STEP $paper {$row['year']} {$row['topic']}
+                        <div class='grey-text'>$keywordList</div>
+                    </div>
+                    <br>
+                    ";
+
+
+                }
             }
         ?>
     </div>
+    
+    <script>
+    function sortQuestions(sortValue) {
+        window.location.href = window.location.pathname + '?sort=' + sortValue;
+    }
+    </script>
+
     <div id="question-preview" class="col-sm-4">
         question
     </div>
