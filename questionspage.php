@@ -423,10 +423,10 @@ include_once('connection.php');?>
         <?php
             if (isset($_SESSION["display-code"])){
                 if(isset($_SESSION["solution"])){
-                    echo("<a href = " .$_SESSION["solution"] . "> Link to solution </a>" );
+                    echo("<a href = " .$_SESSION["solution"] . "> Link to solution </a> " );
                 }
                 else{
-                    echo("No solution is avaliable for this question.");
+                    echo("No solution is avaliable for this question. ");
                 }
             
             unset($_SESSION["display-code"]);
@@ -447,7 +447,15 @@ include_once('connection.php');?>
                         
                         echo('</select>
                             <input type="submit" value="Add">
-                    </form>'
+                    </form>
+                    <br>
+                    <form action "mark-complete.php" method="POST">
+                        <input type="hidden" id="singlequestion" name="singlequestion" value="1">
+                        <textarea placeholder="Add notes about this question..." ></textarea>
+                        Score <input type="number" id="score" name="score" min="0" max="20" >
+                        <input type="submit" value="Complete">
+                    </form>
+                    '
                 );
             }    
         ?>

@@ -173,3 +173,5 @@ move onto fixing questions parts issue
 
 now i need to go through a sample to check for other latex package issues - i can see many arrising from tikz so will especially check geomety questions
 for testing make page where can see all questions
+
+using text area rather than text for notes input

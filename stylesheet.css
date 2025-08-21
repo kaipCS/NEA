@@ -298,3 +298,11 @@ input[type=number]{
 ol{
   list-style-type: lower-roman;
 }
+
+#notes{
+  height:60px;
+}
+
+textarea{
+  min-width:100%;
+}
