@@ -139,3 +139,37 @@ had to do research for this   to realod with value in search bar  <script>
         window.location.href = window.location.pathname + '?sort=' + sortValue;
     }
     </script>
+
+to add just added straight latex into the webpage using research from earlier 
+Got error about questions parts
+Things initalised at the start of step papers needed to be at the start of mine aswell so looked back at raw papers from step database wesbite
+
+when testing without using questions parts, the lines are cut off
+
+with question parts need to enurmate so code to alter these bits
+
+svg vs chtml fixes it which uses an image rather than html
+
+issue of not keeping filters when reloading for displaying questions
+
+    <div id="question-preview" class="col-sm-4">
+        <div id ="latex-question">
+            <?php
+                if (isset($_SESSION["display-code"])){
+                    echo($_SESSION["display-code"]);
+                }
+                else{
+                    echo("Select a question to view it ");
+                }
+                unset($_SESSION["display-code"]);
+            ?>
+        </div>
+
+    </div>
+
+cannot resolve without major changes
+
+move onto fixing questions parts issue
+
+now i need to go through a sample to check for other latex package issues - i can see many arrising from tikz so will especially check geomety questions
+for testing make page where can see all questions

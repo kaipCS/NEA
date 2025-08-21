@@ -71,9 +71,8 @@ $stmt = $conn->prepare("CREATE TABLE usercreatespaper
 userid INT NOT NULL, 
 dateedited DATE,
 time INT(3),
-title VARCHAR(100), 
-details TEXT,
-singlequestion TINYINT(1) NOT NULL)
+title VARCHAR(100) NOT NULL, 
+details TEXT)
 ");
 $stmt->execute();
 $stmt->closeCursor();

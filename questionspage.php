@@ -5,13 +5,22 @@ include_once('connection.php');?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Questions</title>
-  <!-- Links to style sheet and bootstrap -->
-  <link rel="stylesheet" href="stylesheet.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Questions</title>
+    <!-- Links to style sheet and bootstrap -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: {'[+]': [['$', '$']]}
+        }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+
 </head>
 <body>
 
@@ -400,9 +409,48 @@ include_once('connection.php');?>
         window.location.href = window.location.pathname + '?sort=' + sortValue;
     }
     </script>
-
     <div id="question-preview" class="col-sm-4">
-        question
+        <div id ="latex-question">
+            <?php
+                if (isset($_SESSION["display-code"])){
+                    echo($_SESSION["display-code"]);
+                }
+                else{
+                    echo("Select a question to view it.");
+                }
+            ?>
+        </div>
+        <?php
+            if (isset($_SESSION["display-code"])){
+                if(isset($_SESSION["solution"])){
+                    echo("<a href = " .$_SESSION["solution"] . "> Link to solution </a>" );
+                }
+                else{
+                    echo("No solution is avaliable for this question.");
+                }
+            
+            unset($_SESSION["display-code"]);
+            unset($_SESSION["solution"]);
+
+                echo('
+                    <form action="add-to-paper.php" method="POST">
+                        Add to paper 
+                        
+                        <select name="dropdown">');
+                    
+                        $stmt = $conn->prepare("SELECT title FROM usercreatespaper WHERE userid = :userid");
+                        $stmt->bindParam(':userid', $_SESSION["userid"]);
+                        $stmt->execute();
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            echo ('<option value="' . $row["title"] . '">' .  $row["title"] . "</option>" );
+                        }
+                        
+                        echo('</select>
+                            <input type="submit" value="Add">
+                    </form>'
+                );
+            }    
+        ?>
     </div>
 </div>
 
