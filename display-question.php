@@ -4,17 +4,49 @@ include_once('connection.php');
 
 $questionid = $_GET['id']; 
 
-$stmt = $conn->prepare("SELECT solution, code FROM questions WHERE questionid = :questionid");
+$stmt = $conn->prepare("SELECT * FROM questions WHERE questionid = :questionid");
 $stmt->bindParam(':questionid', $questionid);
 $stmt->execute();
 $question = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$code = $question['code'];
+if ($question["paper"] == 1){
+    $_SESSION["paper"] = "I";
+}
+else if ($question["paper"] == 2){
+    $_SESSION["paper"] = "II";
+}
+else{
+    $_SESSION["paper"] = "III";
+}
+
+
+$_SESSION["year"] = $question["year"];
 
 if (!empty($question['solution'])) {
     #echo($question['solution']);
     $_SESSION["solution"] = $question["solution"];
 }
+
+$code = $question['code'];
+
+$stmt = $conn->prepare("SELECT * FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid AND complete = 1");
+$stmt->bindParam(':userid', $_SESSION["userid"] );
+$stmt->bindParam(':questionid', $questionid);
+$stmt->execute();
+$answer = $stmt->fetch(PDO::FETCH_ASSOC); 
+
+#print_r($answer);
+if ($answer) {
+    $_SESSION["complete"] = 1;
+    if (isset($answer["note"]) and !empty($answer["note"])){
+        $_SESSION["note"] = $answer["note"];
+    } 
+    if (isset($answer["mark"]) and !empty($answer["mark"])){
+        $_SESSION["mark"] = $answer["mark"];
+    }
+}
+
+
 
 if (str_contains($code, "\begin{questionparts}")) {
     $sections1 = explode("\begin{questionparts}", $code);
@@ -41,6 +73,7 @@ else{
     $_SESSION["display-code"] = $code;
 }
 
+$_SESSION["questionid"] = $questionid;
 
 header('Location: questionspage.php');
 exit();

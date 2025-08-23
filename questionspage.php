@@ -421,12 +421,18 @@ include_once('connection.php');?>
             ?>
         </div>
         <?php
+
             if (isset($_SESSION["display-code"])){
+                echo ("STEP " . $_SESSION["paper"] . " " . $_SESSION["year"] . ". ");
+
+                unset($_SESSION["year"]);
+                unset($_SESSION["paper"]);
+    
                 if(isset($_SESSION["solution"])){
                     echo("<a href = " .$_SESSION["solution"] . "> Link to solution </a> " );
                 }
                 else{
-                    echo("No solution is avaliable for this question. ");
+                    echo(" No solution is avaliable for this question. ");
                 }
             
             unset($_SESSION["display-code"]);
@@ -448,15 +454,41 @@ include_once('connection.php');?>
                         echo('</select>
                             <input type="submit" value="Add">
                     </form>
-                    <br>
-                    <form action "mark-complete.php" method="POST">
-                        <input type="hidden" id="singlequestion" name="singlequestion" value="1">
-                        <textarea placeholder="Add notes about this question..." ></textarea>
-                        Score <input type="number" id="score" name="score" min="0" max="20" >
-                        <input type="submit" value="Complete">
-                    </form>
-                    '
-                );
+                    <br>');
+                    if (isset($_SESSION["complete"])) {
+                        if (isset($_SESSION["note"])) {
+                            echo 'Note: ' . $_SESSION["note"];
+                            echo "<br>";
+                            unset($_SESSION["note"]);
+                        }
+                        if (isset($_SESSION["mark"])) {
+                            echo 'Score: ' . $_SESSION["mark"];
+                            unset($_SESSION["mark"]);
+                        }
+                        unset($_SESSION["complete"]);
+
+                        echo '
+                            <form action="uncomplete.php" method="POST">
+                                <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
+                                <input type="submit" value="Uncomplete">
+                            </form>
+                        ';
+
+                        unset($_SESSION["questionid"] );
+                    }
+                    
+                    else{
+                        echo '
+                            <form action="mark-complete.php" method="POST">
+                                <input type="hidden" id="singlequestion" name="singlequestion" value="1">
+                                <textarea name="note" placeholder="Add notes about this question..." ></textarea>
+                                Score <input type="number" id="score" name="score" min="0" max="20" >
+                                <input type="submit" value="Complete">
+                            </form>
+                        ';
+                
+                    }
+                    
             }    
         ?>
     </div>

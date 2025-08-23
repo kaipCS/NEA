@@ -175,3 +175,11 @@ now i need to go through a sample to check for other latex package issues - i ca
 for testing make page where can see all questions
 
 using text area rather than text for notes input
+
+last thing to do: debug the late
+
+impossible to get the diagrams to work so had to use as images - seemed like all used \begin{center} so searched the database and downloaded images
+
+-put title back on question preview
+
+sorting not working for result of search
