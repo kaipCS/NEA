@@ -210,99 +210,63 @@ hr {
   background-color:grey !important;
 }
 
+/* Questions page container */
 #questions-page{
   gap:20px;
   display: flex;
 }
 
+/* Questions list column */
 #questions-list{
   background-color:white;
 }
 
-#search{
-  min-width: 245px;
+/* Question preview column */
+#question-preview{
+  background-color:white;
 }
 
-.option-row {
-  display: flex;
-  align-items: center;            /* vertically center */
-  justify-content: space-between; /* label left, button right */
-  width: 100%;
+/* Search input text box */
+#search{ 
+  min-width: 245px !important;
 }
 
-.option-row label {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;                   /* allow label to take available space */
+/* Year input text boxes */
+.year{
+  min-width: 75px !important;
 }
 
-.collapse-button {
-  background: none;
-  border-style: none;
-  padding: 0;
-  margin-left: auto;
-}
-
+/* Checkbox labels */
 label{
   font-weight:normal !important;
 }
 
+/* List of pure topics */
 #pure-topics{
-  display: none;
   margin-left:20px;
   font-size:14px;
 }
 
-
+/* List of mechanics topics */
 #mech-topics{
-  display:none;
   margin-left:20px;
   font-size:14px;
 }
 
-
+/* List of probability topics */
 #stats-topics{
-  display:none;
   margin-left:20px;
   font-size:14px;
 }
 
-input[type=number]{
-  max-width:75px;
+/* Button by each area to display topics */
+.collapse-button {
+  background: none;
+  border-style: none;
+  float:right;
 }
 
-.question-row{
-  padding:5px;
-  border-style:solid;
-  border-width: 1px;
-  border-color: grey;
-  cursor:pointer;
-}
-
-.question-row:hover{
-  background-color: #ADE1FF;
-}
-
-#question-preview{
-  background-color: white;
-}
-
-#latex-question{
-  padding:10px;
-  border-style:solid;
-  border-width: 1px;
-  border-color: grey;
-  font-size: 16px;
-}
-
-ol{
-  list-style-type: lower-roman;
-}
-
-#notes{
-  height:60px;
-}
-
-textarea{
-  min-width:100%;
+/* Label for area checkbox including a button*/
+.area-button{
+  width:100%;
 }

@@ -34,7 +34,7 @@ include_once('connection.php');?>
     <div class="col-sm-4">
         <div class="error-message">
             <?php
-                if ($_SESSION['error'] == "emptySearch"){
+                if ($_SESSION["error"] == "emptySearch"){
                     echo("Please enter a search.");
                 }
             ?>
@@ -63,12 +63,33 @@ include_once('connection.php');?>
                     </label>
                 </div>
 
-                <div id="pure-topics">
+                <div id="pure-topics" style="display: none;">
                     <!-- topic checkboxes -->
                 </div>
             </div>
 
             <script>
+                function changeCheckbox(){
+                    if (!checkbox.checked) {
+                        pureCheckbox.checked = false;
+                    }
+                }
+
+                function pureChange(){
+                        if (pureCheckbox.checked){
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topics[]"]');
+                            allTopicCheckboxes.forEach(checkbox => {
+                                checkbox.checked = true;
+                            });
+                        }
+                        else{
+                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topics[]"]');
+                            allTopicCheckboxes.forEach(checkbox => {
+                                checkbox.checked = false;
+                            });
+                        }
+                    }
+
                 const pureCheckbox = document.getElementById("pure-checkbox");
                 const pureTopics = document.getElementById("pure-topics");
                 const pureButton = document.getElementById("toggle-pure-topics");
@@ -84,41 +105,20 @@ include_once('connection.php');?>
                         checkbox.name = "pure-topics[]";
                         checkbox.value = topic;
                         checkbox.checked = true;
-                        
-                        function changeCheckbox(){
-                            if (!checkbox.checked) {
-                                pureCheckbox.checked = false;
-                            }
-                        }
 
                         checkbox.addEventListener("change", changeCheckbox);
 
                         const topicLabel = document.createElement("label");
                         topicLabel.appendChild(checkbox);
-                        topicLabel.appendChild(document.createTextNode(` ${topic} (${count})`));
+                        topicLabel.appendChild(document.createTextNode(topic + " (" + count + ")"));
                         pureTopics.appendChild(topicLabel);
                         pureTopics.appendChild(document.createElement("br"));
-                    }
-
-                    function pureChange(){
-                        if (pureCheckbox.checked){
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topics[]"]');
-                            allTopicCheckboxes.forEach(checkbox => {
-                                checkbox.checked = true;
-                            });
-                        }
-                        else{
-                            const allTopicCheckboxes = document.querySelectorAll('input[name="pure-topics[]"]');
-                            allTopicCheckboxes.forEach(checkbox => {
-                                checkbox.checked = false;
-                            });
-                        }
                     }
                 
                     pureCheckbox.addEventListener("change", pureChange);
                     
                     function displayTopics(){
-                        if (pureTopics.style.display == "none"  || pureTopics.style.display == ""){
+                        if (pureTopics.style.display == "none" ){
                             pureTopics.style.display = "block";
                             pureButton.textContent = "▼";
                         }
@@ -292,7 +292,7 @@ include_once('connection.php');?>
             <input type="checkbox" name="exclude-complete" value="yes"> Exclude completed questions <br>
             <br>
             <input type="submit" value="Apply filters">
-            </form>
+        </form>
 
         <br>
     </div>
@@ -455,40 +455,41 @@ include_once('connection.php');?>
                             <input type="submit" value="Add">
                     </form>
                     <br>');
-                    if (isset($_SESSION["complete"])) {
-                        if (isset($_SESSION["note"])) {
-                            echo 'Note: ' . $_SESSION["note"];
-                            echo "<br>";
-                            unset($_SESSION["note"]);
-                        }
-                        if (isset($_SESSION["mark"])) {
-                            echo 'Score: ' . $_SESSION["mark"];
-                            unset($_SESSION["mark"]);
-                        }
-                        unset($_SESSION["complete"]);
+                    if ($_SESSION["role"] == 0){
+                        if (isset($_SESSION["complete"])) {
+                            if (isset($_SESSION["note"])) {
+                                echo 'Note: ' . $_SESSION["note"];
+                                echo "<br>";
+                                unset($_SESSION["note"]);
+                            }
+                            if (isset($_SESSION["mark"])) {
+                                echo 'Score: ' . $_SESSION["mark"];
+                                unset($_SESSION["mark"]);
+                            }
+                            unset($_SESSION["complete"]);
 
-                        echo '
-                            <form action="uncomplete.php" method="POST">
-                                <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
-                                <input type="submit" value="Uncomplete">
-                            </form>
-                        ';
+                            echo '
+                                <form action="uncomplete.php" method="POST">
+                                    <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
+                                    <input type="submit" value="Uncomplete">
+                                </form>
+                            ';
 
-                        unset($_SESSION["questionid"] );
-                    }
+                            unset($_SESSION["questionid"] );
+                        }
+                        
+                        else{
+                            echo '
+                                <form action="mark-complete.php" method="POST">
+                                    <input type="hidden" id="singlequestion" name="singlequestion" value="1">
+                                    <textarea name="note" placeholder="Add notes about this question..." ></textarea>
+                                    Score <input type="number" id="score" name="score" min="0" max="20" >
+                                    <input type="submit" value="Complete">
+                                </form>
+                            ';
                     
-                    else{
-                        echo '
-                            <form action="mark-complete.php" method="POST">
-                                <input type="hidden" id="singlequestion" name="singlequestion" value="1">
-                                <textarea name="note" placeholder="Add notes about this question..." ></textarea>
-                                Score <input type="number" id="score" name="score" min="0" max="20" >
-                                <input type="submit" value="Complete">
-                            </form>
-                        ';
-                
+                        }
                     }
-                    
             }    
         ?>
     </div>

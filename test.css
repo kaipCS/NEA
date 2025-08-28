@@ -1,0 +1,38 @@
+
+  input[type=number]{
+    max-width:75px;
+  }
+  
+  .question-row{
+    padding:5px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: grey;
+    cursor:pointer;
+  }
+  
+  .question-row:hover{
+    background-color: #ADE1FF;
+  }
+  
+  
+  #latex-question{
+    padding:10px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: grey;
+    font-size: 16px;
+  }
+  
+  ol{
+    list-style-type: lower-roman;
+  }
+  
+  #notes{
+    height:60px;
+  }
+  
+  textarea{
+    min-width:100%;
+  }
+  

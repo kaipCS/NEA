@@ -1,66 +1,3 @@
-id issue with making search bar not whole way and for years aswell which is exact for 4 digit year
-make 1986 and 2018 values not placeholders so can always filter
-and also step default checked
-
-issue with lots of divs and labels for form 
-
-label not bold issue important
-
-<?php
-$pure_topics= array();
-$mech_topics= array();
-$stats_topics= array();
-
-include_once ("connection.php");
-
-$stmt = $conn -> prepare("SELECT * FROM questions ");
-    $stmt -> execute();
-    while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-        $topic = $row["topic"];
-        if ($row["area"] = 0){
-            if (!in_array($topic, $pure_topics)) {
-                $pure_topics[] = $topic;
-            }
-        }
-        if ($row["area"] = 1){
-            if (!in_array($topic, $mech_topics)) {
-                $mech_topics[] = $topic;
-            }
-        }
-        if ($row["area"] = 2){
-            if (!in_array($topic, $stats_topics)) {
-                $stats_topics[] = $topic;
-            }
-        }
-    } 
-
-print_r($pure_topics);
-?>
-prints nothing - as only used single equals
-
-issue of not in being python syntax
-
-              <?php
-                    if ($status == TRUE){
-                        foreach ($pure_topics as $topic => $count) {
-                            echo '<input type="checkbox" name="topic" value="' . ($topic) . '" checked> ' . ($topic) . " ($count) <br>";
-                        }
-                    }
-                    else{
-                        foreach ($pure_topics as $topic => $count) {
-                            echo '<input type="checkbox" name="topic" value="' . ($topic) . '"> ' . ($topic) . " ($count) <br>";
-                        }
-                    }
-                ?>
-                </div>
-
-
-had the same name for things across pure and mech so needed to specify
-
-have to double click to open - because has to initalise to none as the other none is the style sheet so added an or
-
-post was only catching last checked
-
 for filter validation need to use isset rather than empty
 
 header not working beacuse was printing stuff to test
@@ -180,6 +117,6 @@ last thing to do: debug the late
 
 impossible to get the diagrams to work so had to use as images - seemed like all used \begin{center} so searched the database and downloaded images
 
--put title back on question preview
+ask RIC if okay if just rpoof of concept: only fix question parts as affect majoirty and that is neccesary and images as the pdf builder should work fine with this being only issue
 
 sorting not working for result of search
