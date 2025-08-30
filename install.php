@@ -119,7 +119,7 @@ mark INT(2),
 note TEXT,
 complete TINYINT(1) NOT NULL,
 singlequestion TINYINT(1) NOT NULL, 
-datecompleted DATE,
+datecompleted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY(userid, questionid, paperid))
 ");
 $stmt->execute();

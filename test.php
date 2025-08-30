@@ -45,7 +45,7 @@ include_once('connection.php');?>
         <br>
 
         <!-- Filters -->
-        <form action="test-filters.php"  method="POST">
+        <form action="fiter-questions.php"  method="POST">
 
             <!-- Paper (STEP I,II or III) -->
             <input type="checkbox" name="papers[]" value="1" checked> STEP I <br>
@@ -56,7 +56,8 @@ include_once('connection.php');?>
             <!-- Year range -->
             Year:
             <br>
-            from  <input class="year" type="text" name="from" value="1986"> to  <input class="year" type="text" name="to" value="2018">
+            from  <input class="year" type="number" name="from" value="1986" min="1986" max="2018"> 
+            to  <input class="year" type="number" name="to" value="2018" min="1986" max="2018">
             <br>
             <br>
 

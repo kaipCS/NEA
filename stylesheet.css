@@ -231,11 +231,6 @@ hr {
   min-width: 245px !important;
 }
 
-/* Year input text boxes */
-.year{
-  min-width: 75px !important;
-}
-
 /* Checkbox labels */
 label{
   font-weight:normal !important;
@@ -269,4 +264,9 @@ label{
 /* Label for area checkbox including a button*/
 .area-button{
   width:100%;
+}
+
+/* Number input text boxes */
+input[type=number]{
+  max-width:75px;
 }
