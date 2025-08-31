@@ -45,7 +45,7 @@ include_once('connection.php');?>
         <br>
 
         <!-- Filters -->
-        <form action="fiter-questions.php"  method="POST">
+        <form action="filter-questions.php"  method="POST">
 
             <!-- Paper (STEP I,II or III) -->
             <input type="checkbox" name="papers[]" value="1" checked> STEP I <br>
@@ -371,8 +371,148 @@ include_once('connection.php');?>
 
     <!-- Questions list column -->
     <div id="questions-list" class="col-sm-4">
+
+        <div id="sort-clear">
+            <!-- Sort questions -->
+            <form id="optionForm" action="sort-questions.php" method="POST">
+                Sort by:
+                <select name="sort" onchange="changeOption()">
+                    <option value="oldest">Oldest First</option>
+                    <option value="newest">Newest First</option>
+                </select>
+            </form>
+
+            <!-- Submit sort form automatically if it is changed -->
+            <script>
+                function changeOption() {
+                    document.getElementById("optionForm").submit();
+                }
+            </script>
+
+            <form action="reset.php">
+                <input id ="clear-filters" type="submit" value="Clear filters"> 
+            </form>
+        </div>
+        <br>
+
         <?php
-            print_r($_SESSION["results"]);
+            #set sort to default oldest or depending on session
+            $order = "ASC";
+            if(isset($_SESSION["sort"]) && $_SESSION["sort"] == "newest"){
+                $order = "DESC";
+            }
+
+            #if results have been set then display these, otherwise show all questions
+            if(isset($_SESSION["results"])){
+                #print_r($_SESSION["results"]);
+
+                #implode results list
+                $results = $_SESSION["results"];
+                $results = "(" . implode(",", $results) .")";
+
+                #search for questions in results
+                $sql = "SELECT * FROM questions WHERE questionid IN $results ORDER BY year $order, paper ASC ";
+
+                #display question
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+                    $paper = $row["paper"];
+
+                    #correct the format of paper
+                    switch ($paper) {
+                        case 1:
+                            $paper = "I";
+                            break;
+                        case 2:
+                            $paper = "II";
+                            break;
+                        case 3:
+                            $paper = "III";
+                            break;
+                    }
+
+                    $questionid = $row["questionid"];
+
+                    #search for the question's keywords
+                    $sql = "SELECT * FROM questionhaskeyword WHERE questionid = $questionid";
+
+                    $questions = $conn->query($sql);
+
+                    #store results in array
+                    $keywords= [];
+
+                    while ($keyword = $questions->fetch(PDO::FETCH_ASSOC)) {
+                        $keywords[] = $keyword["keyword"];
+                    }
+
+                    #implode keywords into list
+                    $keywords = implode(", ", $keywords);
+
+                    echo(" 
+                    <form action='display-question.php' method = 'POST' class ='question-form'>
+                        <input type = 'hidden' name='questionid' value='" . $questionid . "'>
+                        <button type = 'submit' class='question-button' >
+                            STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
+                                <div class='grey-text'>" . $keywords . "</div>
+                        </button>
+                    </form>");
+                }
+                
+            }
+            else{
+                #select all questions as no search made
+                $sql = "SELECT * FROM questions ORDER BY year $order, paper ASC ";
+
+                $result = $conn->query($sql);
+
+                #display question
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+                    $paper = $row["paper"];
+
+                    #correct the format of paper
+                    switch ($paper) {
+                        case 1:
+                            $paper = "I";
+                            break;
+                        case 2:
+                            $paper = "II";
+                            break;
+                        case 3:
+                            $paper = "III";
+                            break;
+                    }
+
+                    $questionid = $row["questionid"];
+
+                    #search for the question's keywords
+                    $sql = "SELECT * FROM questionhaskeyword WHERE questionid = $questionid";
+
+                    $questions = $conn->query($sql);
+
+                    #store results in array
+                    $keywords= [];
+
+                    while ($keyword = $questions->fetch(PDO::FETCH_ASSOC)) {
+                        $keywords[] = $keyword["keyword"];
+                    }
+                    
+                    #implode keywords into list
+                    $keywords = implode(", ", $keywords);
+
+                    echo("  
+                    <form action='display-question.php' method = 'POST' class ='question-form'>
+                        <input type = 'hidden' name='questionid' value='" . $questionid . "'>
+                        <button type = 'submit' class='question-button' >
+                            STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
+                                <div class='grey-text'>" . $keywords . "</div>
+                        </button>
+                    </form>");
+
+                }
+            }
         ?>
     </div>
 

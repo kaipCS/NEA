@@ -1,20 +1,3 @@
-when doing exlcluding for step I pure - include some mech questions?/ same thing for not excluding, clearly filtering is going wrong ** 
-
-echo "
-                        <div class='button question-row' onclick=\"window.location.href='display-question.php?id={$row['questionid']}'\">
-                            STEP $paper {$row['year']} {$row['topic']}
-                            <div class='grey-text'>$keywordList</div>
-                        </div>
-                        <br>
-                        ";
-had to concanate differently as the html was not working when split up 
-
-had to do research for this   to realod with value in search bar  <script>
-    function sortQuestions(sortValue) {
-        window.location.href = window.location.pathname + '?sort=' + sortValue;
-    }
-    </script>
-
 to add just added straight latex into the webpage using research from earlier 
 Got error about questions parts
 Things initalised at the start of step papers needed to be at the start of mine aswell so looked back at raw papers from step database wesbite
@@ -51,10 +34,6 @@ for testing make page where can see all questions
 
 using text area rather than text for notes input
 
-last thing to do: debug the late
-
 impossible to get the diagrams to work so had to use as images - seemed like all used \begin{center} so searched the database and downloaded images
 
 ask RIC if okay if just rpoof of concept: only fix question parts as affect majoirty and that is neccesary and images as the pdf builder should work fine with this being only issue
-
-sorting not working for result of search

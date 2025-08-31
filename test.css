@@ -1,16 +1,4 @@
-  .question-row{
-    padding:5px;
-    border-style:solid;
-    border-width: 1px;
-    border-color: grey;
-    cursor:pointer;
-  }
-  
-  .question-row:hover{
-    background-color: #ADE1FF;
-  }
-  
-  #latex-question{
+#latex-question{
     padding:10px;
     border-style:solid;
     border-width: 1px;
@@ -29,4 +17,3 @@
   textarea{
     min-width:100%;
   }
-  

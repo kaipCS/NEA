@@ -270,3 +270,37 @@ label{
 input[type=number]{
   max-width:75px;
 }
+
+/* Container for question list button */
+.question-form{
+  width:100%;
+  margin-bottom: 10px;
+}
+
+/* Question list button*/
+.question-button{
+  width:100%;
+  border-radius:0px;
+  border-width:1px;
+  border-color:gray;
+  background-color:white;
+  text-align:left;
+}
+
+/* Question button when hovered over */
+.question-button:hover{
+  background-color: #ADE1FF;
+}
+
+/* Button to clear filters */
+#clear-filters{
+  color:red;
+  float:right;
+}
+
+/* Row including sort and clear filters button */
+#sort-clear{
+  text-align: center;
+  display:flex;
+  gap:10px;
+}

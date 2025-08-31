@@ -147,7 +147,7 @@ if(!empty($_POST["papers"])){
         #print_r($questions);
 
         #redirect back to questions page
-        header("Location: questionspage.php");
+        header("Location: test.php");
         exit();   
     }
 }
@@ -158,7 +158,7 @@ if(!empty($_POST["papers"])){
 $_SESSION["results"] = [];
 
 #redirect back to questions page
-header("Location: questionspage.php");
+header("Location: test.php");
 exit();   
 
 ?>
