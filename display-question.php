@@ -2,7 +2,7 @@
 session_start();
 include_once('connection.php');
 
-$questionid = $_GET['id']; 
+$questionid = $_POST['id']; 
 
 $diagrams = [2,6,11,50,60,84,
             107,139,145,165,193,204,
@@ -139,7 +139,7 @@ $_SESSION["display-code"] = $code;
 
 $_SESSION["questionid"] = $questionid;
 
-header('Location: questionspage.php');
+header('Location: test.php');
 exit();
 ?>
 

@@ -12,6 +12,15 @@ include_once('connection.php');?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: {'[+]': [['$', '$']]}
+        }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-svg.js"></script>
+
 
 </head>
 <body>
@@ -503,7 +512,7 @@ include_once('connection.php');?>
                     $keywords = implode(", ", $keywords);
 
                     echo("  
-                    <form action='display-question.php' method = 'POST' class ='question-form'>
+                    <form action='display-test.php' method = 'POST' class ='question-form'>
                         <input type = 'hidden' name='questionid' value='" . $questionid . "'>
                         <button type = 'submit' class='question-button' >
                             STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
@@ -518,7 +527,17 @@ include_once('connection.php');?>
 
     <!-- Question preview column -->
     <div id="question-preview" class="col-sm-4">
-        Question preview
+        <div class="latex-question">
+            <?php
+                if (isset($_SESSION["display-code"])){
+                    echo($_SESSION["display-code"]);
+                    unset($_SESSION["display-code"]);
+                }
+                else{
+                    echo("Select a question to view it.");
+                }
+            ?>
+        </div>
     </div>
 </div>
 

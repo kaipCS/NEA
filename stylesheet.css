@@ -304,3 +304,24 @@ input[type=number]{
   display:flex;
   gap:10px;
 }
+
+/* Preview of contents of question selected */
+.latex-question{
+  padding:10px;
+  border-style:solid;
+  border-width: 1px;
+  border-color: grey;
+  font-size: 16px;
+}
+
+/* Ordered list */
+ol{
+  list-style-type: lower-roman;
+}
+
+/* Diagram images*/
+img{
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}

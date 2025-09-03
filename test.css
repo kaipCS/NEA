@@ -1,14 +1,7 @@
-#latex-question{
-    padding:10px;
-    border-style:solid;
-    border-width: 1px;
-    border-color: grey;
-    font-size: 16px;
-  }
-  
-  ol{
-    list-style-type: lower-roman;
-  }
+
+ol{
+  list-style-type: lower-roman;
+}
   
   #notes{
     height:60px;
