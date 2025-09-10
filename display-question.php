@@ -150,6 +150,6 @@ if (str_contains($code, "\begin{questionparts}")) {
 $_SESSION["display-code"] = $code;
 
 #redirect back to questions page
-header('Location: test.php');
+header('Location: questionspage.php');
 exit();
 ?>
