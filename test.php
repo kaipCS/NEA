@@ -529,15 +529,109 @@ include_once('connection.php');?>
     <div id="question-preview" class="col-sm-4">
         <div class="latex-question">
             <?php
+                #if the user has selected a question 
                 if (isset($_SESSION["display-code"])){
                     echo($_SESSION["display-code"]);
                     unset($_SESSION["display-code"]);
+                echo ("</div>");
+
+                    #print the question paper and year
+                    echo ("STEP " . $_SESSION["paper"] . " " . $_SESSION["year"] . ". ");
+
+                    unset($_SESSION["year"]);
+                    unset($_SESSION["paper"]);
+        
+                    #if there is a solution avaliable, include it as a link
+                    if(isset($_SESSION["solution"])){
+                        echo("<a href = " .$_SESSION["solution"] . "> Link to solution </a> " );
+                        unset($_SESSION["solution"]);
+                    }
+                    else{
+                        echo(" No solution is avaliable for this question. ");
+                    }
+
+                    #form to add question to paper
+
+                    #find all titles of papers user has created
+                    $stmt = $conn->prepare("SELECT title FROM usercreatespaper WHERE userid = :userid");
+                    $stmt->bindParam(':userid', $_SESSION["userid"]);
+                    $stmt->execute();
+                    
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    
+                    if (count($rows) > 0) {
+                    echo('
+                    <form action="add-to-paper.php" method="POST">
+                        Add to paper 
+                        
+                        <select name="dropdown">');
+                        foreach ($rows as $row) {
+                            echo '<option value="' . $row["title"] . '">' . $row["title"] . '</option>';
+                        }
+                                        
+                        echo('</select>
+                        <input type="submit" value="Add">
+                    </form>
+                    <br>');
+                    } 
+                    
+                    #if no titles are found, direct the user to create a paper 
+                    else {
+                        echo "<br> Create a paper in the papers tab to add questions like this to it.";
+                    }
+
+
+                    #only allow to the user to complete a question is they are a student
+                    if ($_SESSION["role"] == 0){
+
+                        #if the question selected has already been complete 
+                        if (isset($_SESSION["complete"])) {
+
+                            #display the note if they added one 
+                            if (isset($_SESSION["note"])) {
+                                echo 'Note: ' . $_SESSION["note"];
+                                echo "<br>";
+                                unset($_SESSION["note"]);
+                            }
+
+                            #display the mark if they added one 
+                            if (isset($_SESSION["mark"])) {
+                                echo 'Score: ' . $_SESSION["mark"];
+                                unset($_SESSION["mark"]);
+                            }
+                            unset($_SESSION["complete"]);
+
+                            #form to uncomplete the question with hidden input in post 
+                            echo '
+                                <form action="uncomplete.php" method="POST">
+                                    <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
+                                    <input type="submit" value="Uncomplete">
+                                </form>
+                            ';
+
+                            unset($_SESSION["questionid"] );
+                        }
+                        
+                        #if the user had no completed the question, show them the form to do so
+                        else{
+                            echo '
+                                <form action="mark-complete.php" method="POST">
+                                    <input type="hidden" id="singlequestion" name="singlequestion" value="1">
+                                    <textarea name="note" placeholder="Add notes about this question..." ></textarea>
+                                    Score <input type="number" id="score" name="score" min="0" max="20" >
+                                    <input type="submit" value="Complete">
+                                </form>
+                            ';
+                    
+                        }
+                    }
+
                 }
                 else{
                     echo("Select a question to view it.");
                 }
             ?>
-        </div>
+
     </div>
 </div>
 

@@ -325,3 +325,8 @@ img{
   display: block;
   margin: 0 auto;
 }
+
+/* Text area to add notes about question*/
+textarea{
+  min-width:100%;
+}
