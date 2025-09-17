@@ -553,20 +553,21 @@ include_once('connection.php');?>
                     #form to add question to paper
 
                     #find all titles of papers user has created
-                    $stmt = $conn->prepare("SELECT title FROM usercreatespaper WHERE userid = :userid");
+                    $stmt = $conn->prepare("SELECT * FROM usercreatespaper WHERE userid = :userid");
                     $stmt->bindParam(':userid', $_SESSION["userid"]);
                     $stmt->execute();
                     
                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     
+                
                     if (count($rows) > 0) {
                     echo('
                     <form action="add-to-paper.php" method="POST">
                         Add to paper 
-                        
-                        <select name="dropdown">');
+                        <input type="hidden" name="questionid" value="' . $_SESSION["questionid"] . '">
+                        <select name="paper">');
                         foreach ($rows as $row) {
-                            echo '<option value="' . $row["title"] . '">' . $row["title"] . '</option>';
+                            echo '<option value="' . $row["paperid"] . '">' . $row["title"] . '</option>';
                         }
                                         
                         echo('</select>
@@ -574,12 +575,13 @@ include_once('connection.php');?>
                     </form>
                     <br>');
                     } 
-                    
+
                     #if no titles are found, direct the user to create a paper 
                     else {
                         echo "<br> Create a paper in the papers tab to add questions like this to it.";
                     }
 
+                    unset($_SESSION["questionid"]);
 
                     #only allow to the user to complete a question is they are a student
                     if ($_SESSION["role"] == 0){
@@ -625,7 +627,8 @@ include_once('connection.php');?>
                     
                         }
                     }
-
+                
+                    
                 }
                 else{
                     echo("Select a question to view it.");

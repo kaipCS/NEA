@@ -69,8 +69,8 @@ $stmt->closeCursor();
 $stmt = $conn->prepare("CREATE TABLE usercreatespaper 
 (paperid INT AUTO_INCREMENT PRIMARY KEY,
 userid INT NOT NULL, 
-dateedited DATE,
-time INT(3),
+dateedited TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+time INT(3) NOT NULL,
 title VARCHAR(100) NOT NULL, 
 details TEXT)
 ");

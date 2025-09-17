@@ -2,8 +2,9 @@
 session_start();
 include_once('connection.php');
 
-#get question id of code from POST
+#get question id of code from POST and add into session
 $questionid = $_POST["questionid"]; 
+$_SESSION["questionid"] = $questionid;
 
 #find question in database
 $stmt = $conn->prepare("SELECT * FROM questions WHERE questionid = :questionid");

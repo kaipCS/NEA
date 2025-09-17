@@ -56,7 +56,7 @@ else{
     #print_r($results);
 
     #redirect back to questions page
-    header('Location: test.php');
+    header('Location: questionspage.php');
     exit(); 
 }
 ?>
