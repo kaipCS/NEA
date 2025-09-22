@@ -5,7 +5,6 @@ include_once('connection.php');
 
 $paperid = $_POST["paper"];
 $questionid = $_POST["questionid"];
-$singlequestion = 0;
 #print_r($_POST);
 
 #search for all questions in the paper
@@ -27,12 +26,11 @@ if(!(in_array($questionid,$questions))){
     }
 
     #add into question in paper table to add to the paper
-    $stmt = $conn->prepare("INSERT INTO questioninpaper(paperid,questionid,questionnumber,singlequestion)
-    VALUES (:paperid,:questionid,:questionnumber,:singlequestion)");
+    $stmt = $conn->prepare("INSERT INTO questioninpaper(paperid,questionid,questionnumber)
+    VALUES (:paperid,:questionid,:questionnumber)");
     $stmt->bindParam(':paperid', $paperid);
     $stmt->bindParam(':questionid', $questionid);
     $stmt->bindParam(':questionnumber', $questionNum);
-    $stmt->bindParam(':singlequestion', $singlequestion);
     $stmt->execute();
 }
 #redirect to questions page 

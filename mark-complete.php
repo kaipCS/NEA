@@ -47,8 +47,8 @@ else{
 }
 
 #add question into user does paper does question table
-$sql = "INSERT INTO userdoespaperdoesquestion(userid,questionid,paperid, mark, note, singlequestion) 
-VALUES ($userid, $questionid, $paperid, $mark, $note, $singlequestion)";
+$sql = "INSERT INTO userdoespaperdoesquestion(userid,questionid,paperid, mark, note) 
+VALUES ($userid, $questionid, $paperid, $mark, $note)";
 #echo($sql);
 $result = $conn->query($sql);
 

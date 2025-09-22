@@ -606,7 +606,7 @@ include_once('connection.php');?>
                             #form to uncomplete the question with hidden input in post 
                             echo '
                                 <form action="uncomplete.php" method="POST">
-                                    <input type="hidden" id="paperid" name="paperid" value="' . $row["paperid"]. '">
+                                    <input type="hidden" id="singlequestion" name="singlequestion" value=1>
                                     <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
                                     <input type="submit" value="Uncomplete">
                                 </form>

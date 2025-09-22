@@ -100,8 +100,7 @@ $stmt->closeCursor();
 $stmt = $conn->prepare("CREATE TABLE questioninpaper 
 (paperid INT NOT NULL,
 questionid INT NOT NULL,
-questionnumber INT(3) NOT NULL,
-singlequestion TINYINT(1) NOT NULL, 
+questionnumber INT(3) NOT NULL
 PRIMARY KEY(questionid, paperid))
 ");
 $stmt->execute();
@@ -118,7 +117,6 @@ questionid INT NOT NULL,
 paperid INT NOT NULL,
 mark INT(2),
 note TEXT,
-singlequestion TINYINT(1) NOT NULL, 
 datecompleted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY(userid, questionid, paperid))
 ");

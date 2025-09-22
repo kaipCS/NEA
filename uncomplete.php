@@ -2,31 +2,47 @@
 session_start();
 include_once('connection.php');
 
+#get ids from post and session
 $questionid = $_POST["questionid"];
 $userid = $_SESSION["userid"];
-$paperid = $_SESSION["paperid"];
-#echo($userid);
-#echo($paperid);
+$singlequestion = $_POST["singlequestion"];
 
-#delete from user creates paper table
+#check if the question is from a single question paper
+if($singlequestion == 1){
+    #find paper id
+    $stmt = $conn->prepare("SELECT paperid FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid");
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':questionid', $questionid);
+    $stmt->execute();
+    $paperid = $stmt->fetchColumn();
+    #echo($paperid);
 
-$sql= "DELETE FROM usercreatespaper WHERE userid = $userid AND paperid = $paperid";
-$result = $conn->query($sql);
+    #delete record for user does paper does question table
+    $stmt = $conn->prepare("DELETE FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid");
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':questionid', $questionid);
+    $stmt->execute();
 
-#delete from user does paper table
+    #delete record from user creates paper table
+    $stmt = $conn->prepare("DELETE FROM usercreatespaper WHERE userid = :userid AND paperid = :paperid");
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':paperid', $paperid);
+    $stmt->execute();
 
-$sql= "DELETE FROM userdoespaper WHERE userid = $userid AND paperid = $paperid";
-$result = $conn->query($sql);
+    #delete record from user does paper table
+    $stmt = $conn->prepare("DELETE FROM userdoespaper WHERE userid = :userid AND paperid = :paperid");
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':paperid', $paperid);
+    $stmt->execute();
 
-#delete from user does paper does question table
+    #unset complete variable in the session
+    unset($_SESSION["complete"]);
 
-$sql= "DELETE FROM userdoespaperdoesquestion WHERE userid = $userid AND paperid = $paperid AND questionid= $questionid";
-$result = $conn->query($sql);
-
-#unset complete flag
-unset($_SESSION["complete"]);
-
-#redirect to questions page 
-header('Location: display-question.php');
-exit();
+    #redirect to questions page 
+    header('Location: display-question.php');
+    exit();
+}   
+else{
+    echo("not a single question");
+}
 ?>
