@@ -552,9 +552,11 @@ include_once('connection.php');?>
 
                     #form to add question to paper
 
-                    #find all titles of papers user has created
-                    $stmt = $conn->prepare("SELECT * FROM usercreatespaper WHERE userid = :userid");
+                    #find all titles of papers a user has created (that are not single questions)
+                    $singlequestion = 0;
+                    $stmt = $conn->prepare("SELECT * FROM usercreatespaper WHERE userid = :userid AND singlequestion = :singlequestion");
                     $stmt->bindParam(':userid', $_SESSION["userid"]);
+                    $stmt->bindParam(':singlequestion', $singlequestion);
                     $stmt->execute();
                     
                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -581,8 +583,6 @@ include_once('connection.php');?>
                         echo "<br> Create a paper in the papers tab to add questions like this to it.";
                     }
 
-                    unset($_SESSION["questionid"]);
-
                     #only allow to the user to complete a question is they are a student
                     if ($_SESSION["role"] == 0){
 
@@ -606,12 +606,11 @@ include_once('connection.php');?>
                             #form to uncomplete the question with hidden input in post 
                             echo '
                                 <form action="uncomplete.php" method="POST">
+                                    <input type="hidden" id="paperid" name="paperid" value="' . $row["paperid"]. '">
                                     <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
                                     <input type="submit" value="Uncomplete">
                                 </form>
                             ';
-
-                            unset($_SESSION["questionid"] );
                         }
                         
                         #if the user had no completed the question, show them the form to do so
@@ -619,6 +618,7 @@ include_once('connection.php');?>
                             echo '
                                 <form action="mark-complete.php" method="POST">
                                     <input type="hidden" id="singlequestion" name="singlequestion" value="1">
+                                    <input type="hidden" id="questionid" name="questionid" value=" '.$_SESSION["questionid"].'">
                                     <textarea name="note" placeholder="Add notes about this question..." ></textarea>
                                     Score <input type="number" id="score" name="score" min="0" max="20" >
                                     <input type="submit" value="Complete">
@@ -628,7 +628,6 @@ include_once('connection.php');?>
                         }
                     }
                 
-                    
                 }
                 else{
                     echo("Select a question to view it.");

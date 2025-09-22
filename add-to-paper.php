@@ -36,6 +36,6 @@ if(!(in_array($questionid,$questions))){
     $stmt->execute();
 }
 #redirect to questions page 
-header('Location: questionspage.php');
+header('Location: display-question.php');
 exit();
 ?>

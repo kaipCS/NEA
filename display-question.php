@@ -2,9 +2,14 @@
 session_start();
 include_once('connection.php');
 
-#get question id of code from POST and add into session
-$questionid = $_POST["questionid"]; 
-$_SESSION["questionid"] = $questionid;
+#get question id of code from POST and add into session if POST has been sent
+if (!empty($_POST)) {
+    $questionid = $_POST["questionid"]; 
+    $_SESSION["questionid"] = $questionid;
+}
+else{
+    $questionid= $_SESSION["questionid"];
+}
 
 #find question in database
 $stmt = $conn->prepare("SELECT * FROM questions WHERE questionid = :questionid");
@@ -37,7 +42,7 @@ if(!empty($question["solution"])){
 }
 
 #check if user has completed this question
-$stmt = $conn->prepare("SELECT * FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid AND complete = 1");
+$stmt = $conn->prepare("SELECT * FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid");
 $stmt->bindParam(':userid', $_SESSION["userid"] );
 $stmt->bindParam(':questionid', $questionid);
 $stmt->execute();
@@ -46,6 +51,7 @@ $answer = $stmt->fetch(PDO::FETCH_ASSOC);
 #if a record exists, the user has completed the question
 if ($answer) {
     $_SESSION["complete"] = 1;
+    $_SESSION["paperid"] =$answer["paperid"];
 
     #store note and mark in session if they have been entered
     if (isset($answer["note"]) and !empty($answer["note"])){
@@ -56,7 +62,6 @@ if ($answer) {
     }
 }
 
-print_r($_SESSION);
 
 $code = $question["code"];
 
@@ -112,7 +117,7 @@ if (str_contains($code, "\begin{center}")) {
 
     #contents after the image
     $sections2 = explode("end{center}", $section1[1]);
-    $code = $revisedCode . $sections[1];
+    $code = $revisedCode . $sections2[1];
     }
 }
 

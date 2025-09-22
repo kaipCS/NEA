@@ -125,7 +125,6 @@ if(!empty($_POST["papers"])){
             #search for questions that would be in results that they have done
             $sql = "SELECT questionid FROM userdoespaperdoesquestion WHERE 
                 (userid = $user) 
-                AND (complete = 1) 
                 AND (questionid IN $implodedQuestions) ";
                 
             #store results in array
@@ -147,7 +146,7 @@ if(!empty($_POST["papers"])){
         #print_r($questions);
 
         #redirect back to questions page
-        header("Location: test.php");
+        header("Location: questionspage.php");
         exit();   
     }
 }
@@ -158,7 +157,7 @@ if(!empty($_POST["papers"])){
 $_SESSION["results"] = [];
 
 #redirect back to questions page
-header("Location: test.php");
+header("Location: questionspage.php");
 exit();   
 
 ?>

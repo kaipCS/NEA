@@ -70,9 +70,10 @@ $stmt = $conn->prepare("CREATE TABLE usercreatespaper
 (paperid INT AUTO_INCREMENT PRIMARY KEY,
 userid INT NOT NULL, 
 dateedited TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-time INT(3) NOT NULL,
-title VARCHAR(100) NOT NULL, 
-details TEXT)
+time INT(3),
+title VARCHAR(100), 
+details TEXT,
+singlequestion TINYINT(1) NOT NULL)
 ");
 $stmt->execute();
 $stmt->closeCursor();
@@ -117,7 +118,6 @@ questionid INT NOT NULL,
 paperid INT NOT NULL,
 mark INT(2),
 note TEXT,
-complete TINYINT(1) NOT NULL,
 singlequestion TINYINT(1) NOT NULL, 
 datecompleted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY(userid, questionid, paperid))
