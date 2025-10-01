@@ -330,3 +330,24 @@ img{
 textarea{
   min-width:100%;
 }
+
+.paper-row{
+  border-style: solid;
+  border-color: grey;
+  border-width:1px;
+  padding:10px ;
+}
+
+.row{
+  font-size:18px;
+}
+
+#papers-list{
+  padding-left: 100px;
+  padding-right:100px;
+  padding-top:30px;
+}
+
+#delete-paper{
+  color:red;
+}

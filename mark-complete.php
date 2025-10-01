@@ -19,7 +19,7 @@ $stmt->execute();
 #get auto incremented paper of paper just created
 $paperid = $conn->lastInsertId();
 
-#add into user does paper table 
+#add into user does paper table
 $stmt = $conn->prepare("INSERT INTO userdoespaper(paperid,userid,singlequestion)
 VALUES (:paperid,:userid,:singlequestion)");
 $stmt->bindParam(':paperid', $paperid);
