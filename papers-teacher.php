@@ -35,9 +35,11 @@ include 'navbar-signedin.php'
 <!-- Papers -->
 <?php
   #search dataase for papers created by the current user
-  $stmt = $conn -> prepare("SELECT * FROM usercreatespaper WHERE userid = :userid 
-  ORDER BY usercreatespaper.dateedited DESC");
+  $singlequestion = 0;
+  $stmt = $conn -> prepare("SELECT * FROM usercreatespaper WHERE userid = :userid AND singlequestion = :singlequestion
+  ORDER BY dateedited DESC");
   $stmt->bindParam(':userid', $_SESSION["userid"]);
+  $stmt->bindParam(':singlequestion', $singlequestion);
   $stmt -> execute();
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);       
   
@@ -68,7 +70,7 @@ include 'navbar-signedin.php'
       <div class='col-sm-2'>
         <form action='delete-paper.php' method='post'>
           <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
-          <input type='submit' class='delete-paper' value='Delete'>
+          <input type='submit' class='delete-paper' onclick='return confirm(\"Are you sure you want to delete this paper?\")' value='Delete'>
         </form>
       </div>
     </div> <br>");

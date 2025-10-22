@@ -65,9 +65,17 @@ include 'navbar-signedin.php'
       #check user who created paper
       if($row["userid"] == $_SESSION["userid"]){
         $creator = "You";
+        $delete = "
+              <div class='col-sm-2'>
+                <form action='delete-paper.php' method='post'>
+                  <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
+                  <input type='submit' class='delete-paper' onclick='return confirm(\"Are you sure you want to delete this paper?\")' value='Delete'>
+                </form>
+              </div>";
       }
       else{
         $creator = $row["surname"].", ".$row["forename"] ; 
+        $delete = "";
       }
 
       #output results
@@ -79,17 +87,12 @@ include 'navbar-signedin.php'
           </form>
       </div>
       <div class='col-sm-2'>
-        ".$creator."
+        ".$creator." 
       </div>
       <div class='col-sm-2'>
         " .date('d-m-y', strtotime($row['dateedited']))."
       </div>
-      <div class='col-sm-2'>
-        <form action='delete-paper.php' method='post'>
-          <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
-          <input type='submit' class='delete-paper' value='Delete'>
-        </form>
-      </div>
+      " . $delete ." 
     </div> <br>");
     }
   }
