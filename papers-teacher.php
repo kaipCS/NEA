@@ -18,44 +18,70 @@ include_once('connection.php');
 <!-- Link to include navbar -->
 <?php 
 include 'navbar-signedin.php'
-
-#inner join for user's name ;
 ?>
+
+
 <!-- Page contents -->
 <div id="papers-list" class="container">
- <div class="row"> 
-  <div class="col-sm-6">
-  <form action="create-paper.php" method="post">
-    <input type="submit" value = "Create new paper +"> 
-  </form>
-</div>
-<div class="col-sm-2">
-Last edited
-</div>
-</div><br>
-<?php
-$stmt = $conn -> prepare("SELECT * FROM usercreatespaper WHERE userid = :userid ");
-$stmt->bindParam(':userid', $_SESSION["userid"]);
-$stmt -> execute();
-while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-  echo("<div class='row paper-row'>
-    <div class='col-sm-6'>"
-    .$row["title"]."
-    </div>
-    <div class='col-sm-2'>"
-    . date("Y-m-d", strtotime($row["dateedited"]))."
-    </div>
-    <div class='col-sm-2'>
-      <form action='delete-paper.php' method='post'>
-      <input id='paperid' type='hidden' value = ' ". $row["paperid"]. "'> 
-        <input id='delete-paper' type='submit' value = 'Delete'> 
-      </form>
-    </div>
-    </div> <br>");
-}
-  ?>
 
+<div class="row"> 
+  <div class='col-sm-6'>
+    <!-- Button to create a new paper -->
+    <form action="create-paper">
+      <input type="submit" value = "Create new paper +"> 
+    </form>
+  </div>
+
+<!-- Papers -->
+<?php
+  #search dataase for papers created by the current user
+  $stmt = $conn -> prepare("SELECT * FROM usercreatespaper WHERE userid = :userid 
+  ORDER BY usercreatespaper.dateedited DESC");
+  $stmt->bindParam(':userid', $_SESSION["userid"]);
+  $stmt -> execute();
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);       
+  
+  #check if user has created papers
+  if (count($rows) > 0) {
+    #column headers
+    echo("
+      <div class='col-sm-2'>
+      Last edited
+      </div>
+      </div>
+      <br>  "
+    );
+  
+    #iterate through results 
+    foreach ($rows as $row) {
+      #output results
+      echo("<div class='paper-row row'>
+      <div class='col-sm-6'>
+          <form action='open-paper.php' method='post'>
+            <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
+            <input type='submit' class='paper-button' value='".$row["title"]."'>
+          </form>
+      </div>
+      <div class='col-sm-2'>
+        " .date('d-m-y', strtotime($row['dateedited']))."
+      </div>
+      <div class='col-sm-2'>
+        <form action='delete-paper.php' method='post'>
+          <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
+          <input type='submit' class='delete-paper' value='Delete'>
+        </form>
+      </div>
+    </div> <br>");
+    }
+  }
+  #if they do not yet have any papers
+  else{
+    echo("</div> You have not created any papers, click above to create your first paper");
+  }
+
+?>
 </div>
+
 
 <!-- Bottom blue bar -->
 <div class="bottom-bar">

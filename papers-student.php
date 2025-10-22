@@ -39,7 +39,8 @@ include 'navbar-signedin.php'
   $stmt = $conn -> prepare("SELECT * FROM userdoespaper INNER JOIN usercreatespaper
   ON usercreatespaper.paperid = userdoespaper.paperid
   INNER JOIN users ON users.userid = usercreatespaper.userid
-  WHERE userdoespaper.userid = :userid AND userdoespaper.singlequestion = :singlequestion");
+  WHERE userdoespaper.userid = :userid AND userdoespaper.singlequestion = :singlequestion
+  ORDER BY usercreatespaper.dateedited DESC");
   $stmt->bindParam(':userid', $_SESSION["userid"]);
   $stmt->bindParam(':singlequestion', $singlequestion);
   $stmt -> execute();
