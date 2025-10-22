@@ -18,60 +18,88 @@ include_once('connection.php');
 <!-- Link to include navbar -->
 <?php 
 include 'navbar-signedin.php'
-
-#inner join for user's name ;
 ?>
+
+
 <!-- Page contents -->
 <div id="papers-list" class="container">
- <div class="row"> 
-  <div class="col-sm-6">
-  <form action="create-paper.php" method="post">
-    <input type="submit" value = "Create new paper +"> 
-  </form>
-</div>
-<div class="col-sm-2">
-Created by
-</div>
-<div class="col-sm-2">
-Last edited
-</div>
-</div><br>
-<?php
-$singlequestion = 0;
-$stmt = $conn -> prepare("SELECT * FROM userdoespaper INNER JOIN usercreatespaper
-ON usercreatespaper.paperid = userdoespaper.paperid
-INNER JOIN users ON users.userid = usercreatespaper.userid
-WHERE userdoespaper.userid = :userid AND userdoespaper.singlequestion = :singlequestion");
-$stmt->bindParam(':userid', $_SESSION["userid"]);
-$stmt->bindParam(':singlequestion', $singlequestion);
-$stmt -> execute();
-while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-  if ($row["userid"] == $_SESSION["userid"]) {
-    $name = "You";
-  } else {
-      $name = $row["surname"] . ", " . $row["forename"];
-  }
-  echo("<div class='row paper-row'>
-    <div class='col-sm-6'>"
-    .$row["title"]."
-    </div>
-    <div class='col-sm-2'>"
-    . $name ."
-    </div>
-    <div class='col-sm-2'>"
-    . date("Y-m-d", strtotime($row["dateedited"]))."
-    </div>
-    <div class='col-sm-2'>
-      <form action='delete-paper.php' method='post'>
-      <input id='paperid' type='hidden' value = ' ". $row["paperid"]. "'> 
-        <input id='delete-paper' type='submit' value = 'Delete'> 
-      </form>
-    </div>
-    </div> <br>");
-}
-  ?>
 
+<div class="row"> 
+  <div class='col-sm-6'>
+    <!-- Button to create a new paper -->
+    <form action="create-paper">
+      <input type="submit" value = "Create new paper +"> 
+    </form>
+  </div>
+
+<!-- Papers -->
+<?php
+  $singlequestion = 0;
+  #search dataase for papers for the current user
+  $stmt = $conn -> prepare("SELECT * FROM userdoespaper INNER JOIN usercreatespaper
+  ON usercreatespaper.paperid = userdoespaper.paperid
+  INNER JOIN users ON users.userid = usercreatespaper.userid
+  WHERE userdoespaper.userid = :userid AND userdoespaper.singlequestion = :singlequestion");
+  $stmt->bindParam(':userid', $_SESSION["userid"]);
+  $stmt->bindParam(':singlequestion', $singlequestion);
+  $stmt -> execute();
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);       
+  
+  #if user does have papers
+  if (count($rows) > 0) {
+    #column headers
+    echo("
+      <div class='col-sm-2'>
+      Created by
+      </div>
+      <div class='col-sm-2'>
+      Last edited
+      </div>
+      </div>
+      <br>  "
+    );
+  
+    #iterate through results 
+    foreach ($rows as $row) {
+      #check user who created paper
+      if($row["userid"] == $_SESSION["userid"]){
+        $creator = "You";
+      }
+      else{
+        $creator = $row["surname"].", ".$row["forename"] ; 
+      }
+
+      #output results
+      echo("<div class='paper-row row'>
+      <div class='col-sm-6'>
+          <form action='open-paper.php' method='post'>
+            <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
+            <input type='submit' class='paper-button' value='".$row["title"]."'>
+          </form>
+      </div>
+      <div class='col-sm-2'>
+        ".$creator."
+      </div>
+      <div class='col-sm-2'>
+        " .date('d-m-y', strtotime($row['dateedited']))."
+      </div>
+      <div class='col-sm-2'>
+        <form action='delete-paper.php' method='post'>
+          <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
+          <input type='submit' class='delete-paper' value='Delete'>
+        </form>
+      </div>
+    </div> <br>");
+    }
+  }
+  #if they do not yet have any papers
+  else{
+    echo("</div> You have not created or been assigned any papers, click above to create your first paper");
+  }
+
+?>
 </div>
+
 
 <!-- Bottom blue bar -->
 <div class="bottom-bar">

@@ -58,7 +58,7 @@ include 'navbar-signedout.php';
       </h3>
 
       <!-- Create account form -->
-      <form action="test.php"  method="POST">
+      <form action="createaccount.php"  method="POST">
           Forename<br>
           <input type="text" id="forename" name="forename"><br>
           Surname<br>

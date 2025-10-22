@@ -331,6 +331,7 @@ textarea{
   min-width:100%;
 }
 
+/* Row in list of papers*/
 .paper-row{
   border-style: solid;
   border-color: grey;
@@ -338,16 +339,29 @@ textarea{
   padding:10px ;
 }
 
+/* Bootstrap row*/
 .row{
   font-size:18px;
 }
 
+/* Container of papers list page*/
 #papers-list{
   padding-left: 100px;
   padding-right:100px;
   padding-top:30px;
 }
 
-#delete-paper{
+/* Delete paper button */
+.delete-paper{
   color:red;
+}
+
+/* Button to open button*/
+.paper-button{
+  background-color: transparent !important;
+}
+
+/* Hovering over paper button*/
+.paper-button:hover{
+  background-color: #ADE1FF !important;
 }
