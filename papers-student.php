@@ -27,10 +27,18 @@ include 'navbar-signedin.php'
 <div class="row"> 
   <div class='col-sm-6'>
     <!-- Button to create a new paper -->
-    <form action="create-paper">
-      <input type="submit" value = "Create new paper +"> 
-    </form>
+    <button class="create-paper-button" onclick="openForm()">Create new paper +</button>
   </div>
+  <!-- Javascript to open and close create paper pop up-->
+  <script>
+    function openForm() {
+      document.getElementById("create-paper").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("create-paper").style.display = "none";
+    }
+  </script>
 
 <!-- Papers -->
 <?php
@@ -104,6 +112,18 @@ include 'navbar-signedin.php'
 ?>
 </div>
 
+<!-- create paper pop up-->
+<div id="create-paper">
+  <form action="create-paper.php" method="post" class="form-container">
+    <button type="button" class="btn close" onclick="closeForm()">🞪</button>
+    <h3>Create a new paper</h3>
+    <br>
+    <input id="input-title"  type="text" placeholder="Enter a title..." name="title" required>
+    <br>
+    <br>
+    <input type="submit" value="Create"></input>
+  </form>
+</div>
 
 <!-- Bottom blue bar -->
 <div class="bottom-bar">

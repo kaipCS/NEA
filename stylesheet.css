@@ -139,7 +139,7 @@
 
 /* Radio buttons */
 input[type=radio]{
-  accent-color: #38B6FF;
+  accent-color: black;
 }
 
 /* Submit form buttons */
@@ -147,6 +147,7 @@ input[type=submit]{
   background-color: #38B6FF;
   border-style:none;
   height:35px;
+  font-size:16px;
 }
 
 /* Input text boxes */
@@ -364,4 +365,41 @@ textarea{
 /* Hovering over paper button*/
 .paper-button:hover{
   background-color: #ADE1FF !important;
+}
+
+/* Create paper button*/
+.create-paper-button{
+  background-color: #38B6FF;
+  border-style:none;
+  height:35px;
+}
+
+
+/* Popup container */
+#create-paper {
+  display: none;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+/* Form box */
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color:#ADE1FF;
+  padding: 10px;
+  border-radius: 0px;
+  width: 350px;
+}
+
+#input-title{
+  height:30px;
+  font-size:16px;
 }
