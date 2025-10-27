@@ -34,7 +34,6 @@ include 'navbar-signedin.php'
     function openForm() {
       document.getElementById("create-paper").style.display = "block";
     }
-
     function closeForm() {
       document.getElementById("create-paper").style.display = "none";
     }

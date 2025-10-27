@@ -367,14 +367,6 @@ textarea{
   background-color: #ADE1FF !important;
 }
 
-/* Create paper button*/
-.create-paper-button{
-  background-color: #38B6FF;
-  border-style:none;
-  height:35px;
-}
-
-
 /* Popup container */
 #create-paper {
   display: none;
@@ -394,12 +386,13 @@ textarea{
   left: 50%;
   transform: translate(-50%, -50%); 
   background-color:#ADE1FF;
-  padding: 10px;
-  border-radius: 0px;
+  padding:10px;
   width: 350px;
 }
 
-#input-title{
-  height:30px;
-  font-size:16px;
+/* Create paper button*/
+.create-paper-button{
+  background-color: #38B6FF;
+  border-style:none;
+  height:35px;
 }
