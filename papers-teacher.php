@@ -24,8 +24,6 @@ include 'navbar-signedin.php'
 <!-- Page contents -->
 <div id="papers-list" class="container">
 
-<div id="papers-list" class="container">
-
 <div class="row"> 
   <div class='col-sm-6'>
     <!-- Button to create a new paper -->
