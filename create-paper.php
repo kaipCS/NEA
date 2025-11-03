@@ -32,6 +32,6 @@ if($_SESSION["role"] == 0){
 }
 
 # open the paper they jsut created
-header('Location: in-paper.php');
+header('Location: open-paper.php');
 exit();
 ?>
