@@ -514,6 +514,7 @@ include_once('connection.php');?>
                     echo("  
                     <form action='display-question.php' method = 'POST' class ='question-form'>
                         <input type = 'hidden' name='questionid' value='" . $questionid . "'>
+                        <input type = 'hidden' name='redirect' value='questions'>
                         <button type = 'submit' class='question-button' >
                             STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
                                 <div class='grey-text'>" . $keywords . "</div>
@@ -526,7 +527,7 @@ include_once('connection.php');?>
     </div>
 
     <!-- Question preview column -->
-    <div id="question-preview" class="col-sm-4">
+    <div class="question-preview col-sm-4">
         <div class="latex-question">
             <?php
                 #if the user has selected a question 
@@ -549,8 +550,7 @@ include_once('connection.php');?>
                     else{
                         echo(" No solution is avaliable for this question. ");
                     }
-
-                    #form to add question to paper
+                                        #form to add question to paper
 
                     #find all titles of papers a user has created (that are not single questions)
                     $singlequestion = 0;
@@ -613,7 +613,7 @@ include_once('connection.php');?>
                             ';
                         }
                         
-                        #if the user had no completed the question, show them the form to do so
+                        #if the user had not completed the question, show them the form to do so
                         else{
                             echo '
                                 <form action="mark-complete.php" method="POST">

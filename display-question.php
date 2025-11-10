@@ -155,7 +155,13 @@ if (str_contains($code, "\begin{questionparts}")) {
 #store code in session 
 $_SESSION["display-code"] = $code;
 
-#redirect back to questions page
-header('Location: questionspage.php');
-exit();
+#redirect back to correct page
+if($_POST["redirect"] == "questions"){
+    header('Location: questionspage.php');
+    exit();
+}
+else{
+    header('Location: open-paper.php');
+    exit();
+}
 ?>

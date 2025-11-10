@@ -11,7 +11,7 @@ if (empty($_POST["search"])){
     #echo("empty search");
 
     #redirect back to questions page
-    header('Location: test.php');
+    header('Location: questionspage.php');
     exit(); 
 } 
 else{

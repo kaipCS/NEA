@@ -223,8 +223,9 @@ hr {
 }
 
 /* Question preview column */
-#question-preview{
+.question-preview{
   background-color:white;
+  font-size:20px !important; 
 }
 
 /* Search input text box */
@@ -395,4 +396,63 @@ textarea{
   background-color: #38B6FF;
   border-style:none;
   height:35px;
+}
+
+#paper-questions{
+  background-color: white;
+}
+
+/*
+.paper-question-button{
+  width:100%;
+  border-radius:0px;
+  border-width:1px;
+  border-color:gray;
+  background-color:white;
+  text-align:left;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+  */
+
+.paper-question-button{
+    background-color: transparent !important;
+    font-size:20px !important ;
+}
+
+.question-rows{
+  display: flex;
+  align-items: center !important; 
+  gap: 10px; 
+  width:100%;
+  border-width:1px;
+  border-color:gray;
+  background-color:transparent;
+  border-style: solid;
+  text-align:left;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.move-button{
+  background-color: white !important;
+  border-width:1px !important;
+  border-style: solid !important;
+  border-color:gray !important;
+  height: 30px;
+  width: 35px;
+  border-radius: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.delete-question{
+  color:red;
+}
+
+.question-row{
+  background-color:white;
+}
+
+.question-row:hover{
+  background-color: #ADE1FF;
 }

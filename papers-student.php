@@ -1,5 +1,7 @@
 <?php 
 session_start();
+unset($_SESSION["paperid"]);
+
 include_once('connection.php');
 ?>
 <!DOCTYPE html>
