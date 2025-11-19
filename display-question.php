@@ -62,7 +62,6 @@ if ($answer) {
     }
 }
 
-
 $code = $question["code"];
 
 #check if the code contains a diagram
@@ -156,12 +155,11 @@ if (str_contains($code, "\begin{questionparts}")) {
 $_SESSION["display-code"] = $code;
 
 #redirect back to correct page
-if($_POST["redirect"] == "questions"){
-    header('Location: questionspage.php');
-    exit();
-}
-else{
-    header('Location: open-paper.php');
-    exit();
-}
+ if($_POST["redirect"] == "questions"){
+     header('Location: questionspage.php');
+     exit(); }
+ else{
+     header('Location: open-paper.php');
+     exit();
+ }
 ?>

@@ -330,8 +330,8 @@ img{
 
 /* Text area to add notes about question*/
 textarea{
-  min-width:100%;
-}
+  min-width:95%;
+  }
 
 /* Row in list of papers*/
 .paper-row{
@@ -430,8 +430,7 @@ textarea{
   background-color:transparent;
   border-style: solid;
   text-align:left;
-  padding-top:10px;
-  padding-bottom:10px;
+  height:75px;
 }
 
 .move-button{
@@ -451,8 +450,33 @@ textarea{
 
 .question-row{
   background-color:white;
+  height:73px;
 }
 
 .question-row:hover{
   background-color: #ADE1FF;
+}
+
+#edit-time{
+  width:0;
+  min-width:100%;
+}
+
+/* Popup container */
+#edit-paper {
+  display: none;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+/* Create paper button*/
+.edit-paper-button{
+  background-color: #38B6FF;
+  border-style:none;
+  height:35px;
 }

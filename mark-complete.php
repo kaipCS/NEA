@@ -9,23 +9,29 @@ $questionid = $_POST["questionid"];
 $singlequestion = $_POST["singlequestion"];
 $userid = $_SESSION["userid"];
 
-#add into user creates paper table 
-$stmt = $conn->prepare("INSERT INTO usercreatespaper(userid,singlequestion)
-VALUES (:userid,:singlequestion)");
-$stmt->bindParam(':userid', $userid);
-$stmt->bindParam(':singlequestion', $singlequestion);
-$stmt->execute();
+if($singlequestion == 1){
+    #add into user creates paper table 
+    $stmt = $conn->prepare("INSERT INTO usercreatespaper(userid,singlequestion)
+    VALUES (:userid,:singlequestion)");
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':singlequestion', $singlequestion);
+    $stmt->execute();
 
-#get auto incremented paper of paper just created
-$paperid = $conn->lastInsertId();
+    #get auto incremented paper of paper just created
+    $paperid = $conn->lastInsertId();
 
-#add into user does paper table
-$stmt = $conn->prepare("INSERT INTO userdoespaper(paperid,userid,singlequestion)
-VALUES (:paperid,:userid,:singlequestion)");
-$stmt->bindParam(':paperid', $paperid);
-$stmt->bindParam(':userid', $userid);
-$stmt->bindParam(':singlequestion', $singlequestion);
-$stmt->execute();
+    #add into user does paper table
+    $stmt = $conn->prepare("INSERT INTO userdoespaper(paperid,userid,singlequestion)
+    VALUES (:paperid,:userid,:singlequestion)");
+    $stmt->bindParam(':paperid', $paperid);
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':singlequestion', $singlequestion);
+    $stmt->execute();
+}
+else{
+    $paperid = $_POST["paperid"];
+}
+
 
 #add into user does paper does question table 
 
@@ -55,7 +61,13 @@ $result = $conn->query($sql);
 #set complete as true
 $_SESSION["complete"] = 1;
 
-#redirect to questions page 
-header('Location: display-question.php');
-exit();
+if($singlequestion == 1){
+    #redirect to questions page 
+    header('Location: display-question.php');
+    exit();
+}
+else{
+    header('Location: open-paper.php');
+    exit();
+}
 ?>

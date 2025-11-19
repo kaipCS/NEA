@@ -7,6 +7,12 @@ $questionid = $_POST["questionid"];
 $userid = $_SESSION["userid"];
 $singlequestion = $_POST["singlequestion"];
 
+#delete record for user does paper does question table
+$stmt = $conn->prepare("DELETE FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid");
+$stmt->bindParam(':userid', $userid);
+$stmt->bindParam(':questionid', $questionid);
+$stmt->execute();
+
 #check if the question is from a single question paper
 if($singlequestion == 1){
     #find paper id
@@ -16,12 +22,6 @@ if($singlequestion == 1){
     $stmt->execute();
     $paperid = $stmt->fetchColumn();
     #echo($paperid);
-
-    #delete record for user does paper does question table
-    $stmt = $conn->prepare("DELETE FROM userdoespaperdoesquestion WHERE userid = :userid AND questionid = :questionid");
-    $stmt->bindParam(':userid', $userid);
-    $stmt->bindParam(':questionid', $questionid);
-    $stmt->execute();
 
     #delete record from user creates paper table
     $stmt = $conn->prepare("DELETE FROM usercreatespaper WHERE userid = :userid AND paperid = :paperid");
@@ -42,7 +42,8 @@ if($singlequestion == 1){
     header('Location: display-question.php');
     exit();
 }   
-else{
-    echo("not a single question");
-}
+#redirect to paper page 
+header('Location: open-paper.php');
+exit();
+
 ?>
