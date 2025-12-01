@@ -92,6 +92,7 @@ include 'navbar-signedin.php'
       <div class='col-sm-6'>
           <form action='open-paper.php' method='post'>
             <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
+            <input type='hidden' name='creator' id='creator' value='".$creator."'>
             <input type='submit' class='paper-button' value='".$row["title"]."'>
           </form>
       </div>

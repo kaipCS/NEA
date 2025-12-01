@@ -1,10 +1,20 @@
 <?php session_start();
+#print_r($_SESSION);
 if(isset($_POST["paperid"])){
   $paperid = $_POST["paperid"];
   $_SESSION["paperid"] = $paperid;
 }
 else{
   $paperid = $_SESSION["paperid"];
+  #echo($paperid);
+}
+
+if(isset($_POST["creator"])){
+  $creator = $_POST["creator"];
+  $_SESSION["creator"] = $creator;
+}
+else{
+  $creator = $_SESSION["creator"];
   #echo($paperid);
 }
 
@@ -61,6 +71,7 @@ include 'navbar-signedin.php';?>
    $stmt -> execute();
    $paper= $stmt->fetch(PDO::FETCH_ASSOC); 
    echo("<div class='col-sm-7'>". $paper['title'] . "<br> (" . $paper['time'] . " minutes)");
+   if($creator == "thisUser"){
    echo("<button class='edit-paper-button' onclick='openForm()'>Edit</button>
   </div>
   <!-- Javascript to open and close create paper pop up-->
@@ -71,8 +82,9 @@ include 'navbar-signedin.php';?>
     function closeForm() {
       document.getElementById('edit-paper').style.display = 'none';
     }
-  </script>");
-   echo("Score: <br>" . $correct . "/" . $total);
+  </script>");}
+  if($_SESSION["role"] == 0){
+   echo("Score: <br>" . $correct . "/" . $total);}
 
     $stmt = $conn -> prepare("SELECT * FROM questioninpaper INNER JOIN questions
     ON questioninpaper.questionid = questions.questionid
@@ -80,6 +92,9 @@ include 'navbar-signedin.php';?>
     $stmt->bindParam(':paperid', $paperid);
     $stmt -> execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+
+    $questionNumbers = array_column($rows, 'questionnumber');
+    $maxNumber = max($questionNumbers);
     foreach($rows as $row){
       $paper = $row["paper"];
       #correct the format of paper
@@ -104,35 +119,76 @@ include 'navbar-signedin.php';?>
           <input type='hidden' name='questionid' id='questionid' value='".$row["questionid"]."'>
           <input type='submit' class='paper-question-button' value=' STEP " . $paper . " " . $row["year"] . " " . $row["topic"] ."'>
         </form>
-    </div>
+    </div>");
     
+    if ($creator == "thisUser"){
+    echo("
     <div class='col-sm-1'>
     <form action='delete-question.php' method='post'>
-      <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
       <input type='hidden' name='questionid' id='questionid' value='".$questionid."'>
       <input type='submit' class='delete-question move-button' onclick='return confirm(\"Are you sure you want to delete this question?\")' value='X'>
     </form>
-    </div>
+    </div>");
+      if ($row["questionnumber"] != 1){
+      echo("<div class='col-sm-1'>
+        <form action='move-question.php' method='post'>
+          <input type='hidden' name='questionid' id='questionid' value='".$questionid."'>
+          <input type='hidden' name='direction' id='direction' value='up'>
+          <input type='hidden' name='questionnumber' id='questionnumber' value='".$row["questionnumber"]."'>
+          <input type='submit' class='move-button' value='▲'>
+        </form>
+      </div>");
+      }
+    #to keep consistent spacing
+    else{
+      echo("<div class='col-sm-1'> </div>");
+    }
+    if($row["questionnumber"] != $maxNumber){
+    echo("
     <div class='col-sm-1'>
-      <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
-      <input type='submit' class='move-button' value='▲'>
-    </div>
-    <div class='col-sm-1'>
-      <input type='hidden' name='paperid' id='paperid' value='".$row["paperid"]."'>
-      <input type='submit' class='move-button' value='▼'>
-    </div>
-  </div> <br>");
+      <form action='move-question.php' method='post'>
+        <input type='hidden' name='questionid' id='questionid' value='".$questionid."'>
+        <input type='hidden' name='direction' id='direction' value='down'>
+        <input type='hidden' name='questionnumber' id='questionnumber' value='".$row["questionnumber"]."'>
+        <input type='submit' class='move-button' value='▼'>
+      </form>
+    </div>");
+    }
+    else{
+      echo("<div class='col-sm-1'> </div>");
+    }
+  }
+    echo("</div> <br>");
+}
+
+  ?>
+<?php
+  if($creator == "thisUser"){
+    echo("
+      Notes
+  <br>
+  <form action='download.php' method='post'>
+    <textarea name='note' placeholder='Add notes/instructions to be on the front of this paper...' ></textarea>
+    <input type='submit' value='Download'>
+  </form>
+  </div>");}
+  else{
+    if(!empty($paper["note"])){
+      echo("Note <br> " . $paper["note"]. " 
+      <form action='download.php' method='post'>
+      <input type='submit' value='Download'>
+    </form>
+      ");
 
     }
-  ?>
-  Notes
-  <br>
-  <form action="download.php" method="post">
-    <textarea name="note" placeholder="Add notes/instructions to be on the front of this paper..." ></textarea>
-    <input type="submit" value="Download">
-  </form>
-  </div>
-
+    else{
+      echo("<form action='download.php' method='post'>
+      <input type='submit' value='Download'>
+    </form>");
+    }
+  }
+?>
+</div>
   <!--Notes and download button, same as text area saved and empty versions -->
 
   <!-- Question preview column -->

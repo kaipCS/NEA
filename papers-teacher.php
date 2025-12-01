@@ -49,8 +49,10 @@ include 'navbar-signedin.php'
   $stmt->bindParam(':userid', $_SESSION["userid"]);
   $stmt->bindParam(':singlequestion', $singlequestion);
   $stmt -> execute();
-  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);       
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
   
+  $_SESSION["creator"] = "You";
+
   #check if user has created papers
   if (count($rows) > 0) {
     #column headers
