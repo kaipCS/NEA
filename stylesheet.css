@@ -399,7 +399,7 @@ textarea{
   height:35px;
 }
 
-/* List of questions on the open paper page*/
+/* Section of the open paper page with the list of questions*/
 #paper-questions{
   background-color: white;
 }
@@ -409,4 +409,16 @@ textarea{
   display: flex;
   align-items: center;  
   gap: 15px;          
+}
+
+/* Score on paper*/
+.score{
+  position: absolute;
+  right: 15px;
+  top:10px;
+}
+
+/* List of questions on the open paper page*/
+.question-list{
+  margin-top:10px;
 }

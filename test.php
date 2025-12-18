@@ -12,6 +12,29 @@ else{
   $paperid = $_SESSION["paperid"];
 }
 
+#calculate the users score
+$stmt = $conn -> prepare("SELECT mark FROM userdoespaperdoesquestion WHERE paperid = :paperid AND userid = :userid ");
+$stmt->bindParam(':paperid', $paperid);
+$stmt->bindParam(':userid', $_SESSION["userid"]);
+$stmt -> execute();
+$marks = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+$correct = 0;
+$total= 0;
+#iterate through each completed question from this paper
+foreach($marks as $mark){
+    if (!empty($mark)){
+        $total = $total + 20;
+        $correct = $correct + $mark["mark"];
+    }
+}
+
+#get the title and time for the paper
+$stmt = $conn -> prepare("SELECT * FROM usercreatespaper WHERE paperid = :paperid");
+$stmt->bindParam(':paperid', $paperid);
+$stmt -> execute();
+$paper= $stmt->fetch(PDO::FETCH_ASSOC); 
+$title = $paper["title"];
+$time = $paper["time"];
 ?>
 
 <!DOCTYPE html>
@@ -43,51 +66,66 @@ include 'navbar-signedin.php';?>
 <div class="container">
     <!-- List of questions section of the page -->
     <div id="paper-questions" class="col-sm-8">
+        <!-- Paper information -->
 
+        <!-- Title and time -->
         <?php
+            echo($title . " <br> (" .$time . " minutes)" );
+        ?>
 
-        #find all questions in paper selected
-        $stmt = $conn -> prepare("SELECT * FROM questioninpaper INNER JOIN questions
-            ON questioninpaper.questionid = questions.questionid
-            WHERE questioninpaper.paperid = :paperid ORDER BY questioninpaper.questionnumber ASC");
-        $stmt->bindParam(':paperid', $paperid);
-        $stmt -> execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+        <!-- Score -->
+        <div class="score">
+            <?php
+            echo("Score: <br>" . $correct . "/" . $total); ?>
+        </div>
 
-            #display all the information about each question
-            foreach($rows as $row){
-            #print_r($row);
+        <!-- Questions -->
+        <div class="question-list">
+            <?php
+        
+            #find all questions in paper selected
+            $stmt = $conn -> prepare("SELECT * FROM questioninpaper INNER JOIN questions
+                ON questioninpaper.questionid = questions.questionid
+                WHERE questioninpaper.paperid = :paperid ORDER BY questioninpaper.questionnumber ASC");
+            $stmt->bindParam(':paperid', $paperid);
+            $stmt -> execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
 
-            #correct the format of paper
-            $paper = $row["paper"];
-            switch ($paper) {
-                case 1:
-                    $paper = "I";
-                    break;
-                case 2:
-                    $paper = "II";
-                    break;
-                case 3:
-                    $paper = "III";
-                    break;
+                #display all the information about each question
+                foreach($rows as $row){
+                #print_r($row);
+
+                #correct the format of paper
+                $paper = $row["paper"];
+                switch ($paper) {
+                    case 1:
+                        $paper = "I";
+                        break;
+                    case 2:
+                        $paper = "II";
+                        break;
+                    case 3:
+                        $paper = "III";
+                        break;
+                }
+
+                $questionid = $row["questionid"];
+
+                #display each question as a button 
+                echo("<div class='question-row'>
+                ".$row["questionnumber"] . ".
+                <form action='display-question.php' method = 'POST' class ='question-form'>
+                    <input type = 'hidden' name='page' value='open-paper'>
+                    <input type = 'hidden' name='questionid' value='" . $questionid . "'>
+                    <button type = 'submit' class='question-button' >
+                        STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
+                    </button>
+                </form>
+                </div>");
             }
 
-            $questionid = $row["questionid"];
-
-            #display each question as a button 
-            echo("<div class='question-row'>
-            ".$row["questionnumber"] . ".
-            <form action='display-question.php' method = 'POST' class ='question-form'>
-                <input type = 'hidden' name='page' value='open-paper'>
-                <input type = 'hidden' name='questionid' value='" . $questionid . "'>
-                <button type = 'submit' class='question-button' >
-                    STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
-                </button>
-            </form>
-            </div>");
-        }
-
-        ?>
+            ?>
+        </div>
     </div>
     
     <!-- Question preview column -->
@@ -172,7 +210,7 @@ include 'navbar-signedin.php';?>
     <!-- Bottom blue bar -->
     <div class="bottom-bar">
     <a> </a>
+    </div>
 </div>
-
 </body>
 </html>
