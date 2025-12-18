@@ -460,7 +460,8 @@ include_once('connection.php');?>
                     $keywords = implode(", ", $keywords);
 
                     echo(" 
-                    <form action='display-question.php' method = 'POST' class ='question-form'>
+                    <form action='display-test.php' method = 'POST' class ='question-form'>
+                        <input type = 'hidden' name='redirect' value='questions'>
                         <input type = 'hidden' name='questionid' value='" . $questionid . "'>
                         <button type = 'submit' class='question-button' >
                             STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
@@ -512,9 +513,9 @@ include_once('connection.php');?>
                     $keywords = implode(", ", $keywords);
 
                     echo("  
-                    <form action='display-question.php' method = 'POST' class ='question-form'>
+                    <form action='display-test.php' method = 'POST' class ='question-form'>
+                        <input type = 'hidden' name='page' value='questions'>
                         <input type = 'hidden' name='questionid' value='" . $questionid . "'>
-                        <input type = 'hidden' name='redirect' value='questions'>
                         <button type = 'submit' class='question-button' >
                             STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
                                 <div class='grey-text'>" . $keywords . "</div>

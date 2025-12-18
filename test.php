@@ -1,6 +1,18 @@
 <?php session_start(); 
 #connect to database
-include_once('connection.php'); ?>
+include_once('connection.php');
+
+#check if the paper id is in the POST 
+if(isset($_POST["paperid"])){
+  $paperid = $_POST["paperid"];
+  $_SESSION["paperid"] = $paperid;
+}
+#if it is not in the POST, get it from the session
+else{
+  $paperid = $_SESSION["paperid"];
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -33,8 +45,6 @@ include 'navbar-signedin.php';?>
     <div id="paper-questions" class="col-sm-8">
 
         <?php
-        #get paper id sent from the POST
-        $paperid = $_POST["paperid"];
 
         #find all questions in paper selected
         $stmt = $conn -> prepare("SELECT * FROM questioninpaper INNER JOIN questions
@@ -67,7 +77,8 @@ include 'navbar-signedin.php';?>
             #display each question as a button 
             echo("<div class='question-row'>
             ".$row["questionnumber"] . ".
-            <form action='display-question.php' method = 'POST' class ='question-form'>
+            <form action='display-test.php' method = 'POST' class ='question-form'>
+                <input type = 'hidden' name='page' value='open-paper'>
                 <input type = 'hidden' name='questionid' value='" . $questionid . "'>
                 <button type = 'submit' class='question-button' >
                     STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
@@ -138,7 +149,7 @@ include 'navbar-signedin.php';?>
                         else{
                             echo '
                                 <form action="mark-complete.php" method="POST">
-                                    <input type="hidden" id="singlequestion" name="singlequestion" value="1">
+                                    <input type="hidden" id="singlequestion" name="singlequestion" value="0">
                                     <input type="hidden" id="questionid" name="questionid" value=" '.$_SESSION["questionid"].'">
                                     <textarea name="note" placeholder="Add notes about this question..." ></textarea>
                                     Score <input type="number" id="score" name="score" min="0" max="20" >

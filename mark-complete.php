@@ -2,13 +2,12 @@
 session_start();
 include_once('connection.php');
 
-#print_r($_POST);
-
 #get information about the question from the POST and session
 $questionid = $_POST["questionid"];
 $singlequestion = $_POST["singlequestion"];
 $userid = $_SESSION["userid"];
 
+#check if the question is a single question
 if($singlequestion == 1){
     #add into user creates paper table 
     $stmt = $conn->prepare("INSERT INTO usercreatespaper(userid,singlequestion)
@@ -20,7 +19,7 @@ if($singlequestion == 1){
     #get auto incremented paper of paper just created
     $paperid = $conn->lastInsertId();
 
-    #add into user does paper table
+    #add into user does paper table 
     $stmt = $conn->prepare("INSERT INTO userdoespaper(paperid,userid,singlequestion)
     VALUES (:paperid,:userid,:singlequestion)");
     $stmt->bindParam(':paperid', $paperid);
@@ -28,10 +27,10 @@ if($singlequestion == 1){
     $stmt->bindParam(':singlequestion', $singlequestion);
     $stmt->execute();
 }
+#if the question is in a paper, get the paper id from the session
 else{
-    $paperid = $_POST["paperid"];
+    $paperid = $_SESSION["paperid"];
 }
-
 
 #add into user does paper does question table 
 
@@ -61,13 +60,15 @@ $result = $conn->query($sql);
 #set complete as true
 $_SESSION["complete"] = 1;
 
+#check if question is a single question
 if($singlequestion == 1){
     #redirect to questions page 
     header('Location: display-question.php');
     exit();
 }
 else{
-    header('Location: open-paper.php');
+    #redirect to the open paper page
+    header('Location: test.php');
     exit();
 }
 ?>
