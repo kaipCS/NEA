@@ -73,6 +73,18 @@ include 'navbar-signedin.php';?>
             echo($title . " <br> (" .$time . " minutes)" );
         ?>
 
+        <!-- Edit the title and time -->
+        <button class='edit-paper-button' onclick='openForm()'>Edit</button>
+        <!-- Javascript to open and close edit information pop up-->
+        <script>
+            function openForm() {
+            document.getElementById('edit-paper').style.display = 'block';
+            }
+            function closeForm() {
+            document.getElementById('edit-paper').style.display = 'none';
+            }
+        </script>
+
         <!-- Score -->
         <div class="score">
             <?php
@@ -205,12 +217,28 @@ include 'navbar-signedin.php';?>
             ?>
 
         </div>
-    </div>
-
-    <!-- Bottom blue bar -->
-    <div class="bottom-bar">
-    <a> </a>
-    </div>
 </div>
+
+<!-- create paper pop up-->
+<div id="edit-paper">
+  <form action="edit-paper.php" method="post" class="form-container">
+    <button type="button" class="btn close" onclick="closeForm()">🞪</button>
+    <h3>Edit paper information</h3>
+    <br>
+    Title: <br> <input id='edit-title'  type='text' name='title'>
+    <br>
+    Time (minutes): <br> <input id='edit-time'  type='number' placeholder='typically 30 minutes per question...' name='time'>
+    <br>
+    <br>
+    <input type="submit" value="Create"></input>
+  </form>
+</div>
+
+<!-- Bottom blue bar -->
+<div class="bottom-bar">
+<a> </a>
+</div>
+
+
 </body>
 </html>
