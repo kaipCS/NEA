@@ -230,7 +230,7 @@ include 'navbar-signedin.php';?>
     Time (minutes): <br> <input id='edit-time'  type='number' placeholder='typically 30 minutes per question...' name='time'>
     <br>
     <br>
-    <input type="submit" value="Create"></input>
+    <input type="submit" value="Update"></input>
   </form>
 </div>
 
