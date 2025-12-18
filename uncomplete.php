@@ -42,8 +42,10 @@ if($singlequestion == 1){
     header('Location: display-question.php');
     exit();
 }   
+else{
 #redirect to paper page 
 header('Location: open-paper.php');
 exit();
+}
 
 ?>
