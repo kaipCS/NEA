@@ -2,6 +2,7 @@
 session_start();
 include_once('connection.php');
 
+#print_r($_POST);
 #get question id of code from POST and add into session if POST has been sent
 if (!empty($_POST)) {
     $questionid = $_POST["questionid"]; 
@@ -11,11 +12,21 @@ else{
     $questionid= $_SESSION["questionid"];
 }
 
+#get the type of page this was redirected from 
+if (!empty($_POST)) {
+    $page = $_POST["page"]; 
+    $_SESSION["page"] = $page;
+}
+else{
+    $page= $_SESSION["page"];
+}
+
 #find question in database
 $stmt = $conn->prepare("SELECT * FROM questions WHERE questionid = :questionid");
 $stmt->bindParam(':questionid', $questionid);
 $stmt->execute();
 $question = $stmt->fetch(PDO::FETCH_ASSOC);
+#print_r($question);
 
 #store year in session 
 $_SESSION["year"] = $question["year"];
@@ -47,11 +58,11 @@ $stmt->bindParam(':userid', $_SESSION["userid"] );
 $stmt->bindParam(':questionid', $questionid);
 $stmt->execute();
 $answer = $stmt->fetch(PDO::FETCH_ASSOC); 
+#print_r($answer);
 
 #if a record exists, the user has completed the question
 if ($answer) {
     $_SESSION["complete"] = 1;
-    $_SESSION["paperid"] =$answer["paperid"];
 
     #store note and mark in session if they have been entered
     if (isset($answer["note"]) and !empty($answer["note"])){
@@ -116,7 +127,7 @@ if (str_contains($code, "\begin{center}")) {
 
     #contents after the image
     $sections2 = explode("end{center}", $section1[1]);
-    $code = $revisedCode . $sections2[1];
+    $code = $revisedCode . $sections[1];
     }
 }
 
@@ -154,12 +165,11 @@ if (str_contains($code, "\begin{questionparts}")) {
 #store code in session 
 $_SESSION["display-code"] = $code;
 
-#redirect back to correct page
- if($_POST["redirect"] == "questions"){
-     header('Location: questionspage.php');
-     exit(); }
+#redirect back to correct page 
+if ($_SESSION["page"] == "questions"){
+    header('Location: questionspage.php');}
  else{
-     header('Location: open-paper.php');
-     exit();
- }
+    header('Location: test.php');}
+exit();
+
 ?>

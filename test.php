@@ -77,7 +77,7 @@ include 'navbar-signedin.php';?>
             #display each question as a button 
             echo("<div class='question-row'>
             ".$row["questionnumber"] . ".
-            <form action='display-test.php' method = 'POST' class ='question-form'>
+            <form action='display-question.php' method = 'POST' class ='question-form'>
                 <input type = 'hidden' name='page' value='open-paper'>
                 <input type = 'hidden' name='questionid' value='" . $questionid . "'>
                 <button type = 'submit' class='question-button' >

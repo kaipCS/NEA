@@ -2,6 +2,8 @@
 session_start();
 include_once('connection.php');
 
+#print_r($_POST);
+
 #get information about the question from the POST and session
 $questionid = $_POST["questionid"];
 $singlequestion = $_POST["singlequestion"];
@@ -58,17 +60,16 @@ VALUES ($userid, $questionid, $paperid, $mark, $note)";
 $result = $conn->query($sql);
 
 #set complete as true
-$_SESSION["complete"] = 1;
+$_SESSION["complete"] =1;
 
 #check if question is a single question
 if($singlequestion == 1){
-    #redirect to questions page 
-    header('Location: display-question.php');
-    exit();
+    $_SESSION["page"] = "questions";
 }
 else{
-    #redirect to the open paper page
-    header('Location: test.php');
-    exit();
+    $_SESSION["page"] = "open-paper";
 }
+#redirect to display questions page 
+header('Location: display-question.php');
+exit();
 ?>
