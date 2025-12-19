@@ -103,6 +103,10 @@ include 'navbar-signedin.php';?>
             $stmt -> execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
 
+            #find the largest question number 
+            $questionNumbers = array_column($rows, 'questionnumber');
+            $maxNumber = max($questionNumbers);
+
                 #display all the information about each question
                 foreach($rows as $row){
                 #print_r($row);
@@ -137,23 +141,29 @@ include 'navbar-signedin.php';?>
                 <form action='delete-question.php' method='post'>
                     <input type='hidden' name='questionid' value='".$questionid."'>
                     <input type='submit' class='delete-question move-button' onclick='return confirm(\"Are you sure you want to delete this question?\")' value='X'>
-                </form>
+                </form>");
 
-                <form action='move-question.php' method='post'>
-                    <input type='hidden' name='questionid'  value='".$questionid."'>
-                    <input type='hidden' name='direction' id='direction' value='up'>
-                    <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
-                    <input type='submit' class='move-button' value='▲'>
-                </form>
+                #only have an up button if the question is not at the top
+                if($row["questionnumber"] != 1){
+                    echo("<form action='move-question.php' method='post'>
+                        <input type='hidden' name='questionid'  value='".$questionid."'>
+                        <input type='hidden' name='direction' id='direction' value='up'>
+                        <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
+                        <input type='submit' class='move-button' value='▲'>
+                    </form>");
+                }
 
-                <form action='move-question.php' method='post'>
-                    <input type='hidden' name='questionid' value='".$questionid."'>
-                    <input type='hidden' name='direction' id='direction' value='down'>
-                    <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
-                    <input type='submit' class='move-button' value='▼'>
-                </form>
+                #only have a down button if the question is not the last one
+                if ($row["questionnumber"] != $maxNumber){
+                    echo("<form action='move-question.php' method='post'>
+                        <input type='hidden' name='questionid' value='".$questionid."'>
+                        <input type='hidden' name='direction' id='direction' value='down'>
+                        <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
+                        <input type='submit' class='move-button' value='▼'>
+                    </form>");
+                }
 
-                </div>");
+                echo("</div>");
             }
 
             ?>

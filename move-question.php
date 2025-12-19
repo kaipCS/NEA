@@ -40,7 +40,7 @@ else{
         END
         WHERE paperid = :paperid");
     $stmt->bindParam(':paperid', $paperid);
-    $stmt->bindParam(':nextsquestion', $nextquestion);
+    $stmt->bindParam(':nextquestion', $nextquestion);
     $stmt->bindParam(':currentquestion', $currentquestion);
     $stmt->execute(); 
 }
