@@ -1,43 +1,51 @@
 <?php 
 session_start();
+#connect to the database 
 include_once('connection.php');
+
+#get all the information from the POST
 $questionid = $_POST["questionid"];
 $direction = $_POST["direction"];
-$questionnumber = $_POST["questionnumber"];
-#print_r($_POST);
+$currentquestion = $_POST["questionnumber"];
+
+#get paper id from session 
 $paperid = $_SESSION["paperid"];
-#echo($direction);
-#not redirecting back
-if($direction == "up"){
-    $previousnumber = $questionnumber -1;
-    #echo($previousnumber. $questionnumber);
+
+#check which direction to move in 
+if ($direction == "up"){
+    #calculate question number of the question before the one to move up
+    $previousquestion = $currentquestion -1;
+
+    #swap the previous and current question
     $stmt = $conn -> prepare("UPDATE questioninpaper SET questionnumber = CASE 
-                            WHEN questionnumber = :previousnumber THEN :questionnumber 
-                            WHEN questionnumber = :questionnumber THEN :previousnumber
-                            ELSE questionnumber
-                            END
-                            WHERE paperid = :paperid");
-    $stmt->bindParam(':paperid', $paperid);
-    $stmt->bindParam(':previousnumber', $previousnumber);
-    $stmt->bindParam(':questionnumber', $questionnumber);
-    $stmt->execute();
+                                WHEN questionnumber = :previousquestion THEN :currentquestion
+                                WHEN questionnumber = :currentquestion THEN :previousquestion
+                                ELSE questionnumber
+                                END
+                                WHERE paperid = :paperid");
+        $stmt->bindParam(':paperid', $paperid);
+        $stmt->bindParam(':previousquestion', $previousquestion);
+        $stmt->bindParam(':currentquestion', $currentquestion);
+        $stmt->execute();
 }
 else{
-    $nextnumber = $questionnumber +1;
-    #echo($nextnumber. $questionnumber);
+    #calculate question number of the question after the one to move down
+    $nextquestion = $currentquestion +1;
+    
+    #swap the previous and next question
     $stmt = $conn -> prepare("UPDATE questioninpaper SET questionnumber = CASE 
-                            WHEN questionnumber = :nextnumber THEN :questionnumber 
-                            WHEN questionnumber = :questionnumber THEN :nextnumber
-                            ELSE questionnumber
-                            END
-                            WHERE paperid = :paperid");
+        WHEN questionnumber = :nextquestion THEN :currentquestion
+        WHEN questionnumber = :currentquestion THEN :nextquestion
+        ELSE questionnumber
+        END
+        WHERE paperid = :paperid");
     $stmt->bindParam(':paperid', $paperid);
-    $stmt->bindParam(':nextnumber', $nextnumber);
-    $stmt->bindParam(':questionnumber', $questionnumber);
-    $stmt->execute();
+    $stmt->bindParam(':nextsquestion', $nextquestion);
+    $stmt->bindParam(':currentquestion', $currentquestion);
+    $stmt->execute(); 
 }
 
-header('Location: open-paper.php');
+#redirect back to the open paper page 
+header('Location: test.php');
 exit();
-
 ?>
