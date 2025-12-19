@@ -32,7 +32,7 @@ $stmt->bindParam(':paperid', $paperid);
 $stmt->execute();
 
 #redirect back to the open paper page
-header('Location: test.php');
+header('Location: open-paper.php');
 exit();
 
 ?>

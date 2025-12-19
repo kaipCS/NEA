@@ -28,6 +28,6 @@ $stmt->bindParam(':paperid', $paperid);
 $stmt->execute();
 
 #redirect back
-header('Location: test.php');
+header('Location: open-paper.php');
 exit();
 ?>

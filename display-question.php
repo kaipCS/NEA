@@ -169,7 +169,7 @@ $_SESSION["display-code"] = $code;
 if ($_SESSION["page"] == "questions"){
     header('Location: questionspage.php');}
  else{
-    header('Location: test.php');}
+    header('Location: open-paper.php');}
 exit();
 
 ?>
