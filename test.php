@@ -12,6 +12,17 @@ else{
   $paperid = $_SESSION["paperid"];
 }
 
+#check if the creator is in the POST 
+if(isset($_POST["creator"])){
+    $creator = $_POST["creator"];
+    $_SESSION["creator"] = $creator;
+}
+#if it is not in the POST, get it from the session
+else{
+    $creator = $_SESSION["creator"];
+}
+#echo($creator);
+
 #calculate the users score
 $stmt = $conn -> prepare("SELECT mark FROM userdoespaperdoesquestion WHERE paperid = :paperid AND userid = :userid ");
 $stmt->bindParam(':paperid', $paperid);
@@ -74,22 +85,29 @@ include 'navbar-signedin.php';?>
         ?>
 
         <!-- Edit the title and time -->
-        <button class='edit-paper-button' onclick='openForm()'>Edit</button>
-        <!-- Javascript to open and close edit information pop up-->
-        <script>
-            function openForm() {
-            document.getElementById('edit-paper').style.display = 'block';
-            }
-            function closeForm() {
-            document.getElementById('edit-paper').style.display = 'none';
-            }
-        </script>
+        <?php 
+        if ($creator == "You"){
+            echo("<button class='edit-paper-button' onclick='openForm()'>Edit</button>
+            <!-- Javascript to open and close edit information pop up-->
+            <script>
+                function openForm() {
+                document.getElementById('edit-paper').style.display = 'block';
+                }
+                function closeForm() {
+                document.getElementById('edit-paper').style.display = 'none';
+                }
+            </script>");
+        }
+        ?>
 
         <!-- Score -->
-        <div class="score">
-            <?php
-            echo("Score: <br>" . $correct . "/" . $total); ?>
-        </div>
+        <?php
+        if($_SESSION["role"] == 0){
+            echo("<div class='score'>
+                Score: <br>" . $correct . "/" . $total . "
+            </div>");
+        }
+        ?>
 
         <!-- Questions -->
         <div class="question-list">
@@ -103,12 +121,18 @@ include 'navbar-signedin.php';?>
             $stmt -> execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
 
+            #check if no records were selected
+            if (empty($rows)) {
+                echo("Browse questions on the 'Questions' tab where you can add them to this paper");
+            }
+            else{
             #find the largest question number 
             $questionNumbers = array_column($rows, 'questionnumber');
             $maxNumber = max($questionNumbers);
+            }
 
-                #display all the information about each question
-                foreach($rows as $row){
+            #display all the information about each question
+            foreach($rows as $row){
                 #print_r($row);
 
                 #correct the format of paper
@@ -136,31 +160,33 @@ include 'navbar-signedin.php';?>
                     <button type = 'submit' class='question-button' >
                         STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
                     </button>
-                </form>
-
-                <form action='delete-question.php' method='post'>
-                    <input type='hidden' name='questionid' value='".$questionid."'>
-                    <input type='submit' class='delete-question move-button' onclick='return confirm(\"Are you sure you want to delete this question?\")' value='X'>
                 </form>");
 
-                #only have an up button if the question is not at the top
-                if($row["questionnumber"] != 1){
-                    echo("<form action='move-question.php' method='post'>
-                        <input type='hidden' name='questionid'  value='".$questionid."'>
-                        <input type='hidden' name='direction' id='direction' value='up'>
-                        <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
-                        <input type='submit' class='move-button' value='▲'>
-                    </form>");
-                }
-
-                #only have a down button if the question is not the last one
-                if ($row["questionnumber"] != $maxNumber){
-                    echo("<form action='move-question.php' method='post'>
+                if($creator == "You"){
+                    echo("<form action='delete-question.php' method='post'>
                         <input type='hidden' name='questionid' value='".$questionid."'>
-                        <input type='hidden' name='direction' id='direction' value='down'>
-                        <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
-                        <input type='submit' class='move-button' value='▼'>
+                        <input type='submit' class='delete-question move-button' onclick='return confirm(\"Are you sure you want to delete this question?\")' value='X'>
                     </form>");
+
+                    #only have an up button if the question is not at the top
+                    if($row["questionnumber"] != 1){
+                        echo("<form action='move-question.php' method='post'>
+                            <input type='hidden' name='questionid'  value='".$questionid."'>
+                            <input type='hidden' name='direction' id='direction' value='up'>
+                            <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
+                            <input type='submit' class='move-button' value='▲'>
+                        </form>");
+                    }
+
+                    #only have a down button if the question is not the last one
+                    if ($row["questionnumber"] != $maxNumber){
+                        echo("<form action='move-question.php' method='post'>
+                            <input type='hidden' name='questionid' value='".$questionid."'>
+                            <input type='hidden' name='direction' id='direction' value='down'>
+                            <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
+                            <input type='submit' class='move-button' value='▼'>
+                        </form>");
+                    }
                 }
 
                 echo("</div>");

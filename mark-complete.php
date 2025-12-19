@@ -69,6 +69,12 @@ if($singlequestion == 1){
 else{
     $_SESSION["page"] = "open-paper";
 }
+
+#update date edited in user creates paper table
+$stmt = $conn->prepare("UPDATE usercreatespaper SET dateedited = CURRENT_TIMESTAMP WHERE paperid = :paperid;");
+$stmt->bindParam(':paperid', $paperid);
+$stmt->execute();
+
 #redirect to display questions page 
 header('Location: display-question.php');
 exit();

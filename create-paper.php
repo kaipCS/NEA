@@ -2,15 +2,17 @@
 session_start();
 include_once('connection.php');
 
-#initalise single question as false
+#initalise single question as false and time as 0 
 $singlequestion= 0;
+$time = 0;
 
 # create paper record in the user creates paper table
-$stmt = $conn->prepare("INSERT INTO usercreatespaper(userid,title,singlequestion)
-VALUES (:userid,:title,:singlequestion)");
+$stmt = $conn->prepare("INSERT INTO usercreatespaper(userid,title,singlequestion, time)
+VALUES (:userid,:title,:singlequestion, :time)");
 $stmt->bindParam(':title', $_POST["title"]);
 $stmt->bindParam(':userid', $_SESSION["userid"]);
 $stmt->bindParam(':singlequestion', $singlequestion);
+$stmt->bindParam(':time', $time);
 $stmt->execute();
 
 # get the paper id just created  by the user creates paper table
