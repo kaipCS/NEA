@@ -8,21 +8,23 @@ $questionid = $_POST["questionid"];
 #print_r($_POST);
 
 #search for all questions in the paper
-$stmt = $conn -> prepare("SELECT questionid FROM questioninpaper WHERE paperid = :paperid");
+$stmt = $conn -> prepare("SELECT * FROM questioninpaper WHERE paperid = :paperid");
 $stmt->bindParam(':paperid', $paperid);
 $stmt->execute();
-$questions = $stmt->fetchAll(PDO::FETCH_COLUMN);
+$questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 #print_r($questions);
 
 #check if question is already in the paper
-if(!(in_array($questionid,$questions))){
+$questionids = array_column($questions, "questionid");
+if(!(in_array($questionid,$questionids))){
     #if paper empty, make question number 1 
     if (empty($questions)){
         $questionNum = 1;
     }
     #otherwise, make it one more than the largest currently (add it to the end)
     else{
-        $questionNum = max($questions) + 1 ;
+        $questionNumbers = array_column($questions, "questionnumber");
+        $questionNum = max($questionNumbers) + 1 ;
     }
 
     #add into question in paper table to add to the paper
