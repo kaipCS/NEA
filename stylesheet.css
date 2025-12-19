@@ -404,13 +404,6 @@ textarea{
   background-color: white;
 }
 
-/* Each question in the list in a paper*/
-.question-row {
-  display: flex;
-  align-items: center;  
-  gap: 15px;          
-}
-
 /* Score on paper*/
 .score{
   position: absolute;
@@ -446,4 +439,38 @@ textarea{
 #edit-time{
   width:0;
   min-width:100%;
+}
+
+/* Buttons to rearrange questions in papers*/
+.move-button{
+  background-color: white !important;
+  border-width:1px !important;
+  border-style: solid !important;
+  border-color:gray !important;
+  height: 30px;
+  width: 35px;
+  border-radius: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Button to delete a question from a paper*/
+.delete-question{
+  color:red;
+}
+
+/* Question list button on the open papers page*/
+.question-list .question-button{
+  border-color: transparent;
+}
+
+/* Each question in the list in a paper*/
+.question-row {
+  display: flex;
+  align-items: center;  
+  gap: 15px;   
+  border-style: solid;
+  border-width:1px;
+  border-color:gray;
+  padding: 10px;
+  margin-bottom:10px;
 }

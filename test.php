@@ -133,6 +133,26 @@ include 'navbar-signedin.php';?>
                         STEP " . $paper . " " . $row["year"] . " " . $row["topic"] . "<br>
                     </button>
                 </form>
+
+                <form action='delete-question.php' method='post'>
+                    <input type='hidden' name='questionid' value='".$questionid."'>
+                    <input type='submit' class='delete-question move-button' onclick='return confirm(\"Are you sure you want to delete this question?\")' value='X'>
+                </form>
+
+                <form action='move-question.php' method='post'>
+                    <input type='hidden' name='questionid'  value='".$questionid."'>
+                    <input type='hidden' name='direction' id='direction' value='up'>
+                    <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
+                    <input type='submit' class='move-button' value='▲'>
+                </form>
+
+                <form action='move-question.php' method='post'>
+                    <input type='hidden' name='questionid' value='".$questionid."'>
+                    <input type='hidden' name='direction' id='direction' value='down'>
+                    <input type='hidden' name='questionnumber' value='".$row["questionnumber"]."'>
+                    <input type='submit' class='move-button' value='▼'>
+                </form>
+
                 </div>");
             }
 
@@ -189,7 +209,7 @@ include 'navbar-signedin.php';?>
                             echo '
                                 <form action="uncomplete.php" method="POST">
                                     <input type="hidden" id="singlequestion" name="singlequestion" value=1>
-                                    <input type="hidden" id="questionid" name="questionid" value="' . $_SESSION["questionid"] . '">
+                                    <input type="hidden" name="questionid" value="' . $_SESSION["questionid"] . '">
                                     <input type="submit" value="Uncomplete">
                                 </form>
                             ';
@@ -200,7 +220,7 @@ include 'navbar-signedin.php';?>
                             echo '
                                 <form action="mark-complete.php" method="POST">
                                     <input type="hidden" id="singlequestion" name="singlequestion" value="0">
-                                    <input type="hidden" id="questionid" name="questionid" value=" '.$_SESSION["questionid"].'">
+                                    <input type="hidden" name="questionid" value=" '.$_SESSION["questionid"].'">
                                     <textarea name="note" placeholder="Add notes about this question..." ></textarea>
                                     Score <input type="number" id="score" name="score" min="0" max="20" >
                                     <input type="submit" value="Complete">
@@ -209,7 +229,6 @@ include 'navbar-signedin.php';?>
                     
                         }
                     }
-                
                 }
                 else{
                     echo("Select a question to view it.");
