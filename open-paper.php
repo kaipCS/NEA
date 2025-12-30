@@ -203,13 +203,15 @@ include 'navbar-signedin.php';?>
             echo 'Note: <br> ' . $note;
             echo "<br>";
 
-            #form to edit the question with hidden input in post 
-            echo '
-            <form action="edit-note.php" method="POST">
-                <input type="hidden" name="paperid" value="' . $paperid . '">
-                <input type="submit" value="Delete and edit">
-            </form>
-            ';
+            if($creator == "You"){
+                #form to edit the question with hidden input in post 
+                echo '
+                <form action="edit-note.php" method="POST">
+                    <input type="hidden" name="paperid" value="' . $paperid . '">
+                    <input type="submit" value="Delete and edit">
+                </form>
+                ';
+            }
         }
 
         #if the user had not added a note
