@@ -39,13 +39,14 @@ foreach($marks as $mark){
     }
 }
 
-#get the title and time for the paper
+#get the title, time and note for the paper
 $stmt = $conn -> prepare("SELECT * FROM usercreatespaper WHERE paperid = :paperid");
 $stmt->bindParam(':paperid', $paperid);
 $stmt -> execute();
 $paper= $stmt->fetch(PDO::FETCH_ASSOC); 
 $title = $paper["title"];
 $time = $paper["time"];
+$note = $paper["details"];
 ?>
 
 <!DOCTYPE html>
@@ -194,6 +195,38 @@ include 'navbar-signedin.php';?>
 
             ?>
         </div>
+
+        <!-- Notes on paper -->
+        <?php
+        #display the note if they added one 
+        if (!empty($note)) {
+            echo 'Note: <br> ' . $note;
+            echo "<br>";
+
+            #form to edit the question with hidden input in post 
+            echo '
+            <form action="edit-note.php" method="POST">
+                <input type="hidden" name="paperid" value="' . $paperid . '">
+                <input type="submit" value="Delete and edit">
+            </form>
+            ';
+        }
+
+        #if the user had not added a note
+        else{
+            #if the user owns the paper
+            if($creator == "You"){
+                echo '
+                    <form action="add-note.php" method="POST">
+                        <input type="hidden" name="paperid" value=" '.$paperid.'">
+                        <textarea name="details" placeholder="Add notes about this paper..." ></textarea>
+                        <input type="submit" value="Save note">
+                    </form>
+                ';
+            }
+        }
+        ?>
+
     </div>
     
     <!-- Question preview column -->
@@ -244,7 +277,7 @@ include 'navbar-signedin.php';?>
                             #form to uncomplete the question with hidden input in post 
                             echo '
                                 <form action="uncomplete.php" method="POST">
-                                    <input type="hidden" id="singlequestion" name="singlequestion" value=1>
+                                    <input type="hidden" id="singlequestion" name="singlequestion" value=0>
                                     <input type="hidden" name="questionid" value="' . $_SESSION["questionid"] . '">
                                     <input type="submit" value="Uncomplete">
                                 </form>
