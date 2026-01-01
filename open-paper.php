@@ -229,6 +229,25 @@ include 'navbar-signedin.php';?>
         }
         ?>
 
+        <!-- Download button -->
+        <?php 
+        #get the list of question codes
+        $questionCodes = array_column($rows, 'code');
+        
+        #download form
+        echo("
+            <br>
+            <form action='download-paper.php' method='POST'>");
+            foreach ($questionCodes as $code) {
+                echo "<input type='hidden' name='codes[]' value='$code'>";
+            }
+            echo("<input type='hidden' name='title' value='".$title."'>
+                <input type='hidden' name='time' value='".$time."'>
+                <input type='hidden' name='note' value='".$note."'>
+                <input type='submit' value='Download paper'>
+            </form>");
+        ?>
+
     </div>
     
     <!-- Question preview column -->
