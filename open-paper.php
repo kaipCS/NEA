@@ -24,16 +24,18 @@ else{
 #echo($creator);
 
 #calculate the users score
-$stmt = $conn -> prepare("SELECT mark FROM userdoespaperdoesquestion WHERE paperid = :paperid AND userid = :userid ");
-$stmt->bindParam(':paperid', $paperid);
+$stmt = $conn -> prepare("SELECT mark FROM userdoespaperdoesquestion 
+                        INNER JOIN questioninpaper ON userdoespaperdoesquestion.questionid = questioninpaper.questionid
+                        WHERE userdoespaperdoesquestion.userid = :userid AND questioninpaper.paperid = :paperid ");
 $stmt->bindParam(':userid', $_SESSION["userid"]);
+$stmt->bindParam(':paperid', $paperid);
 $stmt -> execute();
 $marks = $stmt->fetchAll(PDO::FETCH_ASSOC);  
 $correct = 0;
 $total= 0;
 #iterate through each completed question from this paper
 foreach($marks as $mark){
-    if (!empty($mark)){
+    if ($mark["mark"] !== null){
         $total = $total + 20;
         $correct = $correct + $mark["mark"];
     }
@@ -233,7 +235,7 @@ include 'navbar-signedin.php';?>
         <?php 
         #get the list of question codes
         $questionCodes = array_column($rows, 'code');
-        
+
         #download form
         echo("
             <br>

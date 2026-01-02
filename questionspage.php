@@ -386,8 +386,12 @@ include_once('connection.php');?>
             <form id="optionForm" action="sort-questions.php" method="POST">
                 Sort by:
                 <select name="sort" onchange="changeOption()">
-                    <option value="oldest">Oldest First</option>
-                    <option value="newest">Newest First</option>
+                    <option value="oldest" <?php if (!isset($_SESSION['sort']) || $_SESSION['sort'] === 'oldest') echo 'selected'; ?>>
+                        Oldest First
+                    </option>
+                    <option value="newest" <?php if ($_SESSION['sort'] == 'newest') echo 'selected'; ?>>
+                        Newest First
+                    </option>
                 </select>
             </form>
 

@@ -474,3 +474,27 @@ textarea{
   padding: 10px;
   margin-bottom:10px;
 }
+
+
+#completed{
+  font-size:16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color:gray;
+  max-height: 150px;
+  overflow-y: auto; 
+}
+
+#papers-pie canvas {
+  padding:20px;
+  height: 425px !important;
+}
+
+#areas-pie canvas {
+  padding:20px;
+  height: 425px !important;
+}
+
+.col-sm-7{
+  margin-top:-30px;
+}
