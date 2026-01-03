@@ -49,12 +49,15 @@ include 'navbar-signedin.php'; ?>
       $stmt->execute();
       $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+      #form to select a student to view the stats of
       echo('
       <form id="students-form" action="view-stats.php" method="POST">
           View the progress statistics of
           <select name="student" onchange="changeStudent()">
           <option value="" disabled selected>Select a student</option>');
+          #iterate through students
           foreach ($students as $student) {
+            #display the students name
             echo '<option value="' . $student["userid"] . '">' . $student["forename"] . " ". $student["surname"] . '</option>';
           }            
           echo('</select>

@@ -124,8 +124,8 @@ include 'navbar-signedin.php';?>
             $stmt -> execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);  
 
-            #check if no records were selected
-            if (empty($rows)) {
+            #check if no records were selected and the user can edit the paper
+            if (empty($rows) and $creator == "You") {
                 echo("Browse questions on the 'Questions' tab where you can add them to this paper");
             }
             else{
@@ -227,6 +227,38 @@ include 'navbar-signedin.php';?>
                         <input type="submit" value="Save note">
                     </form>
                 ';
+            }
+        }
+        ?>
+
+        <!-- Share with students -->
+        <?php
+        #check if user is a teacher
+        if($_SESSION["role"] == 1){
+            #check if the teacher is in a school
+            if(isset($_SESSION["schoolID"])){
+            #get the list of students in the teachers school
+            $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0 and schoolID = :schoolID");
+            $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
+            $stmt->execute();
+            $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            #form to select a student to share the paper with
+            echo('
+            <br>
+            <form id="students-form" action="share-paper.php" method="POST">
+                <input type="hidden" name="paperid" value="'.$paperid.'">
+                Share paper with
+                <select name="student">
+                <option value="" disabled selected>Select a student</option>');
+                #iterate through each student
+                foreach ($students as $student) {
+                    #display the student's name
+                    echo '<option value="' . $student["userid"] . '">' . $student["forename"] . " ". $student["surname"] . '</option>';
+                }            
+                echo('</select>
+                <input type="submit" value="Share">
+            </form>');
             }
         }
         ?>
