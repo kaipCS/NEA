@@ -487,16 +487,17 @@ textarea{
   margin-left:-15px;
 }
 
+/* Pie chart of distribution across papers*/
 #papers-chart{
   padding:20px;
-  height: 300px !important;
 }
 
+/* Pie chart of distribution across areas*/
 #areas-chart{
   padding:20px;
-  height:425px !important;
 }
 
+/* Column on stats page with bar and line charts*/
 .col-sm-7{
   margin-top:-30px;
 }

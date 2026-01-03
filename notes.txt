@@ -11,3 +11,6 @@
 .col-sm-7{
   margin-top:-30px;
 }
+
+get rid of break
+flex

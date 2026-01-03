@@ -166,7 +166,6 @@ include 'navbar-signedin.php'; ?>
                 </option>
             </select>
         </form>
-        <br>
 
         <!-- Submit sort form automatically if it is changed -->
         <script>
@@ -193,8 +192,6 @@ include 'navbar-signedin.php'; ?>
             },
             });
         </script>
-        <br>
-        <br>
 
         <!-- Areas pie chart -->
         <canvas id="areas-chart"></canvas>
@@ -246,6 +243,7 @@ include 'navbar-signedin.php'; ?>
     <div class="col-sm-7">
         <!-- Chart showing number of questions completed each month-->
         <canvas id="questions-chart"></canvas>
+        <br>
 
         <script>
         const questionsChart = document.getElementById('questions-chart');
