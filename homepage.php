@@ -32,7 +32,9 @@ endif; ?>
       What is STEP 
     </h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      STEP (Sixth term examination paper) is an additional mathematics examination, taken at the end of Year 13, which forms part of conditional offers to applicants for mathematics and some related degrees at Cambridge and some other universities. It is designed to test candidates on questions that are similar in style to undergraduate mathematics.
+    <br>
+      There are two STEP examinations: STEP 2 and STEP 3. Students are usually required to sit either one or both of the examinations, depending on the requirements of the universities they have applied to. STEP 2 is based on A level Mathematics and AS level Further Mathematics. STEP 3 is based on a typical Further Mathematics A-level syllabus.
     </p>
     </div>
     <div class="col-sm-3">
@@ -40,10 +42,10 @@ endif; ?>
         Upcoming dates
       </h3>
       <h3>
-        STEP II: 11/06/25
+        STEP II: 04/06/26
       </h3>
       <h3>
-        STEP III: 16/06/25
+        STEP III: 10/06/26
       </h3>
     </div>
   </div>
@@ -55,7 +57,7 @@ endif; ?>
         How to use this website
       </h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Sign in or create an account to make a paper. You can create these on the papers tab (under account) and then browse questions from the questions tab to add to these. Papers can be downloaded as printable pdfs. 
       </p>
     </div>
     <div class="col-sm-3">
@@ -63,7 +65,7 @@ endif; ?>
         For teachers
       </h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+        Create a school code to share with your students or other teachers from your school. You can share your papers with students and see their progress statistics. 
       </p>
     </div>
     <div class="col-sm-3">
@@ -71,7 +73,7 @@ endif; ?>
         For students
       </h3>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+      There are links to solutions that you can use to mark questions and save your score. You can keep track of your progress on the statistics tabs. Join a school with a code from your teacher which allows them to send you papers.
       </p>
     </div>
   </div>
@@ -83,7 +85,11 @@ endif; ?>
         Tips for preparation
       </h2>
       <p> 
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        The best preparation for STEP is to work slowly through past questions that you can browse through on the questions tab of this website. Do not worry if they initially seem very difficult:  the questions are much longer and more demanding than A-level questions. With enough practice you will get better at tackling STEP questions and you will be well prepared to achieve the grades you need.
+      <br>
+        Consider starting with older questions and working chronologically (questions go back to 1986). Older papers tend to have easier questions and generally get gradually more challenging recently. You can also start with STEP I (which was discontinued in 2019) as these only use single A-level mathematics content.
+      <br>
+        The University of Cambridge have produces the STEP support programme which has foundation modules to use before past questions. In addition, the Advanced Problems in Mathematics book by Stephen Siklos analyses STEP questions followed by a comment and a full solution.
       </p>
     </div>
   </div>

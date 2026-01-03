@@ -14,3 +14,13 @@
 
 get rid of break
 flex
+
+.bottom-bar {
+  height: 10px;
+  background-color: #38B6FF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}

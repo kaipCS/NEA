@@ -110,12 +110,14 @@
   position: fixed;
   bottom: -10px;
   width: 100%;
-}
+  left: 0;
+} 
 
 /* 3 width bootstrap column */
 .col-sm-3{
   background-color:#ADE1FF;
   margin-top: 30px;
+  height: 250px;
 }
 
 /* headers in 3 width columns */
@@ -499,5 +501,5 @@ textarea{
 
 /* Column on stats page with bar and line charts*/
 .col-sm-7{
-  margin-top:-30px;
+  margin-top:25px;
 }
