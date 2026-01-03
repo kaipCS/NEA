@@ -41,6 +41,13 @@ else{
             $_SESSION["role"] = $user["role"];
             $_SESSION["userid"] = $user["userid"];
 
+            #check if the user is in a school
+            if($user["schoolID"] !== NULL){
+                echo("school");
+                #add school id to the session
+                $_SESSION["schoolID"] = $user["schoolID"];
+            }
+
             #redirect to homepage
             header('Location: homepage.php');
             exit();

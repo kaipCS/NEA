@@ -2,6 +2,19 @@
 
 #connect to database 
 include_once ("connection.php");
+
+#get user id of user's stats to view
+if($_SESSION["role"] == 0){
+  #user is a student
+  $userid = $_SESSION["userid"];
+}
+else{
+  #user is a teacher
+  #check if they have selected a student
+  if(isset($_SESSION["student"])){
+    $userid = $_SESSION["student"];
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,272 +37,316 @@ include 'navbar-signedin.php'; ?>
 
 <!-- Page contents -->
 <div class="container">
-    <!-- List of completed questions -->
-    <h3>Completed questions:</h3>
-    <div class="col-sm-5">
-        <div id="completed">
-            <?php
-                #get list of completed questions  
-                $stmt = $conn -> prepare("SELECT * FROM userdoespaperdoesquestion 
-                INNER JOIN  questions ON userdoespaperdoesquestion.questionid = questions.questionid
-                WHERE userdoespaperdoesquestion.userid = :userid 
-                ORDER BY userdoespaperdoesquestion.datecompleted DESC");
-                $stmt->bindParam(':userid', $_SESSION["userid"]);
-                $stmt -> execute();
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+  <!-- Teacher's menu to view students' stats -->
+  <?php
+  #check if the current user is a teacher
+  if($_SESSION["role"] == 1){
+    #check if the teacher is in a school
+    if(isset($_SESSION["schoolID"])){
+      #get the list of students in the teachers school
+      $stmt = $conn -> prepare("SELECT * FROM users WHERE role=0 and schoolID = :schoolID");
+      $stmt->bindParam(':schoolID', $_SESSION["schoolID"]);
+      $stmt->execute();
+      $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                #initalise array for the papers pie chart 
-                $papers = [0,0,0];
+      echo('
+      <form id="students-form" action="view-stats.php" method="POST">
+          View the progress statistics of
+          <select name="student" onchange="changeStudent()">
+          <option value="" disabled selected>Select a student</option>');
+          foreach ($students as $student) {
+            echo '<option value="' . $student["userid"] . '">' . $student["forename"] . " ". $student["surname"] . '</option>';
+          }            
+          echo('</select>
+      </form>
+      <br>');
+    }
+    else{
+      #teacher is not in a school
+      echo("Join a school from the school tab to view the progress statistics of your students here");
+    }
+  }
+  ?>
+  <div class="col-sm-5">
 
-                #initalise array for areas [pure, mechanics, probability]
-                $areas = [0,0,0];
+    <!-- Submit students form automatically if it is changed -->
+    <script>
+      function changeStudent() {
+          document.getElementById("students-form").submit();
+      }
+    </script>
 
-                #intialise the array to count the questions completed each month 
-                $questions = [];
 
-                #intialise the array to count the average marks each month
-                $marks = [];
-
-                #iterate through questions
-                foreach($rows as $row){
-                    #print_r($row);
-
-                    #correct the format of paper and add to the papers array
-                    $paper = $row["paper"];
-                    switch ($paper) {
-                        case 1:
-                            $paper = "I";
-                            $papers[0] += 1;
-                            break;
-                        case 2:
-                            $paper = "II";
-                            $papers[1] +=1;
-                            break;
-                        case 3:
-                            $paper = "III";
-                            $papers[2] += 1;
-                            break;
-                    }
-
-                    #add to totals in areas array for pie chart
-                    switch ($row["area"]) {
-                        case 0:
-                            $areas[0] += 1;
-                            break;
-                        case 1:
-                            $areas[1] +=1;
-                            break;
-                        case 2:
-                            $areas[2] += 1;
-                            break;
-                    }
-
-                    #output the question
-                    echo("STEP " . $paper . " " . $row["year"] . " " . $row["topic"]);
-
-                    #get month and year of completion
-                    $timestamp = strtotime($row["datecompleted"]);
-                    $date = date("m-y", $timestamp);
-
-                    #check if this date is already in the questions array
-                    if (isset($questions[$date])) {
-                        $questions[$date]++;
-                    } else {
-                        $questions[$date] = 1;
-                    }
-
-                    #check if the question has a mark
-                    if ($row["mark"] !== NULL){
-                        #output mark out of 20 
-                        echo(" ". $row["mark"] . "/20");
-
-                        #check if the month is already in the marks array
-                        if (!isset($marks[$date])) {
-                            #add in inital value for this month
-                            $marks[$date] = [1, $row["mark"]];
-                        }
-                        else{
-                            #increment number of questions marked 
-                            $marks[$date][0]++;
-
-                            #add current mark to total 
-                            $marks[$date][1] += $row["mark"];
-                        }
-                    }
-
-                    echo("<br>");
-
-                    #just reverse arrays as already in descending order
-                }
-                #reverse the questions array 
-                $questions = array_reverse($questions);
-
-                #seperate the variables in the questions array
-                $questionsMonths = array_keys($questions);  
-                $questionsCounts = array_values($questions);
-
-                #reverse the marks array
-                $marks = array_reverse($marks);
-
-                #seperate months from the marks into an array 
-                $marksMonths = array_keys($marks); 
-
-                #initialise marksAverages arrays
-                $marksAverages = [];
-
-                #iterate through marks array
-                foreach($marks as $mark){
-                    #calculate average and add to array
-                    $marksAverages[] = ($mark[1])/($mark[0]) ;
-                }
-
-                #print_r($marksMonths);
-                #print_r($marksAverages);
-
-                #print_r($questionsCounts);
-                #print_r($marks);
-            ?>
-        </div>
-        
-
-        <!-- Papers pie chart -->
-        <br>
-        <!-- Switch pie chart -->
-        <form id="pie-options" action="pie-options.php" method="POST">
-            Distribution across
-            <select name="pie-options" onchange="changeOption()">
-                <option value="papers" <?php if (!isset($_SESSION['pie-options']) || $_SESSION['pie-options'] === 'papers') echo 'selected'; ?>>
-                    papers
-                </option>
-                <option value="areas" <?php if ($_SESSION['pie-options'] == 'areas') echo 'selected'; ?>>
-                    areas
-                </option>
-            </select>
-        </form>
-
-        <!-- Submit sort form automatically if it is changed -->
-        <script>
-            function changeOption() {
-                document.getElementById("pie-options").submit();
-            }
-        </script>
-
-        <canvas id="papers-chart"></canvas>
-
-        <script>
-            //get papers array from php
-            var papers = <?php echo json_encode($papers); ?>;
-            
-            //pie chart using chart.js
-            const papersChart = document.getElementById('papers-chart');
-            new Chart(papersChart, {
-            type: 'doughnut',
-            data: {
-                labels: ['STEP I', 'STEP II', 'STEP III'],
-                datasets: [{
-                data: papers
-                }]
-            },
-            });
-        </script>
-
-        <!-- Areas pie chart -->
-        <canvas id="areas-chart"></canvas>
-
-        <script>
-            //get areas array from php
-            var areas = <?php echo json_encode($areas); ?>;
-            
-            //pie chart using chart.js
-            const areasChart = document.getElementById('areas-chart');
-            new Chart(areasChart, {
-            type: 'doughnut',
-            data: {
-                labels: ['Pure', 'Mechanics', 'Probability'],
-                datasets: [{
-                data: areas
-                }]
-            },
-            });
-        </script>
-        <br>
-        <br>
-
-    </div>
-
-    <!-- Displaying and hiding the pie charts -->
-    <?php 
-        #check if areas have been selected
-        if ($_SESSION["pie-options"] == "areas"){
-            #edit CSS to show areas and hide papers
-            echo("
-            <script>
-            document.getElementById('papers-chart').style.display = 'none';
-            document.getElementById('areas-chart').style.display = 'block';
-            </script>");
-        }
-        else{
-            #either nothing has been selected (default) or papers have
-            #edit CSS to show papers and hide areas
-            echo("
-            <script>
-                document.getElementById('areas-chart').style.display = 'none';
-                document.getElementById('papers-chart').style.display = 'block';
-            </script>");  
-        }
+    <?php
+    #only display stats if a user has been set
+    if(isset($userid)) :
     ?>
 
-    <!-- Bar and line charts -->
-    <div class="col-sm-7">
-        <!-- Chart showing number of questions completed each month-->
-        <canvas id="questions-chart"></canvas>
-        <br>
+    <!-- List of completed questions -->
+    <h3>Completed questions:</h3>
+      <div id="completed">
+        <?php
+            #get list of completed questions  
+            $stmt = $conn -> prepare("SELECT * FROM userdoespaperdoesquestion 
+            INNER JOIN  questions ON userdoespaperdoesquestion.questionid = questions.questionid
+            WHERE userdoespaperdoesquestion.userid = :userid 
+            ORDER BY userdoespaperdoesquestion.datecompleted DESC");
+            $stmt->bindParam(':userid', $userid);
+            $stmt -> execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-        <script>
-        const questionsChart = document.getElementById('questions-chart');
+            #initalise array for the papers pie chart 
+            $papers = [0,0,0];
 
-        //get arrays from php
-        var questionsMonths = <?php echo json_encode($questionsMonths); ?>;
-        var questionsCounts = <?php echo json_encode($questionsCounts); ?>;
+            #initalise array for areas [pure, mechanics, probability]
+            $areas = [0,0,0];
 
-        //bar chart using chart.js
-        new Chart(questionsChart, {
-            type: 'bar',
-            data: {
-            labels: questionsMonths,
-            datasets: [{
-                label: 'Number of questions completed each month',
-                data: questionsCounts,
-                borderWidth: 1
-            }]
-            },
-        });
-        </script>
+            #intialise the array to count the questions completed each month 
+            $questions = [];
 
-        <!-- Chart showing average mark each month-->
-        <canvas id="marks-chart"></canvas>
+            #intialise the array to count the average marks each month
+            $marks = [];
 
-        <script>
-        const marksChart = document.getElementById('marks-chart');
+            #iterate through questions
+            foreach($rows as $row){
+                #print_r($row);
 
-        //get arrays from php
-        var marksMonths = <?php echo json_encode($marksMonths); ?>;
-        var marksAverages = <?php echo json_encode($marksAverages); ?>;
+                #correct the format of paper and add to the papers array
+                $paper = $row["paper"];
+                switch ($paper) {
+                    case 1:
+                        $paper = "I";
+                        $papers[0] += 1;
+                        break;
+                    case 2:
+                        $paper = "II";
+                        $papers[1] +=1;
+                        break;
+                    case 3:
+                        $paper = "III";
+                        $papers[2] += 1;
+                        break;
+                }
 
-        //bar chart using chart.js
-        new Chart(marksChart, {
-            type: 'line',
-            data: {
-            labels: marksMonths,
-            datasets: [{
-                label: 'Average marks each month',
-                data: marksAverages,
-            }]
-            },
-        });
-        </script>
+                #add to totals in areas array for pie chart
+                switch ($row["area"]) {
+                    case 0:
+                        $areas[0] += 1;
+                        break;
+                    case 1:
+                        $areas[1] +=1;
+                        break;
+                    case 2:
+                        $areas[2] += 1;
+                        break;
+                }
 
-    </div>
+                #output the question
+                echo("STEP " . $paper . " " . $row["year"] . " " . $row["topic"]);
+
+                #get month and year of completion
+                $timestamp = strtotime($row["datecompleted"]);
+                $date = date("m-y", $timestamp);
+
+                #check if this date is already in the questions array
+                if (isset($questions[$date])) {
+                    $questions[$date]++;
+                } else {
+                    $questions[$date] = 1;
+                }
+
+                #check if the question has a mark
+                if ($row["mark"] !== NULL){
+                    #output mark out of 20 
+                    echo(" ". $row["mark"] . "/20");
+
+                    #check if the month is already in the marks array
+                    if (!isset($marks[$date])) {
+                        #add in inital value for this month
+                        $marks[$date] = [1, $row["mark"]];
+                    }
+                    else{
+                        #increment number of questions marked 
+                        $marks[$date][0]++;
+
+                        #add current mark to total 
+                        $marks[$date][1] += $row["mark"];
+                    }
+                }
+
+                echo("<br>");
+
+                #just reverse arrays as already in descending order
+            }
+            #reverse the questions array 
+            $questions = array_reverse($questions);
+
+            #seperate the variables in the questions array
+            $questionsMonths = array_keys($questions);  
+            $questionsCounts = array_values($questions);
+
+            #reverse the marks array
+            $marks = array_reverse($marks);
+
+            #seperate months from the marks into an array 
+            $marksMonths = array_keys($marks); 
+
+            #initialise marksAverages arrays
+            $marksAverages = [];
+
+            #iterate through marks array
+            foreach($marks as $mark){
+                #calculate average and add to array
+                $marksAverages[] = ($mark[1])/($mark[0]) ;
+            }
+
+            #print_r($marksMonths);
+            #print_r($marksAverages);
+
+            #print_r($questionsCounts);
+            #print_r($marks);
+        ?>
+      </div>
+      
+
+      <!-- Papers pie chart -->
+      <br>
+      <!-- Switch pie chart -->
+      <form id="pie-options" action="pie-options.php" method="POST">
+          Distribution across
+          <select name="pie-options" onchange="changeOption()">
+              <option value="papers" <?php if (!isset($_SESSION['pie-options']) || $_SESSION['pie-options'] === 'papers') echo 'selected'; ?>>
+                  papers
+              </option>
+              <option value="areas" <?php if ($_SESSION['pie-options'] == 'areas') echo 'selected'; ?>>
+                  areas
+              </option>
+          </select>
+      </form>
+
+      <!-- Submit sort form automatically if it is changed -->
+      <script>
+          function changeOption() {
+              document.getElementById("pie-options").submit();
+          }
+      </script>
+
+      <canvas id="papers-chart"></canvas>
+
+      <script>
+          //get papers array from php
+          var papers = <?php echo json_encode($papers); ?>;
+          
+          //pie chart using chart.js
+          const papersChart = document.getElementById('papers-chart');
+          new Chart(papersChart, {
+          type: 'doughnut',
+          data: {
+              labels: ['STEP I', 'STEP II', 'STEP III'],
+              datasets: [{
+              data: papers
+              }]
+          },
+          });
+      </script>
+
+      <!-- Areas pie chart -->
+      <canvas id="areas-chart"></canvas>
+
+      <script>
+          //get areas array from php
+          var areas = <?php echo json_encode($areas); ?>;
+          
+          //pie chart using chart.js
+          const areasChart = document.getElementById('areas-chart');
+          new Chart(areasChart, {
+          type: 'doughnut',
+          data: {
+              labels: ['Pure', 'Mechanics', 'Probability'],
+              datasets: [{
+              data: areas
+              }]
+          },
+          });
+      </script>
+      <br>
+      <br>
+
+  </div>
+
+  <!-- Displaying and hiding the pie charts -->
+  <?php 
+      #check if areas have been selected
+      if ($_SESSION["pie-options"] == "areas"){
+          #edit CSS to show areas and hide papers
+          echo("
+          <script>
+          document.getElementById('papers-chart').style.display = 'none';
+          document.getElementById('areas-chart').style.display = 'block';
+          </script>");
+      }
+      else{
+          #either nothing has been selected (default) or papers have
+          #edit CSS to show papers and hide areas
+          echo("
+          <script>
+              document.getElementById('areas-chart').style.display = 'none';
+              document.getElementById('papers-chart').style.display = 'block';
+          </script>");  
+      }
+  ?>
+
+  <!-- Bar and line charts -->
+  <div class="col-sm-7">
+      <!-- Chart showing number of questions completed each month-->
+      <canvas id="questions-chart"></canvas>
+      <br>
+
+      <script>
+      const questionsChart = document.getElementById('questions-chart');
+
+      //get arrays from php
+      var questionsMonths = <?php echo json_encode($questionsMonths); ?>;
+      var questionsCounts = <?php echo json_encode($questionsCounts); ?>;
+
+      //bar chart using chart.js
+      new Chart(questionsChart, {
+          type: 'bar',
+          data: {
+          labels: questionsMonths,
+          datasets: [{
+              label: 'Number of questions completed each month',
+              data: questionsCounts,
+              borderWidth: 1
+          }]
+          },
+      });
+      </script>
+
+      <!-- Chart showing average mark each month-->
+      <canvas id="marks-chart"></canvas>
+
+      <script>
+      const marksChart = document.getElementById('marks-chart');
+
+      //get arrays from php
+      var marksMonths = <?php echo json_encode($marksMonths); ?>;
+      var marksAverages = <?php echo json_encode($marksAverages); ?>;
+
+      //bar chart using chart.js
+      new Chart(marksChart, {
+          type: 'line',
+          data: {
+          labels: marksMonths,
+          datasets: [{
+              label: 'Average marks each month',
+              data: marksAverages,
+          }]
+          },
+      });
+      </script>
+  </div>
+  <?php endif; ?>
 </div>
 
 <!-- Bottom blue bar -->
