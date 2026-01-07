@@ -351,6 +351,8 @@ include 'navbar-signedin.php'; ?>
   </div>
   <?php endif; ?>
 </div>
+<br>
+<br>
 
 <!-- Bottom blue bar -->
 <div class="bottom-bar">
