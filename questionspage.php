@@ -368,10 +368,16 @@ include_once('connection.php');?>
             <br>
             <br>
 
-            <!-- Exclude questions user has already done -->
+            <!-- Exclude questions a student has already done -->
+            <?php
+            if($_SESSION["role"] == 0){
+            echo('
             <label>
                 <input type="checkbox" name="exclude-complete" value="yes"> Exclude completed questions 
             </label>
+            ');
+            }
+            ?>
             <br>
             <input type="submit" value="Apply filters">
         </form>
@@ -641,6 +647,7 @@ include_once('connection.php');?>
 
     </div>
 </div>
+<br>
 
 <!-- Bottom blue bar -->
 <div class="bottom-bar">

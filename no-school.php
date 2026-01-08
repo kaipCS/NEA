@@ -78,7 +78,7 @@ include 'navbar-signedin.php';
                         echo "Please enter a 5 digit code.";
                     }
                     if ($_SESSION["error"] == "codeExists"){
-                        echo "An school with this code already exists. Enter the code above to join your school.";
+                        echo "A school with this code already exists. Enter the code above to join your school.";
                     }
 
                 echo '</div> <br>

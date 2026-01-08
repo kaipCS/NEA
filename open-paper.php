@@ -376,6 +376,7 @@ include 'navbar-signedin.php';?>
     <input type="submit" value="Update"></input>
   </form>
 </div>
+<br>
 
 <!-- Bottom blue bar -->
 <div class="bottom-bar">

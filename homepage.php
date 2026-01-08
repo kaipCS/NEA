@@ -29,7 +29,7 @@ endif; ?>
   <div class="row">
     <div class="col-sm-9">
     <h2>
-      What is STEP 
+      What is STEP?
     </h2>
     <p>
       STEP (Sixth term examination paper) is an additional mathematics examination, taken at the end of Year 13, which forms part of conditional offers to applicants for mathematics and some related degrees at Cambridge and some other universities. It is designed to test candidates on questions that are similar in style to undergraduate mathematics.
